@@ -39,7 +39,8 @@ social:
   links:
     # The first element serves as the copyright owner's link
     #  - https://twitter.com/username # change to your twitter homepage
-    - https://github.com/timyiu478 # change to your github homepage
+    # - https://github.com/timyiu478 # change to your github homepage
+    - https://www.linkedin.com/in/kam-wing-yiu-47685b172
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -70,10 +71,10 @@ theme_mode: dark # [light|dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn: ""
+img_cdn: "https://timyiu478.github.io/assets/cat.gif"
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: "https://timyiu478.github.io/assets/cat.gif"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -105,7 +106,7 @@ comments:
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
   self_host:
-    enabled: # boolean, keep empty means false
+    enabled: true # boolean, keep empty means false
     # specify the Jekyll environment, empty means both
     # only works if `assets.self_host.enabled` is 'true'
     env: production # [development|production]

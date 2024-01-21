@@ -48,6 +48,8 @@ const allowedDomains = [
   'localhost:4000',
 
   
+    'timyiu478.github.io',
+  
 
   'fonts.gstatic.com',
   'fonts.googleapis.com',
