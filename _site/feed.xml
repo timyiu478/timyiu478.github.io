@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
+  <id>https://timyiu478.github.io/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-01-21T17:23:02+08:00</updated>
+  <updated>2024-01-21T17:26:37+08:00</updated>
   <author>
     <name>Tim Yiu</name>
-    <uri>http://localhost:4000/</uri>
+    <uri>https://timyiu478.github.io/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="https://timyiu478.github.io/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="http://localhost:4000/"/>
+    href="https://timyiu478.github.io/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
   <rights> © 2024 Tim Yiu </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>Welcome to Jekyll!</title>
-    <link href="http://localhost:4000/posts/hellworld/" rel="alternate" type="text/html" title="Welcome to Jekyll!" />
+    <link href="https://timyiu478.github.io/posts/hellworld/" rel="alternate" type="text/html" title="Welcome to Jekyll!" />
     <published>2024-01-21T00:00:00+08:00</published>
   
     <updated>2024-01-21T00:00:00+08:00</updated>
   
-    <id>http://localhost:4000/posts/hellworld/</id>
-    <content src="http://localhost:4000/posts/hellworld/" />
+    <id>https://timyiu478.github.io/posts/hellworld/</id>
+    <content src="https://timyiu478.github.io/posts/hellworld/" />
     <author>
       <name>Tim Yiu</name>
     </author>
