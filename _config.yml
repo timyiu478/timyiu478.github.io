@@ -31,10 +31,10 @@ github:
 # twitter:
 #  username: twitter_username # change to your twitter username
 
-# social:
+social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: tim yiu
+  name: "Tim Yiu"
   email: ctom3560@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
@@ -116,7 +116,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
-baseurl: "/"
+baseurl: ""
 
 # ------------ The following options are not recommended to be modified ------------------
 
