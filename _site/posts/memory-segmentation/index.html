@@ -30,23 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="About" />
+<meta property="og:title" content="Memory Segmentation" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Add Markdown syntax content to file _tabs/about.md and it will show up on this page." />
-<meta property="og:description" content="Add Markdown syntax content to file _tabs/about.md and it will show up on this page." />
-<link rel="canonical" href="https://timyiu478.github.io/about/" />
-<meta property="og:url" content="https://timyiu478.github.io/about/" />
+<meta name="description" content="What is Memory Segmentation?" />
+<meta property="og:description" content="What is Memory Segmentation?" />
+<link rel="canonical" href="https://timyiu478.github.io/posts/memory-segmentation/" />
+<meta property="og:url" content="https://timyiu478.github.io/posts/memory-segmentation/" />
 <meta property="og:site_name" content="Tim Yiu" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-01-27T17:13:29+08:00" />
+<meta property="article:published_time" content="2024-01-27T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="About" />
+<meta property="twitter:title" content="Memory Segmentation" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","dateModified":"2024-01-27T17:13:29+08:00","datePublished":"2024-01-27T17:13:29+08:00","description":"Add Markdown syntax content to file _tabs/about.md and it will show up on this page.","headline":"About","name":"Tim Yiu","sameAs":["https://www.linkedin.com/in/kam-wing-yiu-47685b172"],"url":"https://timyiu478.github.io/about/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-27T00:00:00+08:00","datePublished":"2024-01-27T00:00:00+08:00","description":"What is Memory Segmentation?","headline":"Memory Segmentation","mainEntityOfPage":{"@type":"WebPage","@id":"https://timyiu478.github.io/posts/memory-segmentation/"},"url":"https://timyiu478.github.io/posts/memory-segmentation/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>About | Tim Yiu
+  <title>Memory Segmentation | Tim Yiu
   </title>
 
   <!--
@@ -97,6 +97,8 @@
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
   
 
   
@@ -172,7 +174,7 @@
         </li>
         <!-- .nav-item -->
       
-        <li class="nav-item active">
+        <li class="nav-item">
           <a href="/about/" class="nav-link">
             <i class="fa-fw fas fa-info-circle"></i>
             
@@ -283,8 +285,10 @@
           
         
           
+        
+          
             
-              <span>About</span>
+              <span>Memory Segmentation</span>
             
 
           
@@ -298,7 +302,7 @@
     </button>
 
     <div id="topbar-title">
-      About
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link">
@@ -367,6 +371,49 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -392,19 +439,259 @@
 
 
 <article class="px-1">
+  <header>
+    <h1 data-toc-skip>Memory Segmentation</h1>
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
   
-    
-    
-    <h1 class="dynamic-title">
-      About
-    </h1>
-    <div class="content">
-      <blockquote class="prompt-tip">
-  <p>Add Markdown syntax content to file <code class="language-plaintext filepath highlighter-rouge">_tabs/about.md</code> and it will show up on this page.</p>
+  data-ts="1706284800"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Jan 27, 2024
+</time>
+
+      </span>
+
+      <!-- lastmod date -->
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              <a href="https://www.linkedin.com/in/kam-wing-yiu-47685b172">Tim Yiu</a>
+            
+          </em>
+        </span>
+
+        <!-- read time -->
+        <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="331 words"
+>
+  <em>1 min</em> read</span>
+
+      </div>
+      <!-- .d-flex -->
+    </div>
+    <!-- .post-meta -->
+  </header>
+
+  <div class="content">
+    <h1 id="what-is-memory-segmentation">What is Memory Segmentation?</h1>
+
+<ul>
+  <li>It allows the segments(code, stack, heap) of the address space can be stored in different physical memory locations so that we do not need to allocate the physical memory for the “free” segment.</li>
+  <li>Each segment has its own base/bound registers.</li>
+</ul>
+
+<h1 id="which-segment-the-virtual-memory-address-related-to">Which segment the virtual memory address related to?</h1>
+
+<h2 id="explicit-approach"><span class="me-2">Explicit Approach</span><a href="#explicit-approach" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<blockquote>
+  <p>we divide the address space into segments based on the first few bits of the virtual address.</p>
 </blockquote>
 
+<ul>
+  <li>the top 2 most bits represent which segment the address corresponds to.</li>
+  <li>the other bits represent the offset.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>// get top 2 bits of 14-bit VA
+Segment = (VirtualAddress &amp; SEG_MASK) &gt;&gt; SEG_SHIFT
+// now get offset
+Offset  = VirtualAddress &amp; OFFSET_MASK
+if (Offset &gt;= Bounds[Segment])
+  RaiseException(PROTECTION_FAULT)
+else
+  PhysAddr = Base[Segment] + Offset
+  Register = AccessMemory(PhysAddr)
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="implicit-approach"><span class="me-2">Implicit Approach</span><a href="#implicit-approach" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<blockquote>
+  <p>determines the segment by examining the address.</p>
+</blockquote>
+
+<ul>
+  <li>If the address came from the program counter (i.e., an instruction fetch), it’s in the code segment.</li>
+  <li>If it came from the stack or base pointer, it’s in the stack segment.</li>
+  <li>All others are in the heap.</li>
+</ul>
+
+<h2 id="how-to-handle-stack"><span class="me-2">How to handle stack</span><a href="#how-to-handle-stack" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>The difference between the stack and the other segment is it now grows backwards (towards lower addresses).</li>
+  <li>We need more hardware support so that the hardware knows the segment grows positive or negative from the base address.</li>
+  <li>We can get the correct physical address by <em>base address + offset - max segment size</em>.</li>
+</ul>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Segment</th>
+      <th>Base</th>
+      <th>Size (Max 4K)</th>
+      <th>Grows Positive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Code</td>
+      <td>32K</td>
+      <td>2K</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Heap</td>
+      <td>34K</td>
+      <td>3K</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>28K</td>
+      <td>2K</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h1 id="segmentation-presents-new-challenges-for-the-os">Segmentation presents new challenges for the OS</h1>
+
+<ul>
+  <li>The segment registers must be saved and restored becase each process has its own virtual address space for context switch.</li>
+  <li>Able to update the segment size register to the new (larger/smaller) size.</li>
+  <li>Able to find physical memory space for new address spaces.</li>
+  <li>handle external fragmentation: physical memory soon fills up with pockets of free space, making it impossible to assign new segments or expand old ones.</li>
+</ul>
+
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/os/">OS</a>
+      </div>
+    
+
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/os/"
+            class="post-tag no-text-decoration"
+          >OS</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
+</div>
+
     </div>
-  
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
 </article>
 
 
@@ -524,12 +811,276 @@
             </div>
 
             
+              
+              
+
+
+
+  <section id="toc-wrapper" class="ps-0 pe-4">
+    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/mlfq-scheduling-policy/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1706112000"
+  data-df="ll"
+  
+>
+  Jan 25, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Multilevel Feedback Queue Scheduling</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Example Run
+
+Enter the number of processes: 3
+Enter duration for process 1: 10
+Process 1 enqueued in queue with time quantum 2
+Enter duration for process 2: 20
+Process 2 enqueued in queue with time...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/why-memory-virtualisation/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1706198400"
+  data-df="ll"
+  
+>
+  Jan 26, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Why Memory Virtualisation?</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  
+  Transparency: user program dont need to worry about the physical memory address.
+  Protection: each process only can manipulate its own address space.
+
+
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/why-memory-virtualisation/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>Why Memory Virtualisation?</p>
+    </a>
+  
+
+  
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
+  
+</nav>
+
+            
+              
+              <!--  The comments switcher -->
+
+  
+  <!-- https://giscus.app/ -->
+<script type="text/javascript">
+  (function () {
+    const origin = 'https://giscus.app';
+    const iframe = 'iframe.giscus-frame';
+    const lightTheme = 'light';
+    const darkTheme = 'dark_dimmed';
+
+    let initTheme = lightTheme;
+    const html = document.documentElement;
+
+    if (
+      (html.hasAttribute('data-mode') &&
+        html.getAttribute('data-mode') === 'dark') ||
+      (!html.hasAttribute('data-mode') &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      initTheme = darkTheme;
+    }
+
+    let giscusAttributes = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'timyiu478/timyiu478.github.io',
+      'data-repo-id': 'R_kgDOLHfwOQ',
+      'data-category': 'General',
+      'data-category-id': 'DIC_kwDOLHfwOc4Cckt6',
+      'data-mapping': 'pathname',
+      'data-reactions-enabled': '1',
+      'data-emit-metadata': '0',
+      'data-theme': initTheme,
+      'data-input-position': 'bottom',
+      'data-lang': 'en',
+      'data-loading': 'lazy',
+      crossorigin: 'anonymous',
+      async: ''
+    };
+
+    let giscusScript = document.createElement('script');
+    Object.entries(giscusAttributes).forEach(([key, value]) =>
+      giscusScript.setAttribute(key, value)
+    );
+    document.getElementById('tail-wrapper').appendChild(giscusScript);
+
+    addEventListener('message', (event) => {
+      if (
+        event.source === window &&
+        event.data &&
+        event.data.direction === ModeToggle.ID
+      ) {
+        /* global theme mode changed */
+        const mode = event.data.message;
+        const theme = mode === ModeToggle.DARK_MODE ? darkTheme : lightTheme;
+
+        const message = {
+          setConfig: {
+            theme: theme
+          }
+        };
+
+        const giscus = document.querySelector(iframe).contentWindow;
+        giscus.postMessage({ giscus: message }, origin);
+      }
+    });
+  })();
+</script>
+
+
+
             
 
             <!-- The Footer -->
@@ -739,16 +1290,51 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
 
 
 
 
 
 
-<script defer src="/assets/js/dist/page.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
 
 

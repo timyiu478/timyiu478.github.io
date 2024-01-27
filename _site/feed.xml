@@ -4,7 +4,7 @@
   <id>https://timyiu478.github.io/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-01-25T23:51:08+08:00</updated>
+  <updated>2024-01-27T17:13:29+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>https://timyiu478.github.io/</uri>
@@ -17,6 +17,90 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Memory Segmentation</title>
+    <link href="https://timyiu478.github.io/posts/memory-segmentation/" rel="alternate" type="text/html" title="Memory Segmentation" />
+    <published>2024-01-27T00:00:00+08:00</published>
+  
+    <updated>2024-01-27T00:00:00+08:00</updated>
+  
+    <id>https://timyiu478.github.io/posts/memory-segmentation/</id>
+    <content src="https://timyiu478.github.io/posts/memory-segmentation/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      What is Memory Segmentation?
+
+
+  It allows the segments(code, stack, heap) of the address space can be stored in different physical memory locations so that we do not need to allocate the physical memory for the “free” segment.
+  Each segment has its own base/bound registers.
+
+
+Which segment the virtual memory address related to?
+
+Explicit Approach
+
+
+  we divide the address space into segments ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Why Memory Virtualisation?</title>
+    <link href="https://timyiu478.github.io/posts/why-memory-virtualisation/" rel="alternate" type="text/html" title="Why Memory Virtualisation?" />
+    <published>2024-01-26T00:00:00+08:00</published>
+  
+    <updated>2024-01-26T00:00:00+08:00</updated>
+  
+    <id>https://timyiu478.github.io/posts/why-memory-virtualisation/</id>
+    <content src="https://timyiu478.github.io/posts/why-memory-virtualisation/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+  Transparency: user program dont need to worry about the physical memory address.
+  Protection: each process only can manipulate its own address space.
+
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
