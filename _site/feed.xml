@@ -4,7 +4,7 @@
   <id>https://timyiu478.github.io/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-01-27T17:13:29+08:00</updated>
+  <updated>2024-01-28T14:08:41+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>https://timyiu478.github.io/</uri>
@@ -17,6 +17,42 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Memory Space Management with paging</title>
+    <link href="https://timyiu478.github.io/posts/memory-space-management-with-paging/" rel="alternate" type="text/html" title="Memory Space Management with paging" />
+    <published>2024-01-28T00:00:00+08:00</published>
+  
+    <updated>2024-01-28T00:00:00+08:00</updated>
+  
+    <id>https://timyiu478.github.io/posts/memory-space-management-with-paging/</id>
+    <content src="https://timyiu478.github.io/posts/memory-space-management-with-paging/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      What is Paging
+
+Paging is another memory space management approach that dividing memory into fixed size of chuncks called pages. In contrast to segmentation, paging does not have external fragmentation and support the abstraction of an address space effectively, regardless of how a process uses the address space since it won’t make assumptions about the way the heap and stack grow and how they ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
