@@ -52,7 +52,7 @@ The page size is 16 bytes.
 | VPN 0    |     |     |     | arr[0]   |
 | VPN 1    | arr[1]    | arr[2]    | arr[3]    | arr[4]   |
 | VPN 2    | arr[5]    | arr[6]    | arr[7]    | arr[8]   |
-| VPN 2    | arr[9]    | | |   |
+| VPN 3    | arr[9]    | | |   |
 
 ### The TLB hit rate the first time the array is accessed
 

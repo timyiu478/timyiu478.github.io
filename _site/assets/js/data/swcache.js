@@ -46,7 +46,7 @@ const allowedDomains = [
     'www.google-analytics.com',
   
 
-  'timyiu478.github.io',
+  'localhost:4000',
 
   
     'timyiu478.github.io',
