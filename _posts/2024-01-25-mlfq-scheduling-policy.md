@@ -5,7 +5,7 @@ categories: "OS"
 tags: "OS"
 ---
 
-# Example Run
+## Example Run
 
 ```
 Enter the number of processes: 3
@@ -58,7 +58,7 @@ Process Duration        Waiting Time    Turnaround Time
 3       30      30      60
 ```
 
-# Example C Code 
+## Example C Code 
 
 ```c
 #include<stdio.h>

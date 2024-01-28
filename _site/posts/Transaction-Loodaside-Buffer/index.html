@@ -30,23 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Memory Space Management with paging" />
+<meta property="og:title" content="Transaction Lookaside Buffer" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="What is Paging" />
-<meta property="og:description" content="What is Paging" />
-<link rel="canonical" href="https://timyiu478.github.io/posts/memory-space-management-with-paging/" />
-<meta property="og:url" content="https://timyiu478.github.io/posts/memory-space-management-with-paging/" />
+<meta name="description" content="Problem of Paging" />
+<meta property="og:description" content="Problem of Paging" />
+<link rel="canonical" href="https://timyiu478.github.io/posts/Transaction-Loodaside-Buffer/" />
+<meta property="og:url" content="https://timyiu478.github.io/posts/Transaction-Loodaside-Buffer/" />
 <meta property="og:site_name" content="Tim Yiu" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-01-28T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Memory Space Management with paging" />
+<meta property="twitter:title" content="Transaction Lookaside Buffer" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-28T00:00:00+08:00","datePublished":"2024-01-28T00:00:00+08:00","description":"What is Paging","headline":"Memory Space Management with paging","mainEntityOfPage":{"@type":"WebPage","@id":"https://timyiu478.github.io/posts/memory-space-management-with-paging/"},"url":"https://timyiu478.github.io/posts/memory-space-management-with-paging/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-28T00:00:00+08:00","datePublished":"2024-01-28T00:00:00+08:00","description":"Problem of Paging","headline":"Transaction Lookaside Buffer","mainEntityOfPage":{"@type":"WebPage","@id":"https://timyiu478.github.io/posts/Transaction-Loodaside-Buffer/"},"url":"https://timyiu478.github.io/posts/Transaction-Loodaside-Buffer/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Memory Space Management with paging | Tim Yiu
+  <title>Transaction Lookaside Buffer | Tim Yiu
   </title>
 
   <!--
@@ -288,7 +288,7 @@
         
           
             
-              <span>Memory Space Management with paging</span>
+              <span>Transaction Lookaside Buffer</span>
             
 
           
@@ -433,6 +433,39 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -440,6 +473,71 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -462,7 +560,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Memory Space Management with paging</h1>
+    <h1 data-toc-skip>Transaction Lookaside Buffer</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -529,9 +627,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="280 words"
+  title="585 words"
 >
-  <em>1 min</em> read</span>
+  <em>3 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -540,77 +638,167 @@
   </header>
 
   <div class="content">
-    <h2 id="what-is-paging"><span class="me-2">What is Paging</span><a href="#what-is-paging" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="problem-of-paging"><span class="me-2">Problem of Paging</span><a href="#problem-of-paging" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Paging is another memory space management approach that <strong>dividing memory into fixed size of chuncks called pages</strong>. In contrast to segmentation, paging <strong>does not have external fragmentation</strong> and support <strong>the abstraction of an address space effectively</strong>, regardless of how a process uses the address space since it won’t make assumptions about the way the heap and stack grow and how they are use.</p>
+<p>Paging needs an additional memory lookup in order to translate each virtual address, but it takes too long to obtain translation information before every instruction fetch, load, or store.</p>
 
-<h2 id="address-translation"><span class="me-2">Address Translation</span><a href="#address-translation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="what-is-transaction-lookaside-buffer"><span class="me-2">What is Transaction Lookaside Buffer?</span><a href="#what-is-transaction-lookaside-buffer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>To translate the virtual address the process generates:</p>
+<p>In order to speed up the process of address translation, we use the <strong>hardware cache</strong> for the address translation. This cache is called <strong>Transaction Lookaside Buffer(TLF)</strong> which is part of the <em>MMU</em>.</p>
 
-<ol>
-  <li>We have to break the resulting virtual address into two parts:
+<h2 id="tlb-entry"><span class="me-2">TLB Entry</span><a href="#tlb-entry" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>TLBs generally include 32 or 64 of TLB entries. A few are for the OS (using the G bit). The OS can set a wired register to instruct the hardware how many TLB slots to reserve for it. The OS uses these reserved mappings for code and data it needs to access during key moments when a TLB miss would be troublesome (e.g., in the TLB miss handler).</p>
+
+<p>TLB Entry:</p>
+<ul>
+  <li>Virtual Page Number (VPN)</li>
+  <li>Process ID (PID) or Address Space ID(ASID)</li>
+  <li>Page Frame Number (PFN)</li>
+  <li>V bit: Valid bit - indicates whether the entry has a valid translation or not</li>
+  <li>G bit: Global bit - If set, TLB does not check PID for translation</li>
+  <li>…</li>
+</ul>
+
+<h2 id="what-if-tlb-miss"><span class="me-2">What if TLB miss</span><a href="#what-if-tlb-miss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="hardware-approach"><span class="me-2">Hardware approach</span><a href="#hardware-approach" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>If the virtual address does not in the TLB entries, we have to <strong>check the page table</strong> to find the translation.</li>
+  <li>The hardware has to know the exact location of the page tables in memory (through <strong>a page-table base register</strong>)</li>
+</ul>
+
+<h3 id="os-approach"><span class="me-2">OS approach</span><a href="#os-approach" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>The hardware mimics an exception, pausing the current instruction stream, switching to kernel mode, and <strong>jumping to a trap handler</strong>.</li>
+  <li>Returning from a TLB miss-handling trap causes the hardware to <strong>retry the instruction</strong>, resulting in a TLB hit.</li>
+  <li>OS must avoid creating <strong>endless loops of TLB misses</strong> by keeping the TLB miss handler in physical memory.
     <ul>
-      <li>The virtual page number (<strong>VPN</strong>) and</li>
-      <li>The <strong>offset</strong> within the page.</li>
+      <li>reserve some TLB entries for always valid transaction. Or</li>
+      <li>unmapped and not subject to address translation.</li>
     </ul>
   </li>
-  <li>Using our <em>VPN</em>, we can now index our <strong>page table</strong> and find out which physical frame virtual page lives in.</li>
-</ol>
-
-<h2 id="page-table"><span class="me-2">Page Table</span><a href="#page-table" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<ul>
-  <li>The page table is a <strong>data structure</strong> that <strong>maps virtual addresses (or virtual page numbers) into physical addresses (physical frame numbers)</strong>.</li>
-  <li>Each process has its own page table.</li>
+  <li>OS can use <strong>any data structure it wants to implement the page table</strong>.</li>
 </ul>
 
-<h2 id="linear-page-table"><span class="me-2">Linear Page Table</span><a href="#linear-page-table" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="array-access-example"><span class="me-2">Array Access Example</span><a href="#array-access-example" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Linear Page table is an <strong>array</strong>.</p>
+<h3 id="a-memory-array-of-10-4-byte-integers"><span class="me-2">A memory array of 10 4-byte integers.</span><a href="#a-memory-array-of-10-4-byte-integers" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>The page size is 16 bytes.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>VPN</th>
+      <th>Offset 0-4</th>
+      <th>Offset 5-8</th>
+      <th>Offset 9-12</th>
+      <th>Offset 13-16</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VPN 0</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>arr[0]</td>
+    </tr>
+    <tr>
+      <td>VPN 1</td>
+      <td>arr[1]</td>
+      <td>arr[2]</td>
+      <td>arr[3]</td>
+      <td>arr[4]</td>
+    </tr>
+    <tr>
+      <td>VPN 2</td>
+      <td>arr[5]</td>
+      <td>arr[6]</td>
+      <td>arr[7]</td>
+      <td>arr[8]</td>
+    </tr>
+    <tr>
+      <td>VPN 2</td>
+      <td>arr[9]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h3 id="the-tlb-hit-rate-the-first-time-the-array-is-accessed"><span class="me-2">The TLB hit rate the first time the array is accessed</span><a href="#the-tlb-hit-rate-the-first-time-the-array-is-accessed" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>The hit rate is 60%.</p>
 
 <ul>
-  <li><em>VPN</em> is an <strong>index</strong> of the array.</li>
-  <li>Each page table entry(<strong>PTE</strong>) contains <em>PFN</em> and other useful <em>bits</em>.</li>
+  <li>arr[0]: Miss (VPN 0 stored in TLB)</li>
+  <li>arr[1]: Miss (VPN 1 stored in TLB)</li>
+  <li>arr[2]: Hit (VPN 1)</li>
+  <li>arr[3]: Hit (VPN 1)</li>
+  <li>arr[4]: Hit (VPN 1)</li>
+  <li>arr[5]: Miss (VPN 2 stored in TLB)</li>
+  <li>arr[6]: Hit (VPN 2)</li>
+  <li>arr[7]: Hit (VPN 2)</li>
+  <li>arr[8]: Hit (VPN 2)</li>
+  <li>arr[9]: Miss (VPN 3 stored in TLB)</li>
 </ul>
 
-<h2 id="the-steps-of-address-translation-by-hardware"><span class="me-2">The steps of address translation by hardware</span><a href="#the-steps-of-address-translation-by-hardware" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="the-tlb-hit-rate-the-second-time-the-array-is-accessed"><span class="me-2">The TLB hit rate the second time the array is accessed</span><a href="#the-tlb-hit-rate-the-second-time-the-array-is-accessed" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-</pre></td><td class="rouge-code"><pre>// Extract the VPN from the virtual address
-VPN = (VirtualAddress &amp; VPN_MASK) &gt;&gt; SHIFT
-// Form the address of the page-table entry (PTE)
-PTEAddr = PTBR + (VPN * sizeof(PTE))
-// Fetch the PTE
-PTE = AccessMemory(PTEAddr)
-// Check if process can access the page
-if (PTE.Valid == False)
-    RaiseException(SEGMENTATION_FAULT)
-else if (CanAccess(PTE.ProtectBits) == False)
-    RaiseException(PROTECTION_FAULT)
-else
-    // Access is OK: form physical address and fetch it
-offset = VirtualAddress &amp; OFFSET_MASK
-PhysAddr = (PTE.PFN &lt;&lt; PFN_SHIFT) | offset
-Register = AccessMemory(PhysAddr)
-</pre></td></tr></tbody></table></code></div></div>
+<p>The hit rate is 100% because VPN 0-4 stored in TLB already in the first time access.</p>
+
+<h2 id="context-switching"><span class="me-2">Context Switching</span><a href="#context-switching" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>How to make sure the process does not reuse the TLB entries of the old process?</p>
+
+<ul>
+  <li>flushing: clears the TLB by <strong>setting all valid bits to 0</strong>.</li>
+  <li>ASID: TLBs include an address space identifier (ASID) field. The ASID is a <strong>Process ID (PID) with less bits</strong>. So the TLB can hold several processes’ translations.</li>
+</ul>
+
+<h2 id="two-entries-for-two-processes-with-two-vpns-point-to-the-same-physical-page"><span class="me-2">Two entries for two processes with two VPNs point to the same physical page</span><a href="#two-entries-for-two-processes-with-two-vpns-point-to-the-same-physical-page" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>When two processes share a page (for example, a code page), this can occur. Also, it reduces memory overheads by reducing the number of physical pages needed.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>VPN</th>
+      <th>PFN</th>
+      <th>ASID</th>
+      <th>Prot-bit</th>
+      <th>Valid-bit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VPN 0</td>
+      <td><strong>PFN 100</strong></td>
+      <td>1</td>
+      <td>r-x</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>VPN 5</td>
+      <td><strong>PFN 100</strong></td>
+      <td>2</td>
+      <td>r-x</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h2 id="tlb-replacement-policy"><span class="me-2">TLB Replacement Policy</span><a href="#tlb-replacement-policy" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>LRU</li>
+  <li>Random</li>
+</ul>
 
   </div>
 
@@ -856,19 +1044,19 @@ Register = AccessMemory(PhysAddr)
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -1055,18 +1243,22 @@ Process 2 enqueued in queue with time...
 
   
     <a
-      href="/posts/Transaction-Loodaside-Buffer/"
+      href="/posts/memory-segmentation/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Transaction Lookaside Buffer</p>
+      <p>Memory Segmentation</p>
     </a>
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/memory-space-management-with-paging/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Memory Space Management with paging</p>
+    </a>
   
 </nav>
 

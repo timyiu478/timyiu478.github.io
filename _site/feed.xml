@@ -4,7 +4,7 @@
   <id>https://timyiu478.github.io/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-01-28T14:08:41+08:00</updated>
+  <updated>2024-01-28T17:31:58+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>https://timyiu478.github.io/</uri>
@@ -49,6 +49,46 @@
       What is Paging
 
 Paging is another memory space management approach that dividing memory into fixed size of chuncks called pages. In contrast to segmentation, paging does not have external fragmentation and support the abstraction of an address space effectively, regardless of how a process uses the address space since it won’t make assumptions about the way the heap and stack grow and how they ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Transaction Lookaside Buffer</title>
+    <link href="https://timyiu478.github.io/posts/Transaction-Loodaside-Buffer/" rel="alternate" type="text/html" title="Transaction Lookaside Buffer" />
+    <published>2024-01-28T00:00:00+08:00</published>
+  
+    <updated>2024-01-28T00:00:00+08:00</updated>
+  
+    <id>https://timyiu478.github.io/posts/Transaction-Loodaside-Buffer/</id>
+    <content src="https://timyiu478.github.io/posts/Transaction-Loodaside-Buffer/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Problem of Paging
+
+Paging needs an additional memory lookup in order to translate each virtual address, but it takes too long to obtain translation information before every instruction fetch, load, or store.
+
+What is Transaction Lookaside Buffer?
+
+In order to speed up the process of address translation, we use the hardware cache for the address translation. This cache is called Transaction Look...
     </summary>
   
 
@@ -178,45 +218,6 @@ Process 3 enqueued in queue with time quantum 2
 Process 1 dequeued from queue with time quantum 2
 Process 1 is running in high priority queue
 Process 1 enqu...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Welcome to Jekyll!</title>
-    <link href="https://timyiu478.github.io/posts/hellworld/" rel="alternate" type="text/html" title="Welcome to Jekyll!" />
-    <published>2024-01-21T00:00:00+08:00</published>
-  
-    <updated>2024-01-21T00:00:00+08:00</updated>
-  
-    <id>https://timyiu478.github.io/posts/hellworld/</id>
-    <content src="https://timyiu478.github.io/posts/hellworld/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="HELLOWORLD" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Welcome
-
-Hello world, this is my first Jekyll blog post.
-
-I hope you like it!
-
     </summary>
   
 

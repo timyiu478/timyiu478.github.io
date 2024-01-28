@@ -5,11 +5,11 @@ categories: "OS"
 tags: "OS"
 ---
 
-# What is Paging
+## What is Paging
 
 Paging is another memory space management approach that **dividing memory into fixed size of chuncks called pages**. In contrast to segmentation, paging **does not have external fragmentation** and support **the abstraction of an address space effectively**, regardless of how a process uses the address space since it won’t make assumptions about the way the heap and stack grow and how they are use.
 
-# Address Translation
+## Address Translation
 
 To translate the virtual address the process generates:
 
@@ -18,19 +18,19 @@ To translate the virtual address the process generates:
   - The **offset** within the page.
 2. Using our *VPN*, we can now index our **page table** and find out which physical frame virtual page lives in.
 
-# Page Table
+## Page Table
 
 - The page table is a **data structure** that **maps virtual addresses (or virtual page numbers) into physical addresses (physical frame numbers)**.
 - Each process has its own page table.
 
-# Linear Page Table
+## Linear Page Table
 
 Linear Page table is an **array**.
 
 - *VPN* is an **index** of the array.
 - Each page table entry(**PTE**) contains *PFN* and other useful *bits*.
 
-# The steps of address translation by hardware
+## The steps of address translation by hardware
 
 ```
 // Extract the VPN from the virtual address

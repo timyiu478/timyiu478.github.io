@@ -371,6 +371,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -475,7 +507,7 @@
   </header>
 
   <div class="content">
-    <h1 id="example-run">Example Run</h1>
+    <h2 id="example-run"><span class="me-2">Example Run</span><a href="#example-run" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -577,7 +609,7 @@ Process Duration        Waiting Time    Turnaround Time
 3       30      30      60
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="example-c-code">Example C Code</h1>
+<h2 id="example-c-code"><span class="me-2">Example C Code</span><a href="#example-c-code" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-c highlighter-rouge"><div class="code-header">
         <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
@@ -983,6 +1015,13 @@ Process Duration        Waiting Time    Turnaround Time
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/Transaction-Loodaside-Buffer/">Transaction Lookaside Buffer</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/memory-space-management-with-paging/">Memory Space Management with paging</a>
         </li>
       
@@ -1005,13 +1044,6 @@ Process Duration        Waiting Time    Turnaround Time
         
         <li class="text-truncate lh-lg">
           <a href="/posts/mlfq-scheduling-policy/">Multilevel Feedback Queue Scheduling</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/hellworld/">Welcome to Jekyll!</a>
         </li>
       
     </ul>
@@ -1082,6 +1114,11 @@ Process Duration        Waiting Time    Turnaround Time
 
 
 
+  <section id="toc-wrapper" class="ps-0 pe-4">
+    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1114,6 +1151,18 @@ Process Duration        Waiting Time    Turnaround Time
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -1249,7 +1298,7 @@ Process Duration        Waiting Time    Turnaround Time
         </article>
       
         <article class="col">
-          <a href="/posts/memory-space-management-with-paging/" class="post-preview card h-100">
+          <a href="/posts/Transaction-Loodaside-Buffer/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1268,7 +1317,7 @@ Process Duration        Waiting Time    Turnaround Time
   Jan 28, 2024
 </time>
 
-              <h4 class="pt-0 my-2">Memory Space Management with paging</h4>
+              <h4 class="pt-0 my-2">Transaction Lookaside Buffer</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1277,9 +1326,9 @@ Process Duration        Waiting Time    Turnaround Time
 
 
 
-                  What is Paging
+                  Problem of Paging
 
-Paging is another memory space management approach that dividing memory into fixed size of chuncks called pages. In contrast to segmentation, paging does not have external fragmenta...
+Paging needs an additional memory lookup in order to translate each virtual address, but it takes too long to obtain translation information before every instruction fetch, load,...
                 </p>
               </div>
             </div>
@@ -1630,9 +1679,16 @@ Paging is another memory space management approach that dividing memory into fix
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
 
 
 
