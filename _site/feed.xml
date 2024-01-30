@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-01-28T17:40:24+08:00</updated>
+  <updated>2024-01-30T21:13:16+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -56,11 +56,59 @@ Paging is another memory space management approach that dividing memory into fix
 
   
   <entry>
+    <title>Advanced Page Table</title>
+    <link href="http://localhost:4000/posts/advanced-page-table/" rel="alternate" type="text/html" title="Advanced Page Table" />
+    <published>2024-01-28T00:00:00+08:00</published>
+  
+    <updated>2024-01-28T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/advanced-page-table/</id>
+    <content src="http://localhost:4000/posts/advanced-page-table/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Problem of Linear Page Table
+
+
+  The size of the page table is too big.
+  We need to allocate the physical memory for the page table entries that there is no physical frame as well.
+
+
+Larger Page size
+
+
+  
+    One way to make the page table smaller is make the page size larger because it makes the number of page table entries to be decreased.
+  
+  
+    The major drawback to this strategy is tha...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Transaction Lookaside Buffer</title>
     <link href="http://localhost:4000/posts/Transaction-Loodaside-Buffer/" rel="alternate" type="text/html" title="Transaction Lookaside Buffer" />
     <published>2024-01-28T00:00:00+08:00</published>
   
-    <updated>2024-01-28T00:00:00+08:00</updated>
+    <updated>2024-01-28T17:40:47+08:00</updated>
   
     <id>http://localhost:4000/posts/Transaction-Loodaside-Buffer/</id>
     <content src="http://localhost:4000/posts/Transaction-Loodaside-Buffer/" />
@@ -173,51 +221,6 @@ Explicit Approach
   Protection: each process only can manipulate its own address space.
 
 
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Multilevel Feedback Queue Scheduling</title>
-    <link href="http://localhost:4000/posts/mlfq-scheduling-policy/" rel="alternate" type="text/html" title="Multilevel Feedback Queue Scheduling" />
-    <published>2024-01-25T00:00:00+08:00</published>
-  
-    <updated>2024-01-28T17:32:10+08:00</updated>
-  
-    <id>http://localhost:4000/posts/mlfq-scheduling-policy/</id>
-    <content src="http://localhost:4000/posts/mlfq-scheduling-policy/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Example Run
-
-Enter the number of processes: 3
-Enter duration for process 1: 10
-Process 1 enqueued in queue with time quantum 2
-Enter duration for process 2: 20
-Process 2 enqueued in queue with time quantum 2
-Enter duration for process 3: 30
-Process 3 enqueued in queue with time quantum 2
-Process 1 dequeued from queue with time quantum 2
-Process 1 is running in high priority queue
-Process 1 enqu...
     </summary>
   
 

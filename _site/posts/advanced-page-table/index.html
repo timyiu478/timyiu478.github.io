@@ -30,23 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Transaction Lookaside Buffer" />
+<meta property="og:title" content="Advanced Page Table" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Problem of Paging" />
-<meta property="og:description" content="Problem of Paging" />
-<link rel="canonical" href="http://localhost:4000/posts/Transaction-Loodaside-Buffer/" />
-<meta property="og:url" content="http://localhost:4000/posts/Transaction-Loodaside-Buffer/" />
+<meta name="description" content="Problem of Linear Page Table" />
+<meta property="og:description" content="Problem of Linear Page Table" />
+<link rel="canonical" href="http://localhost:4000/posts/advanced-page-table/" />
+<meta property="og:url" content="http://localhost:4000/posts/advanced-page-table/" />
 <meta property="og:site_name" content="Tim Yiu" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-01-28T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Transaction Lookaside Buffer" />
+<meta property="twitter:title" content="Advanced Page Table" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-28T17:40:47+08:00","datePublished":"2024-01-28T00:00:00+08:00","description":"Problem of Paging","headline":"Transaction Lookaside Buffer","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Transaction-Loodaside-Buffer/"},"url":"http://localhost:4000/posts/Transaction-Loodaside-Buffer/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-28T00:00:00+08:00","datePublished":"2024-01-28T00:00:00+08:00","description":"Problem of Linear Page Table","headline":"Advanced Page Table","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/advanced-page-table/"},"url":"http://localhost:4000/posts/advanced-page-table/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Transaction Lookaside Buffer | Tim Yiu
+  <title>Advanced Page Table | Tim Yiu
   </title>
 
   <!--
@@ -288,7 +288,7 @@
         
           
             
-              <span>Transaction Lookaside Buffer</span>
+              <span>Advanced Page Table</span>
             
 
           
@@ -444,28 +444,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -473,71 +451,6 @@
   
   
 
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
   
@@ -560,7 +473,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Transaction Lookaside Buffer</h1>
+    <h1 data-toc-skip>Advanced Page Table</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -588,29 +501,6 @@
       </span>
 
       <!-- lastmod date -->
-      
-        <span>
-          Updated
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706434847"
-  data-df="ll"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  Jan 28, 2024
-</time>
-
-        </span>
       
 
       
@@ -650,7 +540,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="585 words"
+  title="662 words"
 >
   <em>3 min</em> read</span>
 
@@ -661,167 +551,128 @@
   </header>
 
   <div class="content">
-    <h2 id="problem-of-paging"><span class="me-2">Problem of Paging</span><a href="#problem-of-paging" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="problem-of-linear-page-table"><span class="me-2">Problem of Linear Page Table</span><a href="#problem-of-linear-page-table" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Paging needs an additional memory lookup in order to translate each virtual address, but it takes too long to obtain translation information before every instruction fetch, load, or store.</p>
-
-<h2 id="what-is-transaction-lookaside-buffer"><span class="me-2">What is Transaction Lookaside Buffer?</span><a href="#what-is-transaction-lookaside-buffer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>In order to speed up the process of address translation, we use the <strong>hardware cache</strong> for the address translation. This cache is called <strong>Transaction Lookaside Buffer(TLF)</strong> which is part of the <em>MMU</em>.</p>
-
-<h2 id="tlb-entry"><span class="me-2">TLB Entry</span><a href="#tlb-entry" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>TLBs generally include 32 or 64 of TLB entries. A few are for the OS (using the G bit). The OS can set a wired register to instruct the hardware how many TLB slots to reserve for it. The OS uses these reserved mappings for code and data it needs to access during key moments when a TLB miss would be troublesome (e.g., in the TLB miss handler).</p>
-
-<p>TLB Entry:</p>
 <ul>
-  <li>Virtual Page Number (VPN)</li>
-  <li>Process ID (PID) or Address Space ID(ASID)</li>
-  <li>Page Frame Number (PFN)</li>
-  <li>V bit: Valid bit - indicates whether the entry has a valid translation or not</li>
-  <li>G bit: Global bit - If set, TLB does not check PID for translation</li>
-  <li>…</li>
+  <li>The size of the page table is <strong>too big</strong>.</li>
+  <li>We need to allocate the physical memory for the page table entries that <strong>there is no physical frame</strong> as well.</li>
 </ul>
 
-<h2 id="what-if-tlb-miss"><span class="me-2">What if TLB miss</span><a href="#what-if-tlb-miss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="hardware-approach"><span class="me-2">Hardware approach</span><a href="#hardware-approach" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="larger-page-size"><span class="me-2">Larger Page size</span><a href="#larger-page-size" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>If the virtual address does not in the TLB entries, we have to <strong>check the page table</strong> to find the translation.</li>
-  <li>The hardware has to know the exact location of the page tables in memory (through <strong>a page-table base register</strong>)</li>
+  <li>
+    <p>One way to make the page table smaller is make the <strong>page size larger</strong> because it makes <strong>the number of page table entries</strong> to be decreased.</p>
+  </li>
+  <li>
+    <p>The major drawback to this strategy is that large pages result in waste within each page, a problem known as <strong>internal fragmentation</strong>. Applications allocate pages but only use small portions of each, and memory quickly fills up with these excessively large pages.</p>
+  </li>
 </ul>
 
-<h3 id="os-approach"><span class="me-2">OS approach</span><a href="#os-approach" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="combining-paging-and-segmentation"><span class="me-2">Combining Paging and segmentation</span><a href="#combining-paging-and-segmentation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>The hardware mimics an exception, pausing the current instruction stream, switching to kernel mode, and <strong>jumping to a trap handler</strong>.</li>
-  <li>Returning from a TLB miss-handling trap causes the hardware to <strong>retry the instruction</strong>, resulting in a TLB hit.</li>
-  <li>OS must avoid creating <strong>endless loops of TLB misses</strong> by keeping the TLB miss handler in physical memory.
+  <li>
+    <p>The goal of combining paging and segmentation is <strong>removing the erroneous entries between the heap, and stack segments(unallocated pages between the stack and the heap are no longer needed)</strong> to reduce the size of page table.</p>
+  </li>
+  <li>
+    <p>Instead of one page table for the process’s whole address space, we have <strong>one page table for each segments(code, heap, and stack)</strong> so we have three page tables.</p>
+  </li>
+  <li>
+    <p>The base register holds <strong>the physical address of the segment’s page table</strong>.</p>
+  </li>
+  <li>
+    <p>The limits register indicates the page table’s end (i.e., how many valid pages it has).</p>
+  </li>
+  <li>
+    <p>During a context switch, these registers must be updated to reflect the new process’s page tables.</p>
+  </li>
+  <li>
+    <p>On a TLB miss (assuming a hardware-managed TLB), the hardware utilizes the segment bits (SN) to identify which base and bounds pair to use. The hardware then combines the physical address with the VPN to generate the page table entry (PTE) address.</p>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>SN           = (VirtualAddress &amp; SEG_MASK) &gt;&gt; SN_SHIFT
+VPN          = (VirtualAddress &amp; VPN_MASK) &gt;&gt; VPN_SHIFT
+AddressOfPTE = Base[SN] + (VPN * sizeof(PTE))
+
+Virtual Address:
+|****SN*****|*****VPN******|*****OFFSET******|
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>The downsides of this approach:
     <ul>
-      <li>reserve some TLB entries for always valid transaction. Or</li>
-      <li>unmapped and not subject to address translation.</li>
+      <li>Use segmentation so assumes a fixed address space utilization pattern; <strong>a huge but sparsely used heap</strong></li>
+      <li>External fragmentation: page tables can now <strong>be any size</strong> (in multiples of PTEs). Finding memory space for them is more difficult.</li>
     </ul>
   </li>
-  <li>OS can use <strong>any data structure it wants to implement the page table</strong>.</li>
 </ul>
 
-<h2 id="array-access-example"><span class="me-2">Array Access Example</span><a href="#array-access-example" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="a-memory-array-of-10-4-byte-integers"><span class="me-2">A memory array of 10 4-byte integers.</span><a href="#a-memory-array-of-10-4-byte-integers" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>The page size is 16 bytes.</p>
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th>VPN</th>
-      <th>Offset 0-4</th>
-      <th>Offset 5-8</th>
-      <th>Offset 9-12</th>
-      <th>Offset 13-16</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>VPN 0</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>arr[0]</td>
-    </tr>
-    <tr>
-      <td>VPN 1</td>
-      <td>arr[1]</td>
-      <td>arr[2]</td>
-      <td>arr[3]</td>
-      <td>arr[4]</td>
-    </tr>
-    <tr>
-      <td>VPN 2</td>
-      <td>arr[5]</td>
-      <td>arr[6]</td>
-      <td>arr[7]</td>
-      <td>arr[8]</td>
-    </tr>
-    <tr>
-      <td>VPN 3</td>
-      <td>arr[9]</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table></div>
-
-<h3 id="the-tlb-hit-rate-the-first-time-the-array-is-accessed"><span class="me-2">The TLB hit rate the first time the array is accessed</span><a href="#the-tlb-hit-rate-the-first-time-the-array-is-accessed" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>The hit rate is 60%.</p>
+<h2 id="multi-level-page-tables"><span class="me-2">Multi-Level Page Tables</span><a href="#multi-level-page-tables" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>arr[0]: Miss (VPN 0 stored in TLB)</li>
-  <li>arr[1]: Miss (VPN 1 stored in TLB)</li>
-  <li>arr[2]: Hit (VPN 1)</li>
-  <li>arr[3]: Hit (VPN 1)</li>
-  <li>arr[4]: Hit (VPN 1)</li>
-  <li>arr[5]: Miss (VPN 2 stored in TLB)</li>
-  <li>arr[6]: Hit (VPN 2)</li>
-  <li>arr[7]: Hit (VPN 2)</li>
-  <li>arr[8]: Hit (VPN 2)</li>
-  <li>arr[9]: Miss (VPN 3 stored in TLB)</li>
+  <li>
+    <p>This is approach to get rid of all those incorrect sections in the page table <strong>without using segmentation</strong>.</p>
+  </li>
+  <li>
+    <p>It first divide the page table into <strong>page-sized units</strong>.</p>
+  </li>
+  <li>
+    <p>If <strong>all page-table entries (PTEs) of that page are invalid</strong>, then <strong>do not assign that page of the page table</strong> at all.</p>
+  </li>
+  <li>
+    <p>So, it’s generally <strong>compact</strong> and <strong>supports sparse address spaces</strong>.</p>
+  </li>
+  <li>
+    <p>To know <strong>the memory location of the pages of the page table and their validities</strong>, it use the new data structure called <strong>page directory</strong>.</p>
+  </li>
+  <li>
+    <p>When the OS wants to allocate or grow a page table, it may simply grab the <strong>next free page-sized unit(the size is much smaller than the size of page table)</strong>.</p>
+  </li>
+  <li>
+    <p>But, on a TLB miss, two loads from memory are necessary to acquire the proper translation information from the page table (<strong>one for the page directory, and one for the PTE itself</strong>).</p>
+  </li>
+  <li>
+    <p>For 2-level page table, to find out the page table entry, we can use <em>base pointer + PD.index * sizeof(page directory)</em> to find out the address of <em>page-sized unit = PD.PFN</em> , then we use <em>PD.PFN + PT.index * sizeof(PTE)</em> to find out the <em>PTE</em> address.</p>
+  </li>
 </ul>
 
-<h3 id="the-tlb-hit-rate-the-second-time-the-array-is-accessed"><span class="me-2">The TLB hit rate the second time the array is accessed</span><a href="#the-tlb-hit-rate-the-second-time-the-array-is-accessed" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>|******** VPN **********************|****** Offset *********|
+| 13 | 12 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+|**** PD.Index *****|** PT.index ***|
+</pre></td></tr></tbody></table></code></div></div>
 
-<p>The hit rate is 100% because VPN 0-4 stored in TLB already in the first time access.</p>
-
-<h2 id="context-switching"><span class="me-2">Context Switching</span><a href="#context-switching" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>How to make sure the process does not reuse the TLB entries of the old process?</p>
+<h2 id="inverted-page-table"><span class="me-2">Inverted Page Table</span><a href="#inverted-page-table" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>flushing: clears the TLB by <strong>setting all valid bits to 0</strong>.</li>
-  <li>ASID: TLBs include an address space identifier (ASID) field. The ASID is a <strong>Process ID (PID) with less bits</strong>. So the TLB can hold several processes’ translations.</li>
+  <li>
+    <p>Rather than having many page tables (one for each system process), we have a <strong>single</strong> page table with an item for each physical page of the system.</p>
+  </li>
+  <li>
+    <p>This entry indicates <strong>which process uses this page</strong> and which virtual page of that process corresponds to this physical page.</p>
+  </li>
+  <li>
+    <p>A <strong>hash table</strong> is frequently added on top of the underlying structure to speed up lookups.</p>
+  </li>
 </ul>
 
-<h2 id="two-entries-for-two-processes-with-two-vpns-point-to-the-same-physical-page"><span class="me-2">Two entries for two processes with two VPNs point to the same physical page</span><a href="#two-entries-for-two-processes-with-two-vpns-point-to-the-same-physical-page" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="swapping-the-page-tables-to-disk"><span class="me-2">Swapping the Page Tables to Disk</span><a href="#swapping-the-page-tables-to-disk" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>When two processes share a page (for example, a code page), this can occur. Also, it reduces memory overheads by reducing the number of physical pages needed.</p>
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th>VPN</th>
-      <th>PFN</th>
-      <th>ASID</th>
-      <th>Prot-bit</th>
-      <th>Valid-bit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>VPN 0</td>
-      <td><strong>PFN 100</strong></td>
-      <td>1</td>
-      <td>r-x</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>VPN 5</td>
-      <td><strong>PFN 100</strong></td>
-      <td>2</td>
-      <td>r-x</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table></div>
-
-<h2 id="tlb-replacement-policy"><span class="me-2">TLB Replacement Policy</span><a href="#tlb-replacement-policy" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<ul>
-  <li>LRU</li>
-  <li>Random</li>
-</ul>
+<p>Some systems store page tables in kernel virtual memory, allowing the system to swap portions of these page tables to disk if memory becomes scarce.</p>
 
   </div>
 
@@ -1079,19 +930,19 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1278,21 +1129,21 @@ Process 2 enqueued in queue with time...
 
   
     <a
-      href="/posts/memory-segmentation/"
+      href="/posts/Transaction-Loodaside-Buffer/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Memory Segmentation</p>
+      <p>Transaction Lookaside Buffer</p>
     </a>
   
 
   
     <a
-      href="/posts/advanced-page-table/"
+      href="/posts/memory-space-management-with-paging/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>Advanced Page Table</p>
+      <p>Memory Space Management with paging</p>
     </a>
   
 </nav>
