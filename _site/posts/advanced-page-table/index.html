@@ -561,35 +561,19 @@
 <h2 id="larger-page-size"><span class="me-2">Larger Page size</span><a href="#larger-page-size" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>
-    <p>One way to make the page table smaller is make the <strong>page size larger</strong> because it makes <strong>the number of page table entries</strong> to be decreased.</p>
-  </li>
-  <li>
-    <p>The major drawback to this strategy is that large pages result in waste within each page, a problem known as <strong>internal fragmentation</strong>. Applications allocate pages but only use small portions of each, and memory quickly fills up with these excessively large pages.</p>
-  </li>
+  <li>One way to make the page table smaller is make the <strong>page size larger</strong> because it makes <strong>the number of page table entries</strong> to be decreased.</li>
+  <li>The major drawback to this strategy is that large pages result in waste within each page, a problem known as <strong>internal fragmentation</strong>. Applications allocate pages but only use small portions of each, and memory quickly fills up with these excessively large pages.</li>
 </ul>
 
 <h2 id="combining-paging-and-segmentation"><span class="me-2">Combining Paging and segmentation</span><a href="#combining-paging-and-segmentation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>
-    <p>The goal of combining paging and segmentation is <strong>removing the erroneous entries between the heap, and stack segments(unallocated pages between the stack and the heap are no longer needed)</strong> to reduce the size of page table.</p>
-  </li>
-  <li>
-    <p>Instead of one page table for the process’s whole address space, we have <strong>one page table for each segments(code, heap, and stack)</strong> so we have three page tables.</p>
-  </li>
-  <li>
-    <p>The base register holds <strong>the physical address of the segment’s page table</strong>.</p>
-  </li>
-  <li>
-    <p>The limits register indicates the page table’s end (i.e., how many valid pages it has).</p>
-  </li>
-  <li>
-    <p>During a context switch, these registers must be updated to reflect the new process’s page tables.</p>
-  </li>
-  <li>
-    <p>On a TLB miss (assuming a hardware-managed TLB), the hardware utilizes the segment bits (SN) to identify which base and bounds pair to use. The hardware then combines the physical address with the VPN to generate the page table entry (PTE) address.</p>
-  </li>
+  <li>The goal of combining paging and segmentation is <strong>removing the erroneous entries between the heap, and stack segments(unallocated pages between the stack and the heap are no longer needed)</strong> to reduce the size of page table.</li>
+  <li>Instead of one page table for the process’s whole address space, we have <strong>one page table for each segments(code, heap, and stack)</strong> so we have three page tables.</li>
+  <li>The base register holds <strong>the physical address of the segment’s page table</strong>.</li>
+  <li>The limits register indicates the page table’s end (i.e., how many valid pages it has).</li>
+  <li>During a context switch, these registers must be updated to reflect the new process’s page tables.</li>
+  <li>On a TLB miss (assuming a hardware-managed TLB), the hardware utilizes the segment bits (SN) to identify which base and bounds pair to use. The hardware then combines the physical address with the VPN to generate the page table entry (PTE) address.</li>
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -620,30 +604,14 @@ Virtual Address:
 <h2 id="multi-level-page-tables"><span class="me-2">Multi-Level Page Tables</span><a href="#multi-level-page-tables" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>
-    <p>This is approach to get rid of all those incorrect sections in the page table <strong>without using segmentation</strong>.</p>
-  </li>
-  <li>
-    <p>It first divide the page table into <strong>page-sized units</strong>.</p>
-  </li>
-  <li>
-    <p>If <strong>all page-table entries (PTEs) of that page are invalid</strong>, then <strong>do not assign that page of the page table</strong> at all.</p>
-  </li>
-  <li>
-    <p>So, it’s generally <strong>compact</strong> and <strong>supports sparse address spaces</strong>.</p>
-  </li>
-  <li>
-    <p>To know <strong>the memory location of the pages of the page table and their validities</strong>, it use the new data structure called <strong>page directory</strong>.</p>
-  </li>
-  <li>
-    <p>When the OS wants to allocate or grow a page table, it may simply grab the <strong>next free page-sized unit(the size is much smaller than the size of page table)</strong>.</p>
-  </li>
-  <li>
-    <p>But, on a TLB miss, two loads from memory are necessary to acquire the proper translation information from the page table (<strong>one for the page directory, and one for the PTE itself</strong>).</p>
-  </li>
-  <li>
-    <p>For 2-level page table, to find out the page table entry, we can use <em>base pointer + PD.index * sizeof(page directory)</em> to find out the address of <em>page-sized unit = PD.PFN</em> , then we use <em>PD.PFN + PT.index * sizeof(PTE)</em> to find out the <em>PTE</em> address.</p>
-  </li>
+  <li>This is approach to get rid of all those incorrect sections in the page table <strong>without using segmentation</strong>.</li>
+  <li>It first divide the page table into <strong>page-sized units</strong>.</li>
+  <li>If <strong>all page-table entries (PTEs) of that page are invalid</strong>, then <strong>do not assign that page of the page table</strong> at all.</li>
+  <li>So, it’s generally <strong>compact</strong> and <strong>supports sparse address spaces</strong>.</li>
+  <li>To know <strong>the memory location of the pages of the page table and their validities</strong>, it use the new data structure called <strong>page directory</strong>.</li>
+  <li>When the OS wants to allocate or grow a page table, it may simply grab the <strong>next free page-sized unit(the size is much smaller than the size of page table)</strong>.</li>
+  <li>But, on a TLB miss, two loads from memory are necessary to acquire the proper translation information from the page table (<strong>one for the page directory, and one for the PTE itself</strong>).</li>
+  <li>For 2-level page table, to find out the page table entry, we can use <em>base pointer + PD.index * sizeof(page directory)</em> to find out the address of <em>page-sized unit = PD.PFN</em> , then we use <em>PD.PFN + PT.index * sizeof(PTE)</em> to find out the <em>PTE</em> address.</li>
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -659,15 +627,9 @@ Virtual Address:
 <h2 id="inverted-page-table"><span class="me-2">Inverted Page Table</span><a href="#inverted-page-table" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>
-    <p>Rather than having many page tables (one for each system process), we have a <strong>single</strong> page table with an item for each physical page of the system.</p>
-  </li>
-  <li>
-    <p>This entry indicates <strong>which process uses this page</strong> and which virtual page of that process corresponds to this physical page.</p>
-  </li>
-  <li>
-    <p>A <strong>hash table</strong> is frequently added on top of the underlying structure to speed up lookups.</p>
-  </li>
+  <li>Rather than having many page tables (one for each system process), we have a <strong>single</strong> page table with an item for each physical page of the system.</li>
+  <li>This entry indicates <strong>which process uses this page</strong> and which virtual page of that process corresponds to this physical page.</li>
+  <li>A <strong>hash table</strong> is frequently added on top of the underlying structure to speed up lookups.</li>
 </ul>
 
 <h2 id="swapping-the-page-tables-to-disk"><span class="me-2">Swapping the Page Tables to Disk</span><a href="#swapping-the-page-tables-to-disk" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -778,6 +740,13 @@ Virtual Address:
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/page-swapping/">Page Swapping</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/Transaction-Loodaside-Buffer/">Transaction Lookaside Buffer</a>
         </li>
       
@@ -800,13 +769,6 @@ Virtual Address:
         
         <li class="text-truncate lh-lg">
           <a href="/posts/memory-space-management-with-paging/">Memory Space Management with paging</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/advanced-page-table/">Advanced Page Table</a>
         </li>
       
     </ul>
@@ -914,6 +876,18 @@ Virtual Address:
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 

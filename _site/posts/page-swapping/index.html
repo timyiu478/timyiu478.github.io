@@ -30,23 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Transaction Lookaside Buffer" />
+<meta property="og:title" content="Page Swapping" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Problem of Paging" />
-<meta property="og:description" content="Problem of Paging" />
-<link rel="canonical" href="http://localhost:4000/posts/Transaction-Loodaside-Buffer/" />
-<meta property="og:url" content="http://localhost:4000/posts/Transaction-Loodaside-Buffer/" />
+<meta name="description" content="What is page swapping" />
+<meta property="og:description" content="What is page swapping" />
+<link rel="canonical" href="http://localhost:4000/posts/page-swapping/" />
+<meta property="og:url" content="http://localhost:4000/posts/page-swapping/" />
 <meta property="og:site_name" content="Tim Yiu" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-01-28T00:00:00+08:00" />
+<meta property="article:published_time" content="2024-01-30T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Transaction Lookaside Buffer" />
+<meta property="twitter:title" content="Page Swapping" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-28T17:40:47+08:00","datePublished":"2024-01-28T00:00:00+08:00","description":"Problem of Paging","headline":"Transaction Lookaside Buffer","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Transaction-Loodaside-Buffer/"},"url":"http://localhost:4000/posts/Transaction-Loodaside-Buffer/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-30T00:00:00+08:00","datePublished":"2024-01-30T00:00:00+08:00","description":"What is page swapping","headline":"Page Swapping","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/page-swapping/"},"url":"http://localhost:4000/posts/page-swapping/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Transaction Lookaside Buffer | Tim Yiu
+  <title>Page Swapping | Tim Yiu
   </title>
 
   <!--
@@ -288,7 +288,7 @@
         
           
             
-              <span>Transaction Lookaside Buffer</span>
+              <span>Page Swapping</span>
             
 
           
@@ -444,28 +444,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -481,28 +459,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -560,7 +516,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Transaction Lookaside Buffer</h1>
+    <h1 data-toc-skip>Page Swapping</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -576,41 +532,18 @@
 
 <time
   
-  data-ts="1706371200"
+  data-ts="1706544000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jan 28, 2024
+  Jan 30, 2024
 </time>
 
       </span>
 
       <!-- lastmod date -->
-      
-        <span>
-          Updated
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706434847"
-  data-df="ll"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  Jan 28, 2024
-</time>
-
-        </span>
       
 
       
@@ -650,9 +583,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="585 words"
+  title="413 words"
 >
-  <em>3 min</em> read</span>
+  <em>2 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -661,166 +594,68 @@
   </header>
 
   <div class="content">
-    <h2 id="problem-of-paging"><span class="me-2">Problem of Paging</span><a href="#problem-of-paging" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="what-is-page-swapping"><span class="me-2">What is page swapping</span><a href="#what-is-page-swapping" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Paging needs an additional memory lookup in order to translate each virtual address, but it takes too long to obtain translation information before every instruction fetch, load, or store.</p>
+<p>Swap pages to disk so that the running programs to <strong>use more RAM than is physically accessible</strong>.</p>
 
-<h2 id="what-is-transaction-lookaside-buffer"><span class="me-2">What is Transaction Lookaside Buffer?</span><a href="#what-is-transaction-lookaside-buffer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="swap-space"><span class="me-2">Swap Space</span><a href="#swap-space" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>In order to speed up the process of address translation, we use the <strong>hardware cache</strong> for the address translation. This cache is called <strong>Transaction Lookaside Buffer(TLF)</strong> which is part of the <em>MMU</em>.</p>
-
-<h2 id="tlb-entry"><span class="me-2">TLB Entry</span><a href="#tlb-entry" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>TLBs generally include 32 or 64 of TLB entries. A few are for the OS (using the G bit). The OS can set a wired register to instruct the hardware how many TLB slots to reserve for it. The OS uses these reserved mappings for code and data it needs to access during key moments when a TLB miss would be troublesome (e.g., in the TLB miss handler).</p>
-
-<p>TLB Entry:</p>
 <ul>
-  <li>Virtual Page Number (VPN)</li>
-  <li>Process ID (PID) or Address Space ID(ASID)</li>
-  <li>Page Frame Number (PFN)</li>
-  <li>V bit: Valid bit - indicates whether the entry has a valid translation or not</li>
-  <li>G bit: Global bit - If set, TLB does not check PID for translation</li>
-  <li>…</li>
+  <li>Swap space is <strong>reserved space on the disk</strong> for moving pages between memory and the file system.</li>
+  <li>This assumes the OS can read and write to swap space in <strong>page-sized units</strong>.</li>
 </ul>
 
-<h2 id="what-if-tlb-miss"><span class="me-2">What if TLB miss</span><a href="#what-if-tlb-miss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="the-free-command"><span class="me-2">The <em>free</em> Command</span><a href="#the-free-command" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="hardware-approach"><span class="me-2">Hardware approach</span><a href="#hardware-approach" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>The <code class="language-plaintext highlighter-rouge">free</code> command displays amount of free and used memory in the system.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>               total        used        free      shared  buff/cache   available
+Mem:         8086120     2908832      577556       56540     4599732     4815504
+Swap:        2097148          12     2097136
+</pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li>If the virtual address does not in the TLB entries, we have to <strong>check the page table</strong> to find the translation.</li>
-  <li>The hardware has to know the exact location of the page tables in memory (through <strong>a page-table base register</strong>)</li>
+  <li>In the “Mem” or memory row, there is more “available” space than “free” because <strong>there are pages the system knows it can get rid of if needed</strong>.</li>
+  <li>The “Swap” row which reports <strong>the usage of the swap space</strong> as distinct from your memory.</li>
 </ul>
 
-<h3 id="os-approach"><span class="me-2">OS approach</span><a href="#os-approach" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="swapping-mechanism"><span class="me-2">Swapping Mechanism</span><a href="#swapping-mechanism" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>The hardware mimics an exception, pausing the current instruction stream, switching to kernel mode, and <strong>jumping to a trap handler</strong>.</li>
-  <li>Returning from a TLB miss-handling trap causes the hardware to <strong>retry the instruction</strong>, resulting in a TLB hit.</li>
-  <li>OS must avoid creating <strong>endless loops of TLB misses</strong> by keeping the TLB miss handler in physical memory.
-    <ul>
-      <li>reserve some TLB entries for always valid transaction. Or</li>
-      <li>unmapped and not subject to address translation.</li>
-    </ul>
+  <li>In a software-managed TLB architecture, the OS <strong>determines if a page exists in physical memory</strong> using a new piece of information in each page-table entry called the <strong>present bit</strong>.</li>
+  <li>A <strong>page fault</strong> occurs when a program accesses a page that isn’t in physical memory.</li>
+  <li>A page fault will require the OS to <strong>swap in a page from disk</strong>.
+    <ol>
+      <li>use the <strong>PTE’s data bits</strong>, like the page’s PFN, to store a disk address.</li>
+      <li>Once the page is located on the disk, it is <strong>swapped into memory via I/O</strong>. The process will be blocked while the I/O is running, so the OS can run other ready processes while the page fault is handled.</li>
+      <li>The OS will <strong>update the page table</strong> to reflect the new page, update the PFN field of the page-table entry (PTE) to reflect the new page’s address in memory, and <strong>retry</strong> the instruction.</li>
+    </ol>
   </li>
-  <li>OS can use <strong>any data structure it wants to implement the page table</strong>.</li>
 </ul>
 
-<h2 id="array-access-example"><span class="me-2">Array Access Example</span><a href="#array-access-example" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="when-to-swap-outswap-page-to-disk"><span class="me-2">When to swap out(swap page to disk)?</span><a href="#when-to-swap-outswap-page-to-disk" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="a-memory-array-of-10-4-byte-integers"><span class="me-2">A memory array of 10 4-byte integers.</span><a href="#a-memory-array-of-10-4-byte-integers" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="highlow-watermark"><span class="me-2">High/Low Watermark</span><a href="#highlow-watermark" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>The page size is 16 bytes.</p>
+<p>When the OS detects that there are more pages in memory than the <strong>high watermark (HW)</strong>, a background process called the swap daemon  starts to evict pages from memory until the number of pages is less than the <strong>low watermark (LW)</strong>. The daemon then <strong>sleeps until the HW is reached again</strong>.</p>
 
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th>VPN</th>
-      <th>Offset 0-4</th>
-      <th>Offset 5-8</th>
-      <th>Offset 9-12</th>
-      <th>Offset 13-16</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>VPN 0</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>arr[0]</td>
-    </tr>
-    <tr>
-      <td>VPN 1</td>
-      <td>arr[1]</td>
-      <td>arr[2]</td>
-      <td>arr[3]</td>
-      <td>arr[4]</td>
-    </tr>
-    <tr>
-      <td>VPN 2</td>
-      <td>arr[5]</td>
-      <td>arr[6]</td>
-      <td>arr[7]</td>
-      <td>arr[8]</td>
-    </tr>
-    <tr>
-      <td>VPN 3</td>
-      <td>arr[9]</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table></div>
+<h3 id="invoke-by-process"><span class="me-2">Invoke by Process</span><a href="#invoke-by-process" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h3 id="the-tlb-hit-rate-the-first-time-the-array-is-accessed"><span class="me-2">The TLB hit rate the first time the array is accessed</span><a href="#the-tlb-hit-rate-the-first-time-the-array-is-accessed" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>The swap can also be awoken by a process if there are <strong>no free pages available</strong>; Once the daemon has freed up some pages, it will <strong>re-awaken the original thread</strong>, which will then be able to page in the appropriate page and continue working.</p>
 
-<p>The hit rate is 60%.</p>
+<h3 id="performancement-optimization"><span class="me-2">Performancement Optimization</span><a href="#performancement-optimization" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Many systems, will cluster or group a number of pages and <strong>write them out to the swap partition all at once</strong>.</p>
+
+<h2 id="other-useful-commands"><span class="me-2">Other useful commands</span><a href="#other-useful-commands" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>arr[0]: Miss (VPN 0 stored in TLB)</li>
-  <li>arr[1]: Miss (VPN 1 stored in TLB)</li>
-  <li>arr[2]: Hit (VPN 1)</li>
-  <li>arr[3]: Hit (VPN 1)</li>
-  <li>arr[4]: Hit (VPN 1)</li>
-  <li>arr[5]: Miss (VPN 2 stored in TLB)</li>
-  <li>arr[6]: Hit (VPN 2)</li>
-  <li>arr[7]: Hit (VPN 2)</li>
-  <li>arr[8]: Hit (VPN 2)</li>
-  <li>arr[9]: Miss (VPN 3 stored in TLB)</li>
-</ul>
-
-<h3 id="the-tlb-hit-rate-the-second-time-the-array-is-accessed"><span class="me-2">The TLB hit rate the second time the array is accessed</span><a href="#the-tlb-hit-rate-the-second-time-the-array-is-accessed" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>The hit rate is 100% because VPN 0-4 stored in TLB already in the first time access.</p>
-
-<h2 id="context-switching"><span class="me-2">Context Switching</span><a href="#context-switching" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>How to make sure the process does not reuse the TLB entries of the old process?</p>
-
-<ul>
-  <li>flushing: clears the TLB by <strong>setting all valid bits to 0</strong>.</li>
-  <li>ASID: TLBs include an address space identifier (ASID) field. The ASID is a <strong>Process ID (PID) with less bits</strong>. So the TLB can hold several processes’ translations.</li>
-</ul>
-
-<h2 id="two-entries-for-two-processes-with-two-vpns-point-to-the-same-physical-page"><span class="me-2">Two entries for two processes with two VPNs point to the same physical page</span><a href="#two-entries-for-two-processes-with-two-vpns-point-to-the-same-physical-page" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>When two processes share a page (for example, a code page), this can occur. Also, it reduces memory overheads by reducing the number of physical pages needed.</p>
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th>VPN</th>
-      <th>PFN</th>
-      <th>ASID</th>
-      <th>Prot-bit</th>
-      <th>Valid-bit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>VPN 0</td>
-      <td><strong>PFN 100</strong></td>
-      <td>1</td>
-      <td>r-x</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>VPN 5</td>
-      <td><strong>PFN 100</strong></td>
-      <td>2</td>
-      <td>r-x</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table></div>
-
-<h2 id="tlb-replacement-policy"><span class="me-2">TLB Replacement Policy</span><a href="#tlb-replacement-policy" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<ul>
-  <li>LRU</li>
-  <li>Random</li>
+  <li><code class="language-plaintext highlighter-rouge">vmstat</code></li>
 </ul>
 
   </div>
@@ -1067,43 +902,43 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1290,22 +1125,18 @@ Process 2 enqueued in queue with time...
 
   
     <a
-      href="/posts/memory-segmentation/"
+      href="/posts/memory-space-management-with-paging/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Memory Segmentation</p>
+      <p>Memory Space Management with paging</p>
     </a>
   
 
   
-    <a
-      href="/posts/advanced-page-table/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>Advanced Page Table</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
