@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-01T00:51:02+08:00</updated>
+  <updated>2024-02-01T20:57:24+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -109,7 +109,7 @@ Paging is another memory space management approach that dividing memory into fix
     <link href="http://localhost:4000/posts/advanced-page-table/" rel="alternate" type="text/html" title="Advanced Page Table" />
     <published>2024-01-28T00:00:00+08:00</published>
   
-    <updated>2024-01-28T00:00:00+08:00</updated>
+    <updated>2024-02-01T00:51:36+08:00</updated>
   
     <id>http://localhost:4000/posts/advanced-page-table/</id>
     <content src="http://localhost:4000/posts/advanced-page-table/" />

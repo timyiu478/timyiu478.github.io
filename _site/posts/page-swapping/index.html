@@ -444,6 +444,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -459,6 +481,39 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -583,9 +638,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="413 words"
+  title="704 words"
 >
-  <em>2 min</em> read</span>
+  <em>3 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -656,6 +711,47 @@ Swap:        2097148          12     2097136
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">vmstat</code></li>
+</ul>
+
+<h2 id="implementing-lru"><span class="me-2">Implementing LRU</span><a href="#implementing-lru" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="problem"><span class="me-2">Problem</span><a href="#problem" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Scanning a wide array of times to <strong>discover the least-recently-used page is expensive</strong>.</p>
+
+<h3 id="approximating-lru"><span class="me-2">Approximating LRU</span><a href="#approximating-lru" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>When a page is referenced (read or written), the hardware sets the <strong>use bit to 1</strong>.</li>
+  <li>The system’s pages organized in a <strong>circle</strong>.</li>
+  <li>Initially, a clock hand points to any page.</li>
+  <li>When replacing a page, the OS checks if the use bit is 1 or 0.
+    <ul>
+      <li>If <strong>1</strong>, page P was <strong>recently used</strong>. The usage bit for P is <strong>cleared (set to 0)</strong>, and the clock hand is advanced one page (P + 1).</li>
+      <li>If the use bit is set to <strong>0</strong>, the page is <strong>evicted</strong> (in the worst case, all pages have been recently used and we have now searched through the entire set of pages, clearing all the bits).</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="dirty-pages"><span class="me-2">Dirty Pages</span><a href="#dirty-pages" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>The clock algorithm may be altered to look for pages that are both unused and <strong>clean</strong> to evict first; if those aren’t found, then look for <strong>unused dirty</strong> pages, and so on.</li>
+  <li>Because if a page has been updated and is thus unclean, it must be evicted by writing it back to disk, which is <strong>costly</strong>.</li>
+  <li>The eviction is <strong>free</strong> if it has not been updated; the physical frame can simply be reused for other purposes <strong>without further I/O</strong>.</li>
+  <li>A <strong>modified/dirty bit</strong> should be included in the hardware to accommodate this behavior.</li>
+</ul>
+
+<h2 id="thrashing"><span class="me-2">Thrashing</span><a href="#thrashing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>Thrashing is used to describe the system is <strong>continuously paging</strong> because the memory demands of the operating processes simply outnumber the physical memory available.</li>
+  <li>The methods to address thrashing
+    <ul>
+      <li><strong>not to execute a subset of them</strong> in the hopes that the pages of the reduced set of processes will fit in memory, allowing progress.</li>
+      <li>launch an <strong>out-of-memory killer</strong>; this daemon selects a memory-intensive process and kills it.</li>
+    </ul>
+  </li>
 </ul>
 
   </div>
@@ -762,6 +858,13 @@ Swap:        2097148          12     2097136
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/advanced-page-table/">Advanced Page Table</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/page-swapping/">Page Swapping</a>
         </li>
       
@@ -784,13 +887,6 @@ Swap:        2097148          12     2097136
         
         <li class="text-truncate lh-lg">
           <a href="/posts/memory-segmentation/">Memory Segmentation</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/memory-space-management-with-paging/">Memory Space Management with paging</a>
         </li>
       
     </ul>

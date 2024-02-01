@@ -53,3 +53,32 @@ Many systems, will cluster or group a number of pages and **write them out to th
 ## Other useful commands
 
 - `vmstat`
+
+## Implementing LRU
+
+### Problem
+
+Scanning a wide array of times to **discover the least-recently-used page is expensive**.
+
+### Approximating LRU 
+
+- When a page is referenced (read or written), the hardware sets the **use bit to 1**.
+- The system’s pages organized in a **circle**.
+- Initially, a clock hand points to any page.
+- When replacing a page, the OS checks if the use bit is 1 or 0.
+  - If **1**, page P was **recently used**. The usage bit for P is **cleared (set to 0)**, and the clock hand is advanced one page (P + 1).
+  - If the use bit is set to **0**, the page is **evicted** (in the worst case, all pages have been recently used and we have now searched through the entire set of pages, clearing all the bits).
+
+### Dirty Pages
+
+- The clock algorithm may be altered to look for pages that are both unused and **clean** to evict first; if those aren’t found, then look for **unused dirty** pages, and so on.
+- Because if a page has been updated and is thus unclean, it must be evicted by writing it back to disk, which is **costly**.
+- The eviction is **free** if it has not been updated; the physical frame can simply be reused for other purposes **without further I/O**. 
+- A **modified/dirty bit** should be included in the hardware to accommodate this behavior.
+
+## Thrashing
+
+- Thrashing is used to describe the system is **continuously paging** because the memory demands of the operating processes simply outnumber the physical memory available.
+- The methods to address thrashing
+  - **not to execute a subset of them** in the hopes that the pages of the reduced set of processes will fit in memory, allowing progress.
+  - launch an **out-of-memory killer**; this daemon selects a memory-intensive process and kills it.
