@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-01T20:57:24+08:00</updated>
+  <updated>2024-02-03T00:14:14+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,51 @@
 
   
   <entry>
+    <title>VMS Lazy Optimizations</title>
+    <link href="http://localhost:4000/posts/vms-lazy-optimizations/" rel="alternate" type="text/html" title="VMS Lazy Optimizations" />
+    <published>2024-02-02T00:00:00+08:00</published>
+  
+    <updated>2024-02-02T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/vms-lazy-optimizations/</id>
+    <content src="http://localhost:4000/posts/vms-lazy-optimizations/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Demand Page Zeroing
+
+
+  Consider adding a page to the address space, say in the heap.
+  The OS have to zero the page for security reason so that the process cannot know how this page used for.
+  Instead of the OS zeros the page before maps it into your address space, the OS  the OS just adds an entry to the page table marking it unavailable.
+  When the process reads or writes the page, it traps...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Page Swapping</title>
     <link href="http://localhost:4000/posts/page-swapping/" rel="alternate" type="text/html" title="Page Swapping" />
     <published>2024-01-30T00:00:00+08:00</published>
   
-    <updated>2024-01-30T00:00:00+08:00</updated>
+    <updated>2024-02-01T21:09:37+08:00</updated>
   
     <id>http://localhost:4000/posts/page-swapping/</id>
     <content src="http://localhost:4000/posts/page-swapping/" />
@@ -183,52 +223,6 @@ Paging needs an additional memory lookup in order to translate each virtual addr
 What is Transaction Lookaside Buffer?
 
 In order to speed up the process of address translation, we use the hardware cache for the address translation. This cache is called Transaction Look...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Memory Segmentation</title>
-    <link href="http://localhost:4000/posts/memory-segmentation/" rel="alternate" type="text/html" title="Memory Segmentation" />
-    <published>2024-01-27T00:00:00+08:00</published>
-  
-    <updated>2024-01-28T17:32:10+08:00</updated>
-  
-    <id>http://localhost:4000/posts/memory-segmentation/</id>
-    <content src="http://localhost:4000/posts/memory-segmentation/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      What is Memory Segmentation?
-
-
-  It allows the segments(code, stack, heap) of the address space can be stored in different physical memory locations so that we do not need to allocate the physical memory for the “free” segment.
-  Each segment has its own base/bound registers.
-
-
-Which segment the virtual memory address related to?
-
-Explicit Approach
-
-
-  we divide the address space into segments ...
     </summary>
   
 
