@@ -1,0 +1,53 @@
+<h2 id="what-is-paging">What is Paging</h2>
+
+<p>Paging is another memory space management approach that <strong>dividing memory into fixed size of chuncks called pages</strong>. In contrast to segmentation, paging <strong>does not have external fragmentation</strong> and support <strong>the abstraction of an address space effectively</strong>, regardless of how a process uses the address space since it won’t make assumptions about the way the heap and stack grow and how they are use.</p>
+
+<h2 id="address-translation">Address Translation</h2>
+
+<p>To translate the virtual address the process generates:</p>
+
+<ol>
+  <li>We have to break the resulting virtual address into two parts:
+    <ul>
+      <li>The virtual page number (<strong>VPN</strong>) and</li>
+      <li>The <strong>offset</strong> within the page.</li>
+    </ul>
+  </li>
+  <li>Using our <em>VPN</em>, we can now index our <strong>page table</strong> and find out which physical frame virtual page lives in.</li>
+</ol>
+
+<h2 id="page-table">Page Table</h2>
+
+<ul>
+  <li>The page table is a <strong>data structure</strong> that <strong>maps virtual addresses (or virtual page numbers) into physical addresses (physical frame numbers)</strong>.</li>
+  <li>Each process has its own page table.</li>
+</ul>
+
+<h2 id="linear-page-table">Linear Page Table</h2>
+
+<p>Linear Page table is an <strong>array</strong>.</p>
+
+<ul>
+  <li><em>VPN</em> is an <strong>index</strong> of the array.</li>
+  <li>Each page table entry(<strong>PTE</strong>) contains <em>PFN</em> and other useful <em>bits</em>.</li>
+</ul>
+
+<h2 id="the-steps-of-address-translation-by-hardware">The steps of address translation by hardware</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Extract the VPN from the virtual address
+VPN = (VirtualAddress &amp; VPN_MASK) &gt;&gt; SHIFT
+// Form the address of the page-table entry (PTE)
+PTEAddr = PTBR + (VPN * sizeof(PTE))
+// Fetch the PTE
+PTE = AccessMemory(PTEAddr)
+// Check if process can access the page
+if (PTE.Valid == False)
+    RaiseException(SEGMENTATION_FAULT)
+else if (CanAccess(PTE.ProtectBits) == False)
+    RaiseException(PROTECTION_FAULT)
+else
+    // Access is OK: form physical address and fetch it
+offset = VirtualAddress &amp; OFFSET_MASK
+PhysAddr = (PTE.PFN &lt;&lt; PFN_SHIFT) | offset
+Register = AccessMemory(PhysAddr)
+</code></pre></div></div>

@@ -1,0 +1,99 @@
+<h2 id="what-is-page-swapping">What is page swapping</h2>
+
+<p>Swap pages to disk so that the running programs to <strong>use more RAM than is physically accessible</strong>.</p>
+
+<h2 id="swap-space">Swap Space</h2>
+
+<ul>
+  <li>Swap space is <strong>reserved space on the disk</strong> for moving pages between memory and the file system.</li>
+  <li>This assumes the OS can read and write to swap space in <strong>page-sized units</strong>.</li>
+</ul>
+
+<h2 id="the-free-command">The <em>free</em> Command</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">free</code> command displays amount of free and used memory in the system.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>               total        used        free      shared  buff/cache   available
+Mem:         8086120     2908832      577556       56540     4599732     4815504
+Swap:        2097148          12     2097136
+</code></pre></div></div>
+
+<ul>
+  <li>In the “Mem” or memory row, there is more “available” space than “free” because <strong>there are pages the system knows it can get rid of if needed</strong>.</li>
+  <li>The “Swap” row which reports <strong>the usage of the swap space</strong> as distinct from your memory.</li>
+</ul>
+
+<h2 id="swapping-mechanism">Swapping Mechanism</h2>
+
+<ul>
+  <li>In a software-managed TLB architecture, the OS <strong>determines if a page exists in physical memory</strong> using a new piece of information in each page-table entry called the <strong>present bit</strong>.</li>
+  <li>A <strong>page fault</strong> occurs when a program accesses a page that isn’t in physical memory.</li>
+  <li>A page fault will require the OS to <strong>swap in a page from disk</strong>.
+    <ol>
+      <li>use the <strong>PTE’s data bits</strong>, like the page’s PFN, to store a disk address.</li>
+      <li>Once the page is located on the disk, it is <strong>swapped into memory via I/O</strong>. The process will be blocked while the I/O is running, so the OS can run other ready processes while the page fault is handled.</li>
+      <li>The OS will <strong>update the page table</strong> to reflect the new page, update the PFN field of the page-table entry (PTE) to reflect the new page’s address in memory, and <strong>retry</strong> the instruction.</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="when-to-swap-outswap-page-to-disk">When to swap out(swap page to disk)?</h2>
+
+<h3 id="highlow-watermark">High/Low Watermark</h3>
+
+<p>When the OS detects that there are more pages in memory than the <strong>high watermark (HW)</strong>, a background process called the swap daemon  starts to evict pages from memory until the number of pages is less than the <strong>low watermark (LW)</strong>. The daemon then <strong>sleeps until the HW is reached again</strong>.</p>
+
+<h3 id="invoke-by-process">Invoke by Process</h3>
+
+<p>The swap can also be awoken by a process if there are <strong>no free pages available</strong>; Once the daemon has freed up some pages, it will <strong>re-awaken the original thread</strong>, which will then be able to page in the appropriate page and continue working.</p>
+
+<h3 id="performancement-optimization">Performancement Optimization</h3>
+
+<p>Many systems, will cluster or group a number of pages and <strong>write them out to the swap partition all at once</strong>.</p>
+
+<h2 id="other-useful-commands">Other useful commands</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">vmstat</code></li>
+</ul>
+
+<h2 id="implementing-lru">Implementing LRU</h2>
+
+<h3 id="problem">Problem</h3>
+
+<p>Scanning a wide array of times to <strong>discover the least-recently-used page is expensive</strong>.</p>
+
+<h3 id="approximating-lru">Approximating LRU</h3>
+
+<ul>
+  <li>When a page is referenced (read or written), the hardware sets the <strong>use bit to 1</strong>.</li>
+  <li>The system’s pages organized in a <strong>circle</strong>.</li>
+  <li>Initially, a clock hand points to any page.</li>
+  <li>When replacing a page, the OS checks if the use bit is 1 or 0.
+    <ul>
+      <li>If <strong>1</strong>, page P was <strong>recently used</strong>. The usage bit for P is <strong>cleared (set to 0)</strong>, and the clock hand is advanced one page (P + 1).</li>
+      <li>If the use bit is set to <strong>0</strong>, the page is <strong>evicted</strong> (in the worst case, all pages have been recently used and we have now searched through the entire set of pages, clearing all the bits).</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="dirty-pages">Dirty Pages</h3>
+
+<ul>
+  <li>The clock algorithm may be altered to look for pages that are both unused and <strong>clean</strong> to evict first; if those aren’t found, then look for <strong>unused dirty</strong> pages, and so on.</li>
+  <li>Because if a page has been updated and is thus unclean, it must be evicted by writing it back to disk, which is <strong>costly</strong>.</li>
+  <li>The eviction is <strong>free</strong> if it has not been updated; the physical frame can simply be reused for other purposes <strong>without further I/O</strong>.</li>
+  <li>A <strong>modified/dirty bit</strong> should be included in the hardware to accommodate this behavior.</li>
+</ul>
+
+<h2 id="thrashing">Thrashing</h2>
+
+<ul>
+  <li>Thrashing is used to describe the system is <strong>continuously paging</strong> because the memory demands of the operating processes simply outnumber the physical memory available.</li>
+  <li>The methods to address thrashing
+    <ul>
+      <li><strong>not to execute a subset of them</strong> in the hopes that the pages of the reduced set of processes will fit in memory, allowing progress.</li>
+      <li>launch an <strong>out-of-memory killer</strong>; this daemon selects a memory-intensive process and kills it.</li>
+    </ul>
+  </li>
+</ul>

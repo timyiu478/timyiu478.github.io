@@ -1,0 +1,25 @@
+<h2 id="demand-page-zeroing">Demand Page Zeroing</h2>
+
+<ul>
+  <li>Consider adding a page to the address space, say in the heap.</li>
+  <li>The OS have to <strong>zero</strong> the page for security reason so that the process cannot know how this page used for.</li>
+  <li>Instead of the OS zeros the page <strong>before maps it into your address space</strong>, the OS  the OS just adds an entry to the page table <strong>marking it unavailable</strong>.</li>
+  <li>When the process <strong>reads or writes</strong> the page, it <strong>traps</strong> the OS. A demand-zero page is identified by the OS using certain bits designated in the “reserved for OS” portion of the page table entry.</li>
+  <li>The OS then finds a physical page, zeroes it, and maps it into the process’s address space.</li>
+  <li>This task(zeros the page) is avoided if the process <strong>never accesses the page</strong>.</li>
+</ul>
+
+<h2 id="copy-on-write">Copy-On-Write</h2>
+
+<ul>
+  <li>Instead of copying a page from one address space to another, the OS can <strong>map it into the target address space and declare it read-only in both address spaces</strong>.</li>
+  <li>If both address spaces <strong>just read</strong> the page, <strong>no data is moved</strong>.</li>
+  <li>A page write attempt from one of the address spaces will be logged into the OS. The OS then allocate a new page, fill it with data, and map it into the address space of the faulting process.</li>
+  <li>So it saves <strong>unnecessary copying</strong>.</li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li>VMS - <a href="https://en.wikipedia.org/wiki/OpenVMS">https://en.wikipedia.org/wiki/OpenVMS</a></li>
+</ol>

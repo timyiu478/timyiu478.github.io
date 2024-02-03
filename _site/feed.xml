@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-03T00:14:14+08:00</updated>
+  <updated>2024-02-03T20:46:39+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,46 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Concurrency and Threads</title>
+    <link href="http://localhost:4000/posts/concurrency-and-threads/" rel="alternate" type="text/html" title="Concurrency and Threads" />
+    <published>2024-02-03T00:00:00+08:00</published>
+  
+    <updated>2024-02-03T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/concurrency-and-threads/</id>
+    <content src="http://localhost:4000/posts/concurrency-and-threads/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Threads
+
+
+  Each thread is like an independent worker, but they all share the same memory space.
+  Each thread has its own Program Counter(PC) to keeps track of where a thread is in its execution.
+  Just like a process has a control block to keep track of its state, each thread has its own Thread Control Block(TCB).
+  Each thread has its own stack. This means each thread can handle its own func...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -183,46 +223,6 @@ Larger Page size
 
   One way to make the page table smaller is make the page size larger because it makes the number of page table entries to be decreased.
   The major drawback to this strategy is that large pages...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Transaction Lookaside Buffer</title>
-    <link href="http://localhost:4000/posts/Transaction-Loodaside-Buffer/" rel="alternate" type="text/html" title="Transaction Lookaside Buffer" />
-    <published>2024-01-28T00:00:00+08:00</published>
-  
-    <updated>2024-01-28T17:40:47+08:00</updated>
-  
-    <id>http://localhost:4000/posts/Transaction-Loodaside-Buffer/</id>
-    <content src="http://localhost:4000/posts/Transaction-Loodaside-Buffer/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Problem of Paging
-
-Paging needs an additional memory lookup in order to translate each virtual address, but it takes too long to obtain translation information before every instruction fetch, load, or store.
-
-What is Transaction Lookaside Buffer?
-
-In order to speed up the process of address translation, we use the hardware cache for the address translation. This cache is called Transaction Look...
     </summary>
   
 

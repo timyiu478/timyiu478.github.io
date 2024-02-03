@@ -1,0 +1,161 @@
+<h2 id="problem-of-paging">Problem of Paging</h2>
+
+<p>Paging needs an additional memory lookup in order to translate each virtual address, but it takes too long to obtain translation information before every instruction fetch, load, or store.</p>
+
+<h2 id="what-is-transaction-lookaside-buffer">What is Transaction Lookaside Buffer?</h2>
+
+<p>In order to speed up the process of address translation, we use the <strong>hardware cache</strong> for the address translation. This cache is called <strong>Transaction Lookaside Buffer(TLF)</strong> which is part of the <em>MMU</em>.</p>
+
+<h2 id="tlb-entry">TLB Entry</h2>
+
+<p>TLBs generally include 32 or 64 of TLB entries. A few are for the OS (using the G bit). The OS can set a wired register to instruct the hardware how many TLB slots to reserve for it. The OS uses these reserved mappings for code and data it needs to access during key moments when a TLB miss would be troublesome (e.g., in the TLB miss handler).</p>
+
+<p>TLB Entry:</p>
+<ul>
+  <li>Virtual Page Number (VPN)</li>
+  <li>Process ID (PID) or Address Space ID(ASID)</li>
+  <li>Page Frame Number (PFN)</li>
+  <li>V bit: Valid bit - indicates whether the entry has a valid translation or not</li>
+  <li>G bit: Global bit - If set, TLB does not check PID for translation</li>
+  <li>…</li>
+</ul>
+
+<h2 id="what-if-tlb-miss">What if TLB miss</h2>
+
+<h3 id="hardware-approach">Hardware approach</h3>
+
+<ul>
+  <li>If the virtual address does not in the TLB entries, we have to <strong>check the page table</strong> to find the translation.</li>
+  <li>The hardware has to know the exact location of the page tables in memory (through <strong>a page-table base register</strong>)</li>
+</ul>
+
+<h3 id="os-approach">OS approach</h3>
+
+<ul>
+  <li>The hardware mimics an exception, pausing the current instruction stream, switching to kernel mode, and <strong>jumping to a trap handler</strong>.</li>
+  <li>Returning from a TLB miss-handling trap causes the hardware to <strong>retry the instruction</strong>, resulting in a TLB hit.</li>
+  <li>OS must avoid creating <strong>endless loops of TLB misses</strong> by keeping the TLB miss handler in physical memory.
+    <ul>
+      <li>reserve some TLB entries for always valid transaction. Or</li>
+      <li>unmapped and not subject to address translation.</li>
+    </ul>
+  </li>
+  <li>OS can use <strong>any data structure it wants to implement the page table</strong>.</li>
+</ul>
+
+<h2 id="array-access-example">Array Access Example</h2>
+
+<h3 id="a-memory-array-of-10-4-byte-integers">A memory array of 10 4-byte integers.</h3>
+
+<p>The page size is 16 bytes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>VPN</th>
+      <th>Offset 0-4</th>
+      <th>Offset 5-8</th>
+      <th>Offset 9-12</th>
+      <th>Offset 13-16</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VPN 0</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>arr[0]</td>
+    </tr>
+    <tr>
+      <td>VPN 1</td>
+      <td>arr[1]</td>
+      <td>arr[2]</td>
+      <td>arr[3]</td>
+      <td>arr[4]</td>
+    </tr>
+    <tr>
+      <td>VPN 2</td>
+      <td>arr[5]</td>
+      <td>arr[6]</td>
+      <td>arr[7]</td>
+      <td>arr[8]</td>
+    </tr>
+    <tr>
+      <td>VPN 3</td>
+      <td>arr[9]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="the-tlb-hit-rate-the-first-time-the-array-is-accessed">The TLB hit rate the first time the array is accessed</h3>
+
+<p>The hit rate is 60%.</p>
+
+<ul>
+  <li>arr[0]: Miss (VPN 0 stored in TLB)</li>
+  <li>arr[1]: Miss (VPN 1 stored in TLB)</li>
+  <li>arr[2]: Hit (VPN 1)</li>
+  <li>arr[3]: Hit (VPN 1)</li>
+  <li>arr[4]: Hit (VPN 1)</li>
+  <li>arr[5]: Miss (VPN 2 stored in TLB)</li>
+  <li>arr[6]: Hit (VPN 2)</li>
+  <li>arr[7]: Hit (VPN 2)</li>
+  <li>arr[8]: Hit (VPN 2)</li>
+  <li>arr[9]: Miss (VPN 3 stored in TLB)</li>
+</ul>
+
+<h3 id="the-tlb-hit-rate-the-second-time-the-array-is-accessed">The TLB hit rate the second time the array is accessed</h3>
+
+<p>The hit rate is 100% because VPN 0-4 stored in TLB already in the first time access.</p>
+
+<h2 id="context-switching">Context Switching</h2>
+
+<p>How to make sure the process does not reuse the TLB entries of the old process?</p>
+
+<ul>
+  <li>flushing: clears the TLB by <strong>setting all valid bits to 0</strong>.</li>
+  <li>ASID: TLBs include an address space identifier (ASID) field. The ASID is a <strong>Process ID (PID) with less bits</strong>. So the TLB can hold several processes’ translations.</li>
+</ul>
+
+<h2 id="two-entries-for-two-processes-with-two-vpns-point-to-the-same-physical-page">Two entries for two processes with two VPNs point to the same physical page</h2>
+
+<p>When two processes share a page (for example, a code page), this can occur. Also, it reduces memory overheads by reducing the number of physical pages needed.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>VPN</th>
+      <th>PFN</th>
+      <th>ASID</th>
+      <th>Prot-bit</th>
+      <th>Valid-bit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VPN 0</td>
+      <td><strong>PFN 100</strong></td>
+      <td>1</td>
+      <td>r-x</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>VPN 5</td>
+      <td><strong>PFN 100</strong></td>
+      <td>2</td>
+      <td>r-x</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="tlb-replacement-policy">TLB Replacement Policy</h2>
+
+<ul>
+  <li>LRU</li>
+  <li>Random</li>
+</ul>
