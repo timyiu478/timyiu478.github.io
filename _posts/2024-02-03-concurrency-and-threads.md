@@ -56,4 +56,4 @@ To prevent race conditions, we need mutual exclusion in critical sections. **If 
 - In multi-threading, a major challenge is ensuring that certain operations are **executed without interruption, maintaining consistency in shared data**. 
 - **add instruction** is one of an atomic instructions.
 - In practice, we often don’t have such atomic instructions for **complex operations** in regular instruction set and we have to break it down to multiple instructions.
-- Since we can’t rely on **hardware** for atomicity, we turn to **synchronization primitives(hardware + OS)**.
+- Since we can’t rely on **hardware** for atomicity, we turn to **synchronization primitives**.

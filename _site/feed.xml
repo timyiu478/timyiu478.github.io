@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-03T20:46:39+08:00</updated>
+  <updated>2024-02-04T13:51:55+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,66 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Thread API</title>
+    <link href="http://localhost:4000/posts/thread-api/" rel="alternate" type="text/html" title="Thread API" />
+    <published>2024-02-03T00:00:00+08:00</published>
+  
+    <updated>2024-02-03T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/thread-api/</id>
+    <content src="http://localhost:4000/posts/thread-api/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Thread Creation in POSIX
+
+Functions
+
+
+  create thread: pthread_create
+  wait a thread to complete: pthread_join
+
+
+Example Code
+
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+#include &amp;lt;pthread.h&amp;gt;
+
+// Define structures for argument and return values
+typedef struct {
+    int a;
+    int b;
+} myarg_t;
+
+typedef struct {
+    int x;
+    int y;
+} myret_t;
+
+// Thread function to perform a task...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -178,51 +238,6 @@ The free command displays amount of free and used memory in the system.
       What is Paging
 
 Paging is another memory space management approach that dividing memory into fixed size of chuncks called pages. In contrast to segmentation, paging does not have external fragmentation and support the abstraction of an address space effectively, regardless of how a process uses the address space since it won’t make assumptions about the way the heap and stack grow and how they ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Advanced Page Table</title>
-    <link href="http://localhost:4000/posts/advanced-page-table/" rel="alternate" type="text/html" title="Advanced Page Table" />
-    <published>2024-01-28T00:00:00+08:00</published>
-  
-    <updated>2024-02-01T00:51:36+08:00</updated>
-  
-    <id>http://localhost:4000/posts/advanced-page-table/</id>
-    <content src="http://localhost:4000/posts/advanced-page-table/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Problem of Linear Page Table
-
-
-  The size of the page table is too big.
-  We need to allocate the physical memory for the page table entries that there is no physical frame as well.
-
-
-Larger Page size
-
-
-  One way to make the page table smaller is make the page size larger because it makes the number of page table entries to be decreased.
-  The major drawback to this strategy is that large pages...
     </summary>
   
 

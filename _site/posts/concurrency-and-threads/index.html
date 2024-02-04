@@ -583,7 +583,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="494 words"
+  title="492 words"
 >
   <em>2 min</em> read</span>
 
@@ -656,7 +656,7 @@
   <li>In multi-threading, a major challenge is ensuring that certain operations are <strong>executed without interruption, maintaining consistency in shared data</strong>.</li>
   <li><strong>add instruction</strong> is one of an atomic instructions.</li>
   <li>In practice, we often don’t have such atomic instructions for <strong>complex operations</strong> in regular instruction set and we have to break it down to multiple instructions.</li>
-  <li>Since we can’t rely on <strong>hardware</strong> for atomicity, we turn to <strong>synchronization primitives(hardware + OS)</strong>.</li>
+  <li>Since we can’t rely on <strong>hardware</strong> for atomicity, we turn to <strong>synchronization primitives</strong>.</li>
 </ul>
 
   </div>
@@ -770,6 +770,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/thread-api/">Thread API</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/vms-lazy-optimizations/">VMS Lazy Optimizations</a>
         </li>
       
@@ -785,13 +792,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/advanced-page-table/">Advanced Page Table</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Transaction-Loodaside-Buffer/">Transaction Lookaside Buffer</a>
         </li>
       
     </ul>
@@ -882,6 +882,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -1142,9 +1154,13 @@ Process 2 enqueued in queue with time...
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/thread-api/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Thread API</p>
+    </a>
   
 </nav>
 
