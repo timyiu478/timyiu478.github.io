@@ -34,15 +34,15 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/page2/" />
+<meta property="og:url" content="http://localhost:4000/page2/" />
 <meta property="og:site_name" content="Tim Yiu" />
 <meta property="og:type" content="website" />
-<link rel="next" href="http://localhost:4000/page2" />
+<link rel="prev" href="http://localhost:4000/" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Tim Yiu" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Tim Yiu","name":"Tim Yiu","sameAs":["https://www.linkedin.com/in/kam-wing-yiu-47685b172"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Tim Yiu","url":"http://localhost:4000/page2/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -400,14 +400,14 @@
 <div id="post-list" class="flex-grow-1 px-xl-1">
   
     <article class="card-wrapper card">
-      <a href="/posts/threads-locks/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/mlfq-scheduling-policy/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Threads Locks</h1>
+            <h1 class="card-title my-2 mt-md-0">Multilevel Feedback Queue Scheduling</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -417,14 +417,13 @@
 
 
 
-                What is a Lock
+                Example Run
 
-Lock is a tool for allowing running critical section code atomically by only allow one thread to be execute that part of code.
-
-How does a lock work?
-
-
-  Lock Variable: e.g. mutex. ...
+Enter the number of processes: 3
+Enter duration for process 1: 10
+Process 1 enqueued in queue with time quantum 2
+Enter duration for process 2: 20
+Process 2 enqueued in queue with time...
               </p>
             </div>
 
@@ -442,626 +441,11 @@ How does a lock work?
 
 <time
   
-  data-ts="1707062400"
+  data-ts="1706112000"
   data-df="ll"
   
 >
-  Feb  5, 2024
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      OS
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/thread-api/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Thread API</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                Thread Creation in POSIX
-
-Functions
-
-
-  create thread: pthread_create
-  wait a thread to complete: pthread_join
-
-
-Example Code
-
-#include &amp;lt;stdio.h&amp;gt;
-#include &amp;lt;stdlib.h&amp;gt;
-#include &amp;lt;pthre...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706889600"
-  data-df="ll"
-  
->
-  Feb  3, 2024
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      OS
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/concurrency-and-threads/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Concurrency and Threads</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                Threads
-
-
-  Each thread is like an independent worker, but they all share the same memory space.
-  Each thread has its own Program Counter(PC) to keeps track of where a thread is in its execution.
-...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706889600"
-  data-df="ll"
-  
->
-  Feb  3, 2024
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      OS
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/vms-lazy-optimizations/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">VMS Lazy Optimizations</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                Demand Page Zeroing
-
-
-  Consider adding a page to the address space, say in the heap.
-  The OS have to zero the page for security reason so that the process cannot know how this page used for.
-  In...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706803200"
-  data-df="ll"
-  
->
-  Feb  2, 2024
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      OS
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/page-swapping/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Page Swapping</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                What is page swapping
-
-Swap pages to disk so that the running programs to use more RAM than is physically accessible.
-
-Swap Space
-
-
-  Swap space is reserved space on the disk for moving pages betwe...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706544000"
-  data-df="ll"
-  
->
-  Jan 30, 2024
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      OS
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/memory-space-management-with-paging/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Memory Space Management with paging</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                What is Paging
-
-Paging is another memory space management approach that dividing memory into fixed size of chuncks called pages. In contrast to segmentation, paging does not have external fragmenta...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706371200"
-  data-df="ll"
-  
->
-  Jan 28, 2024
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      OS
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/advanced-page-table/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Advanced Page Table</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                Problem of Linear Page Table
-
-
-  The size of the page table is too big.
-  We need to allocate the physical memory for the page table entries that there is no physical frame as well.
-
-
-Larger Page s...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706371200"
-  data-df="ll"
-  
->
-  Jan 28, 2024
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      OS
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/Transaction-Loodaside-Buffer/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Transaction Lookaside Buffer</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                Problem of Paging
-
-Paging needs an additional memory lookup in order to translate each virtual address, but it takes too long to obtain translation information before every instruction fetch, load,...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706371200"
-  data-df="ll"
-  
->
-  Jan 28, 2024
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      OS
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/memory-segmentation/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Memory Segmentation</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                What is Memory Segmentation?
-
-
-  It allows the segments(code, stack, heap) of the address space can be stored in different physical memory locations so that we do not need to allocate the physical ...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706284800"
-  data-df="ll"
-  
->
-  Jan 27, 2024
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      OS
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/why-memory-virtualisation/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Why Memory Virtualisation?</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                
-  Transparency: user program dont need to worry about the physical memory address.
-  Protection: each process only can manipulate its own address space.
-
-
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706198400"
-  data-df="ll"
-  
->
-  Jan 26, 2024
+  Jan 25, 2024
 </time>
 
 
@@ -1095,8 +479,8 @@ Paging needs an additional memory lookup in order to translate each virtual addr
     <!-- left arrow -->
     
 
-    <li class="page-item disabled">
-      <a class="page-link" href="#" aria-label="previous-page">
+    <li class="page-item ">
+      <a class="page-link" href="/" aria-label="previous-page">
         <i class="fas fa-angle-left"></i>
       </a>
     </li>
@@ -1116,7 +500,7 @@ Paging needs an additional memory lookup in order to translate each virtual addr
 
       
         <!-- show number -->
-        <li class="page-item  active">
+        <li class="page-item ">
           <a
             class="page-link"
             href="/"
@@ -1134,7 +518,7 @@ Paging needs an additional memory lookup in order to translate each virtual addr
 
       
         <!-- show number -->
-        <li class="page-item ">
+        <li class="page-item  active">
           <a
             class="page-link"
             href="/page2"
@@ -1145,15 +529,15 @@ Paging needs an additional memory lookup in order to translate each virtual addr
 
     <!-- mobile pagination -->
     <li class="page-index align-middle">
-      <span>1</span>
+      <span>2</span>
       <span class="text-muted">/ 2</span>
     </li>
 
     <!-- right arrow -->
     
 
-    <li class="page-item ">
-      <a class="page-link" href="/page2" aria-label="next-page">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" aria-label="next-page">
         <i class="fas fa-angle-right"></i>
       </a>
     </li>

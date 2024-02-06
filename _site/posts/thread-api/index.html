@@ -977,6 +977,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/threads-locks/">Threads Locks</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/concurrency-and-threads/">Concurrency and Threads</a>
         </li>
       
@@ -999,13 +1006,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/page-swapping/">Page Swapping</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/advanced-page-table/">Advanced Page Table</a>
         </li>
       
     </ul>
@@ -1096,6 +1096,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -1224,48 +1236,6 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/mlfq-scheduling-policy/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706112000"
-  data-df="ll"
-  
->
-  Jan 25, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Multilevel Feedback Queue Scheduling</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Example Run
-
-Enter the number of processes: 3
-Enter duration for process 1: 10
-Process 1 enqueued in queue with time quantum 2
-Enter duration for process 2: 20
-Process 2 enqueued in queue with time...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/why-memory-virtualisation/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1344,6 +1314,44 @@ Process 2 enqueued in queue with time...
           </a>
         </article>
       
+        <article class="col">
+          <a href="/posts/Transaction-Loodaside-Buffer/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1706371200"
+  data-df="ll"
+  
+>
+  Jan 28, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Transaction Lookaside Buffer</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Problem of Paging
+
+Paging needs an additional memory lookup in order to translate each virtual address, but it takes too long to obtain translation information before every instruction fetch, load,...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -1368,9 +1376,13 @@ Process 2 enqueued in queue with time...
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/threads-locks/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Threads Locks</p>
+    </a>
   
 </nav>
 

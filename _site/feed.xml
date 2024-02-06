@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-04T13:51:55+08:00</updated>
+  <updated>2024-02-06T21:56:11+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,48 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Threads Locks</title>
+    <link href="http://localhost:4000/posts/threads-locks/" rel="alternate" type="text/html" title="Threads Locks" />
+    <published>2024-02-05T00:00:00+08:00</published>
+  
+    <updated>2024-02-05T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/threads-locks/</id>
+    <content src="http://localhost:4000/posts/threads-locks/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      What is a Lock
+
+Lock is a tool for allowing running critical section code atomically by only allow one thread to be execute that part of code.
+
+How does a lock work?
+
+
+  Lock Variable: e.g. mutex. It holds the lock state.  It indicates whether the lock is free or acquired by a thread.
+  Acquiring a Lock: When a thread executes lock(&amp;amp;mutex), it acquires the lock if it’s free, allowing the th...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -84,7 +126,7 @@ typedef struct {
     <link href="http://localhost:4000/posts/concurrency-and-threads/" rel="alternate" type="text/html" title="Concurrency and Threads" />
     <published>2024-02-03T00:00:00+08:00</published>
   
-    <updated>2024-02-03T00:00:00+08:00</updated>
+    <updated>2024-02-04T14:01:54+08:00</updated>
   
     <id>http://localhost:4000/posts/concurrency-and-threads/</id>
     <content src="http://localhost:4000/posts/concurrency-and-threads/" />
@@ -202,42 +244,6 @@ The free Command
 The free command displays amount of free and used memory in the system.
 
 ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Memory Space Management with paging</title>
-    <link href="http://localhost:4000/posts/memory-space-management-with-paging/" rel="alternate" type="text/html" title="Memory Space Management with paging" />
-    <published>2024-01-28T00:00:00+08:00</published>
-  
-    <updated>2024-01-28T17:32:10+08:00</updated>
-  
-    <id>http://localhost:4000/posts/memory-space-management-with-paging/</id>
-    <content src="http://localhost:4000/posts/memory-space-management-with-paging/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      What is Paging
-
-Paging is another memory space management approach that dividing memory into fixed size of chuncks called pages. In contrast to segmentation, paging does not have external fragmentation and support the abstraction of an address space effectively, regardless of how a process uses the address space since it won’t make assumptions about the way the heap and stack grow and how they ...
     </summary>
   
 
