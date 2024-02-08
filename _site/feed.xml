@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-06T21:56:11+08:00</updated>
+  <updated>2024-02-08T21:10:48+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,49 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Concurrent Data Structures</title>
+    <link href="http://localhost:4000/posts/concurrent-data-structure/" rel="alternate" type="text/html" title="Concurrent Data Structures" />
+    <published>2024-02-07T00:00:00+08:00</published>
+  
+    <updated>2024-02-07T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/concurrent-data-structure/</id>
+    <content src="http://localhost:4000/posts/concurrent-data-structure/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Challenges of Concurrency in Data Structures
+
+
+  What are the strategies for adding locks to a data structure to ensure correct, concurrent access?
+  How can locks be applied in a way that maintains the speed and allows simultaneous access by multiple threads?
+
+
+Ideal Scenario: Perfect Scaling
+
+Perfect scaling is achieved when the time taken for threads to complete tasks on multiple processors ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -195,55 +238,6 @@ typedef struct {
   The OS have to zero the page for security reason so that the process cannot know how this page used for.
   Instead of the OS zeros the page before maps it into your address space, the OS  the OS just adds an entry to the page table marking it unavailable.
   When the process reads or writes the page, it traps...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Page Swapping</title>
-    <link href="http://localhost:4000/posts/page-swapping/" rel="alternate" type="text/html" title="Page Swapping" />
-    <published>2024-01-30T00:00:00+08:00</published>
-  
-    <updated>2024-02-01T21:09:37+08:00</updated>
-  
-    <id>http://localhost:4000/posts/page-swapping/</id>
-    <content src="http://localhost:4000/posts/page-swapping/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      What is page swapping
-
-Swap pages to disk so that the running programs to use more RAM than is physically accessible.
-
-Swap Space
-
-
-  Swap space is reserved space on the disk for moving pages between memory and the file system.
-  This assumes the OS can read and write to swap space in page-sized units.
-
-
-The free Command
-
-The free command displays amount of free and used memory in the system.
-
-...
     </summary>
   
 

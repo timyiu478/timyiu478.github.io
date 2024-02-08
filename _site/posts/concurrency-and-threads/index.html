@@ -786,6 +786,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/concurrent-data-structure/">Concurrent Data Structures</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/threads-locks/">Threads Locks</a>
         </li>
       
@@ -808,13 +815,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/vms-lazy-optimizations/">VMS Lazy Optimizations</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/page-swapping/">Page Swapping</a>
         </li>
       
     </ul>
@@ -905,6 +905,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -1045,46 +1057,6 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/why-memory-virtualisation/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706198400"
-  data-df="ll"
-  
->
-  Jan 26, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Why Memory Virtualisation?</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  
-  Transparency: user program dont need to worry about the physical memory address.
-  Protection: each process only can manipulate its own address space.
-
-
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/memory-segmentation/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1155,6 +1127,49 @@
                   Problem of Paging
 
 Paging needs an additional memory lookup in order to translate each virtual address, but it takes too long to obtain translation information before every instruction fetch, load,...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/advanced-page-table/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1706371200"
+  data-df="ll"
+  
+>
+  Jan 28, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Advanced Page Table</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Problem of Linear Page Table
+
+
+  The size of the page table is too big.
+  We need to allocate the physical memory for the page table entries that there is no physical frame as well.
+
+
+Larger Page s...
                 </p>
               </div>
             </div>
