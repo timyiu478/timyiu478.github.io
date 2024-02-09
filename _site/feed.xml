@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-09T22:44:06+08:00</updated>
+  <updated>2024-02-10T02:39:51+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,50 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Semaphore</title>
+    <link href="http://localhost:4000/posts/semaphore/" rel="alternate" type="text/html" title="Semaphore" />
+    <published>2024-02-09T00:00:00+08:00</published>
+  
+    <updated>2024-02-09T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/semaphore/</id>
+    <content src="http://localhost:4000/posts/semaphore/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      What is Semaphore?
+
+Semaphores serve as a unified primitive, adept at handling synchronization tasks traditionally managed by both locks and condition variables.
+
+Essence of a Semaphore
+
+
+  Semaphores operate on a integer value, manipulated by two pivotal routines:
+    
+      sem_wait(): Decreases the semaphore value by one. If this action would lead to a negative value, the thread must wait.
+ ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -203,46 +247,6 @@ typedef struct {
 } myret_t;
 
 // Thread function to perform a task...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Concurrency and Threads</title>
-    <link href="http://localhost:4000/posts/concurrency-and-threads/" rel="alternate" type="text/html" title="Concurrency and Threads" />
-    <published>2024-02-03T00:00:00+08:00</published>
-  
-    <updated>2024-02-04T14:01:54+08:00</updated>
-  
-    <id>http://localhost:4000/posts/concurrency-and-threads/</id>
-    <content src="http://localhost:4000/posts/concurrency-and-threads/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Threads
-
-
-  Each thread is like an independent worker, but they all share the same memory space.
-  Each thread has its own Program Counter(PC) to keeps track of where a thread is in its execution.
-  Just like a process has a control block to keep track of its state, each thread has its own Thread Control Block(TCB).
-  Each thread has its own stack. This means each thread can handle its own func...
     </summary>
   
 

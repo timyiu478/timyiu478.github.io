@@ -30,23 +30,22 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="VMS Lazy Optimizations" />
+<meta property="og:title" content="Semaphore" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Demand Page Zeroing" />
-<meta property="og:description" content="Demand Page Zeroing" />
-<link rel="canonical" href="http://localhost:4000/posts/vms-lazy-optimizations/" />
-<meta property="og:url" content="http://localhost:4000/posts/vms-lazy-optimizations/" />
+<meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
+<meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
+<link rel="canonical" href="http://localhost:4000/%5C" />
+<meta property="og:url" content="http://localhost:4000/%5C" />
 <meta property="og:site_name" content="Tim Yiu" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-02-02T00:00:00+08:00" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="VMS Lazy Optimizations" />
+<meta property="twitter:title" content="Semaphore" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-02-02T00:00:00+08:00","datePublished":"2024-02-02T00:00:00+08:00","description":"Demand Page Zeroing","headline":"VMS Lazy Optimizations","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/vms-lazy-optimizations/"},"url":"http://localhost:4000/posts/vms-lazy-optimizations/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Semaphore","url":"http://localhost:4000/%5C"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>VMS Lazy Optimizations | Tim Yiu
+  <title>Semaphore | Tim Yiu
   </title>
 
   <!--
@@ -97,8 +96,6 @@
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
   
 
   
@@ -285,10 +282,8 @@
           
         
           
-        
-          
             
-              <span>VMS Lazy Optimizations</span>
+              <span>Semaphore</span>
             
 
           
@@ -371,49 +366,6 @@
   
 
   
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
 
   
   
@@ -440,7 +392,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>VMS Lazy Optimizations</h1>
+    <h1 data-toc-skip>Semaphore</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -456,13 +408,13 @@
 
 <time
   
-  data-ts="1706803200"
+  data-ts=""
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb  2, 2024
+  
 </time>
 
       </span>
@@ -507,7 +459,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="219 words"
+  title="4 words"
 >
   <em>1 min</em> read</span>
 
@@ -518,31 +470,7 @@
   </header>
 
   <div class="content">
-    <h2 id="demand-page-zeroing"><span class="me-2">Demand Page Zeroing</span><a href="#demand-page-zeroing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<ul>
-  <li>Consider adding a page to the address space, say in the heap.</li>
-  <li>The OS have to <strong>zero</strong> the page for security reason so that the process cannot know how this page used for.</li>
-  <li>Instead of the OS zeros the page <strong>before maps it into your address space</strong>, the OS  the OS just adds an entry to the page table <strong>marking it unavailable</strong>.</li>
-  <li>When the process <strong>reads or writes</strong> the page, it <strong>traps</strong> the OS. A demand-zero page is identified by the OS using certain bits designated in the “reserved for OS” portion of the page table entry.</li>
-  <li>The OS then finds a physical page, zeroes it, and maps it into the process’s address space.</li>
-  <li>This task(zeros the page) is avoided if the process <strong>never accesses the page</strong>.</li>
-</ul>
-
-<h2 id="copy-on-write"><span class="me-2">Copy-On-Write</span><a href="#copy-on-write" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<ul>
-  <li>Instead of copying a page from one address space to another, the OS can <strong>map it into the target address space and declare it read-only in both address spaces</strong>.</li>
-  <li>If both address spaces <strong>just read</strong> the page, <strong>no data is moved</strong>.</li>
-  <li>A page write attempt from one of the address spaces will be logged into the OS. The OS then allocate a new page, fill it with data, and map it into the address space of the faulting process.</li>
-  <li>So it saves <strong>unnecessary copying</strong>.</li>
-</ul>
-
-<h2 id="references"><span class="me-2">References</span><a href="#references" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<ol>
-  <li>VMS - <a href="https://en.wikipedia.org/wiki/OpenVMS">https://en.wikipedia.org/wiki/OpenVMS</a></li>
-</ol>
+    ## What is Semaphore?
 
   </div>
 
@@ -730,11 +658,6 @@
 
 
 
-  <section id="toc-wrapper" class="ps-0 pe-4">
-    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
-    <nav id="toc"></nav>
-  </section>
-
 
             
           </aside>
@@ -843,7 +766,15 @@
   
 
   
-    
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1080,97 +1011,21 @@ Swap Space
   
 
   
-    <a
-      href="/posts/page-swapping/"
-      class="btn btn-outline-primary"
-      aria-label="Older"
-    >
-      <p>Page Swapping</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Older">
+      <p>-</p>
+    </div>
   
 
   
-    <a
-      href="/posts/concurrency-and-threads/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>Concurrency and Threads</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
             
               
               <!--  The comments switcher -->
-
-  
-  <!-- https://giscus.app/ -->
-<script type="text/javascript">
-  (function () {
-    const origin = 'https://giscus.app';
-    const iframe = 'iframe.giscus-frame';
-    const lightTheme = 'light';
-    const darkTheme = 'dark_dimmed';
-
-    let initTheme = lightTheme;
-    const html = document.documentElement;
-
-    if (
-      (html.hasAttribute('data-mode') &&
-        html.getAttribute('data-mode') === 'dark') ||
-      (!html.hasAttribute('data-mode') &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      initTheme = darkTheme;
-    }
-
-    let giscusAttributes = {
-      src: 'https://giscus.app/client.js',
-      'data-repo': 'timyiu478/timyiu478.github.io',
-      'data-repo-id': 'R_kgDOLHfwOQ',
-      'data-category': 'General',
-      'data-category-id': 'DIC_kwDOLHfwOc4Cckt6',
-      'data-mapping': 'pathname',
-      'data-reactions-enabled': '1',
-      'data-emit-metadata': '0',
-      'data-theme': initTheme,
-      'data-input-position': 'bottom',
-      'data-lang': 'en',
-      'data-loading': 'lazy',
-      crossorigin: 'anonymous',
-      async: ''
-    };
-
-    let giscusScript = document.createElement('script');
-    Object.entries(giscusAttributes).forEach(([key, value]) =>
-      giscusScript.setAttribute(key, value)
-    );
-    document.getElementById('tail-wrapper').appendChild(giscusScript);
-
-    addEventListener('message', (event) => {
-      if (
-        event.source === window &&
-        event.data &&
-        event.data.direction === ModeToggle.ID
-      ) {
-        /* global theme mode changed */
-        const mode = event.data.message;
-        const theme = mode === ModeToggle.DARK_MODE ? darkTheme : lightTheme;
-
-        const message = {
-          setConfig: {
-            theme: theme
-          }
-        };
-
-        const giscus = document.querySelector(iframe).contentWindow;
-        giscus.postMessage({ giscus: message }, origin);
-      }
-    });
-  })();
-</script>
-
 
 
             
@@ -1393,16 +1248,9 @@ Swap Space
 
   
 
-  
-    
-
-    
-
-  
 
 
-
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
 
 
 
