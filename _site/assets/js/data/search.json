@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Condition Variables in Threading",
+    "url": "/posts/condition-variables-in-threading/",
+    "categories": "OS",
+    "tags": "OS",
+    "date": "2024-02-09 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "What is Condition Variables?Condition variables in threading allow threads to wait for certain conditions to be true. When the condition changes, threads can be woken up by signaling the condition ...",
+    "content": "What is Condition Variables?Condition variables in threading allow threads to wait for certain conditions to be true. When the condition changes, threads can be woken up by signaling the condition variable.Why we need Condition Variables?It allows a thread to wait for a specific condition without wasting CPU cycles.Mesa vs. Hoare Semantics  In Mesa semantics, signaling indicates a state change without guaranteeing the state upon the thread’s activation.  Hoare semantics ensures immediate action post-signaling but is harder to implement. Most systems opt for Mesa semantics.The Producer/Consumer (Bounded Buffer) ProblemThis problem involves producer threads creating data items and storing them in a share buffer, and consumer threads taking these items from the buffer for use.Synchronization requirementProducers only put data into the buffer when count is buffer is empty and consumers only retrieve data when count is buffer is full.Initial Implementation in C++int loops; // Initialized elsewherecond_t cond;mutex_t mutex;void *producer(void *arg) { for (int i = 0; i &lt; loops; i++) {  Pthread_mutex_lock(&amp;mutex);   if (count == 1)   Pthread_cond_wait(&amp;cond, &amp;mutex);  put(i);  Pthread_cond_signal(&amp;cond);  Pthread_mutex_unlock(&amp;mutex); }}void *consumer(void *arg) { for (int i = 0; i &lt; loops; i++) {  Pthread_mutex_lock(&amp;mutex);   if (count == 0)   Pthread_cond_wait(&amp;cond, &amp;mutex);  int tmp = get();  Pthread_cond_signal(&amp;cond);  Pthread_mutex_unlock(&amp;mutex);  printf(\"%d\\n\", tmp); }}Problem of Initial ImplementationThe issue stems from the buffer state changing after Consumer thread Tc1 is signaled but before it acts since the system use Mesa semantics.Assume there are 1 producer Tp and two consumers Tc1 and Tc2.  Tc1 checked count = 0 so it waits.  Tp puts item since count = 0 and then signals Tc1 to Ready state.  Before Tc1 can consume, Tc2 intervenes and consumes the buffer value.  When Tc1 resumes, it finds an empty buffer, leading to an assertion failure.Implementing a While Loop for Condition VariablesReplacing if statements with while loops in both producer and consumer functions. This ensures that whenever a thread wakes up, it rechecks the shared variable’s state.Unresolved Issue: DeadLock  Both consumers go to sleep as the buffer is empty.  Tp fills the buffer and signals, waking Tc1.  Tp producer keeps take control the CPU and try to add more data, it finds the buffer full and sleeps.  Tc1 consumes the buffer and signals, but if it accidentally wakes Tc2.  Tc2 finds an empty buffer and sleeps again.  Tp also asleep, leaves the system in a deadlock."
+  },
+  
+  {
     "title": "Concurrent Data Structures",
     "url": "/posts/concurrent-data-structure/",
     "categories": "OS",

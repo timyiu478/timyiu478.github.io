@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-08T21:10:48+08:00</updated>
+  <updated>2024-02-09T22:44:06+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,51 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Condition Variables in Threading</title>
+    <link href="http://localhost:4000/posts/condition-variables-in-threading/" rel="alternate" type="text/html" title="Condition Variables in Threading" />
+    <published>2024-02-09T00:00:00+08:00</published>
+  
+    <updated>2024-02-09T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/condition-variables-in-threading/</id>
+    <content src="http://localhost:4000/posts/condition-variables-in-threading/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      What is Condition Variables?
+
+Condition variables in threading allow threads to wait for certain conditions to be true. When the condition changes, threads can be woken up by signaling the condition variable.
+
+Why we need Condition Variables?
+
+It allows a thread to wait for a specific condition without wasting CPU cycles.
+
+Mesa vs. Hoare Semantics
+
+
+  In Mesa semantics, signaling indicates a st...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -198,46 +243,6 @@ typedef struct {
   Each thread has its own Program Counter(PC) to keeps track of where a thread is in its execution.
   Just like a process has a control block to keep track of its state, each thread has its own Thread Control Block(TCB).
   Each thread has its own stack. This means each thread can handle its own func...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>VMS Lazy Optimizations</title>
-    <link href="http://localhost:4000/posts/vms-lazy-optimizations/" rel="alternate" type="text/html" title="VMS Lazy Optimizations" />
-    <published>2024-02-02T00:00:00+08:00</published>
-  
-    <updated>2024-02-02T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/vms-lazy-optimizations/</id>
-    <content src="http://localhost:4000/posts/vms-lazy-optimizations/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Demand Page Zeroing
-
-
-  Consider adding a page to the address space, say in the heap.
-  The OS have to zero the page for security reason so that the process cannot know how this page used for.
-  Instead of the OS zeros the page before maps it into your address space, the OS  the OS just adds an entry to the page table marking it unavailable.
-  When the process reads or writes the page, it traps...
     </summary>
   
 
