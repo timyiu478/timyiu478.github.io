@@ -231,3 +231,88 @@ int main() {
 
 - a risk that readers could continually access the data structure, starving writers who are waiting for an opportunity to acquire the write lock.
 - don’t always result in performance improvement over simpler, faster locking primitives.
+
+## Thread throttling
+
+Thread throttling is a semaphore application in concurrency control, where the goal is to **limit the number of threads running simultaneously** to prevent system slowdowns. 
+
+### Semaphore as a Solution
+
+```c
+sem_t semaphore;
+sem_init(&semaphore, 0, threshold); // threshold is the max allowed threads
+
+void memory_intensive_operation() {
+    sem_wait(&semaphore); // Enter region
+    // Perform memory-intensive work
+    sem_post(&semaphore); // Leave region
+}
+```
+
+### Implementing Semaphores
+
+Unlike traditional semaphores, where the negative value indicates the number of waiting threads, in this implementation, **the semaphore value never goes below zero**. This approach simplifies the implementation and aligns with current practices like those in Linux.
+
+```c
+typedef struct __Zem_t {
+    int value;
+    pthread_cond_t cond;
+    pthread_mutex_t lock;
+} Zem_t;
+
+// Initialize the semaphore
+void Zem_init(Zem_t *s, int value) {
+    s->value = value;
+    pthread_cond_init(&s->cond, NULL);
+    pthread_mutex_init(&s->lock, NULL);
+}
+
+// Semaphore wait operation
+void Zem_wait(Zem_t *s) {
+    pthread_mutex_lock(&s->lock);
+    while (s->value <= 0)
+        pthread_cond_wait(&s->cond, &s->lock);
+    s->value--;
+    pthread_mutex_unlock(&s->lock);
+}
+
+// Semaphore post operation
+void Zem_post(Zem_t *s) {
+    pthread_mutex_lock(&s->lock);
+    s->value++;
+    pthread_cond_signal(&s->cond);
+    pthread_mutex_unlock(&s->lock);
+}
+```
+
+### Use Zem_t to throttle threads
+
+```c
+void *memory_intensive_operation(void *arg) {
+    Zem_t *sem = (Zem_t *)arg;
+    Zem_wait(sem);
+    printf("Thread entered memory-intensive region\n");
+    sleep(1);
+    // Simulate memory-intensive work
+    Zem_post(sem);
+    printf("Thread exited memory-intensive region\n");
+    return NULL;
+}
+
+int main() {
+    const int MAX_THREADS = 5; // Maximum number of concurrent threads in the region
+    Zem_t sem;
+    Zem_init(&sem, 3); // Allowing 3 threads to enter the region simultaneously
+
+    pthread_t threads[MAX_THREADS];
+    for (int i = 0; i < MAX_THREADS; i++) {
+        pthread_create(&threads[i], NULL, memory_intensive_operation, &sem);
+    }
+
+    for (int i = 0; i < MAX_THREADS; i++) {
+        pthread_join(threads[i], NULL);
+    }
+
+    return 0;
+}
+```
