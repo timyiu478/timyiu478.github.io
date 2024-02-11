@@ -888,6 +888,13 @@ Swap:        2097148          12     2097136
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/concurrency-bugs/">Concurrency Bugs</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/multi-cpu-scheduling/">Multi CPU Scheduling</a>
         </li>
       
@@ -903,13 +910,6 @@ Swap:        2097148          12     2097136
         
         <li class="text-truncate lh-lg">
           <a href="/posts/concurrent-data-structure/">Concurrent Data Structures</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/threads-locks/">Threads Locks</a>
         </li>
       
     </ul>
@@ -1100,6 +1100,18 @@ Swap:        2097148          12     2097136
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -1188,44 +1200,6 @@ Swap:        2097148          12     2097136
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/memory-space-management-with-paging/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706371200"
-  data-df="ll"
-  
->
-  Jan 28, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Memory Space Management with paging</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  What is Paging
-
-Paging is another memory space management approach that dividing memory into fixed size of chuncks called pages. In contrast to segmentation, paging does not have external fragmenta...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/vms-lazy-optimizations/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1300,6 +1274,79 @@ Paging is another memory space management approach that dividing memory into fix
 
   Each thread is like an independent worker, but they all share the same memory space.
   Each thread has its own Program Counter(PC) to keeps track of where a thread is in its execution.
+...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/thread-api/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1706889600"
+  data-df="ll"
+  
+>
+  Feb  3, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Thread API</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Thread Creation in POSIX
+
+Functions
+
+
+  create thread: pthread_create
+  wait a thread to complete: pthread_join
+
+
+Example Code
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
 ...
                 </p>
               </div>

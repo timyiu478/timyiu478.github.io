@@ -840,6 +840,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/concurrency-bugs/">Concurrency Bugs</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/multi-cpu-scheduling/">Multi CPU Scheduling</a>
         </li>
       
@@ -855,13 +862,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/concurrent-data-structure/">Concurrent Data Structures</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/threads-locks/">Threads Locks</a>
         </li>
       
     </ul>
@@ -1125,6 +1125,18 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -1138,44 +1150,6 @@
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
-      
-        <article class="col">
-          <a href="/posts/memory-space-management-with-paging/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706371200"
-  data-df="ll"
-  
->
-  Jan 28, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Memory Space Management with paging</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  What is Paging
-
-Paging is another memory space management approach that dividing memory into fixed size of chuncks called pages. In contrast to segmentation, paging does not have external fragmenta...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
       
         <article class="col">
           <a href="/posts/page-swapping/" class="post-preview card h-100">
@@ -1261,6 +1235,47 @@ Swap Space
           </a>
         </article>
       
+        <article class="col">
+          <a href="/posts/concurrency-and-threads/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1706889600"
+  data-df="ll"
+  
+>
+  Feb  3, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Concurrency and Threads</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Threads
+
+
+  Each thread is like an independent worker, but they all share the same memory space.
+  Each thread has its own Program Counter(PC) to keeps track of where a thread is in its execution.
+...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -1276,11 +1291,11 @@ Swap Space
 
   
     <a
-      href="/posts/semaphore/"
+      href="/posts/concurrency-bugs/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Semaphore</p>
+      <p>Concurrency Bugs</p>
     </a>
   
 
