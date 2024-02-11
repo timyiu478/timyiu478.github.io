@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-10T12:48:14+08:00</updated>
+  <updated>2024-02-11T14:12:33+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,50 @@
 
   
   <entry>
+    <title>Multi CPU Scheduling</title>
+    <link href="http://localhost:4000/posts/multi-cpu-scheduling/" rel="alternate" type="text/html" title="Multi CPU Scheduling" />
+    <published>2024-02-10T00:00:00+08:00</published>
+  
+    <updated>2024-02-10T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/multi-cpu-scheduling/</id>
+    <content src="http://localhost:4000/posts/multi-cpu-scheduling/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Key Questions
+
+
+  How to Schedule Jobs on Multiple CPUs? Strategies and mechanisms for effectively distributing tasks across multiple processing units.
+  Emerging Challenges in Multiprocessor Scheduling: Identifying and addressing unique issues that arise when transitioning from single to multiple CPU systems.
+  Load Balancing in Multi-Queue Multiprocessor Schedulers: Methods to achieve optimal...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Semaphore</title>
     <link href="http://localhost:4000/posts/semaphore/" rel="alternate" type="text/html" title="Semaphore" />
     <published>2024-02-09T00:00:00+08:00</published>
   
-    <updated>2024-02-09T00:00:00+08:00</updated>
+    <updated>2024-02-10T12:50:22+08:00</updated>
   
     <id>http://localhost:4000/posts/semaphore/</id>
     <content src="http://localhost:4000/posts/semaphore/" />
@@ -187,66 +226,6 @@ How does a lock work?
 
   Lock Variable: e.g. mutex. It holds the lock state.  It indicates whether the lock is free or acquired by a thread.
   Acquiring a Lock: When a thread executes lock(&amp;amp;mutex), it acquires the lock if it’s free, allowing the th...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Thread API</title>
-    <link href="http://localhost:4000/posts/thread-api/" rel="alternate" type="text/html" title="Thread API" />
-    <published>2024-02-03T00:00:00+08:00</published>
-  
-    <updated>2024-02-03T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/thread-api/</id>
-    <content src="http://localhost:4000/posts/thread-api/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Thread Creation in POSIX
-
-Functions
-
-
-  create thread: pthread_create
-  wait a thread to complete: pthread_join
-
-
-Example Code
-
-#include &amp;lt;stdio.h&amp;gt;
-#include &amp;lt;stdlib.h&amp;gt;
-#include &amp;lt;pthread.h&amp;gt;
-
-// Define structures for argument and return values
-typedef struct {
-    int a;
-    int b;
-} myarg_t;
-
-typedef struct {
-    int x;
-    int y;
-} myret_t;
-
-// Thread function to perform a task...
     </summary>
   
 

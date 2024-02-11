@@ -881,14 +881,21 @@ Swap:        2097148          12     2097136
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/condition-variables-in-threading/">Condition Variables in Threading</a>
+          <a href="/posts/semaphore/">Semaphore</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/semaphore/">Semaphore</a>
+          <a href="/posts/multi-cpu-scheduling/">Multi CPU Scheduling</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/condition-variables-in-threading/">Condition Variables in Threading</a>
         </li>
       
         
@@ -903,13 +910,6 @@ Swap:        2097148          12     2097136
         
         <li class="text-truncate lh-lg">
           <a href="/posts/threads-locks/">Threads Locks</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/concurrency-and-threads/">Concurrency and Threads</a>
         </li>
       
     </ul>
@@ -1088,6 +1088,18 @@ Swap:        2097148          12     2097136
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -1176,49 +1188,6 @@ Swap:        2097148          12     2097136
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/advanced-page-table/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706371200"
-  data-df="ll"
-  
->
-  Jan 28, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Advanced Page Table</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Problem of Linear Page Table
-
-
-  The size of the page table is too big.
-  We need to allocate the physical memory for the page table entries that there is no physical frame as well.
-
-
-Larger Page s...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/memory-space-management-with-paging/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1291,6 +1260,47 @@ Paging is another memory space management approach that dividing memory into fix
   Consider adding a page to the address space, say in the heap.
   The OS have to zero the page for security reason so that the process cannot know how this page used for.
   In...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/concurrency-and-threads/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1706889600"
+  data-df="ll"
+  
+>
+  Feb  3, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Concurrency and Threads</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Threads
+
+
+  Each thread is like an independent worker, but they all share the same memory space.
+  Each thread has its own Program Counter(PC) to keeps track of where a thread is in its execution.
+...
                 </p>
               </div>
             </div>

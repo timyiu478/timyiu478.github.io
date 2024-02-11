@@ -30,23 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Concurrency and Threads" />
+<meta property="og:title" content="Multi CPU Scheduling" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Threads" />
-<meta property="og:description" content="Threads" />
-<link rel="canonical" href="http://localhost:4000/posts/concurrency-and-threads/" />
-<meta property="og:url" content="http://localhost:4000/posts/concurrency-and-threads/" />
+<meta name="description" content="Key Questions" />
+<meta property="og:description" content="Key Questions" />
+<link rel="canonical" href="http://localhost:4000/posts/multi-cpu-scheduling/" />
+<meta property="og:url" content="http://localhost:4000/posts/multi-cpu-scheduling/" />
 <meta property="og:site_name" content="Tim Yiu" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-02-03T00:00:00+08:00" />
+<meta property="article:published_time" content="2024-02-10T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Concurrency and Threads" />
+<meta property="twitter:title" content="Multi CPU Scheduling" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-02-04T14:01:54+08:00","datePublished":"2024-02-03T00:00:00+08:00","description":"Threads","headline":"Concurrency and Threads","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/concurrency-and-threads/"},"url":"http://localhost:4000/posts/concurrency-and-threads/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-02-10T00:00:00+08:00","datePublished":"2024-02-10T00:00:00+08:00","description":"Key Questions","headline":"Multi CPU Scheduling","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/multi-cpu-scheduling/"},"url":"http://localhost:4000/posts/multi-cpu-scheduling/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Concurrency and Threads | Tim Yiu
+  <title>Multi CPU Scheduling | Tim Yiu
   </title>
 
   <!--
@@ -288,7 +288,7 @@
         
           
             
-              <span>Concurrency and Threads</span>
+              <span>Multi CPU Scheduling</span>
             
 
           
@@ -444,6 +444,61 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -459,28 +514,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -516,7 +549,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Concurrency and Threads</h1>
+    <h1 data-toc-skip>Multi CPU Scheduling</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -532,41 +565,18 @@
 
 <time
   
-  data-ts="1706889600"
+  data-ts="1707494400"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb  3, 2024
+  Feb 10, 2024
 </time>
 
       </span>
 
       <!-- lastmod date -->
-      
-        <span>
-          Updated
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1707026514"
-  data-df="ll"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  Feb  4, 2024
-</time>
-
-        </span>
       
 
       
@@ -606,9 +616,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="492 words"
+  title="777 words"
 >
-  <em>2 min</em> read</span>
+  <em>4 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -617,69 +627,106 @@
   </header>
 
   <div class="content">
-    <h2 id="threads"><span class="me-2">Threads</span><a href="#threads" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="key-questions"><span class="me-2">Key Questions</span><a href="#key-questions" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>Each thread is like an independent worker, but they all <strong>share the same memory space</strong>.</li>
-  <li>Each thread has its own <strong>Program Counter(PC)</strong> to keeps track of where a thread is in its execution.</li>
-  <li>Just like a process has a control block to <strong>keep track of its state</strong>, each thread has its own <strong>Thread Control Block(TCB)</strong>.</li>
-  <li>Each thread has its own <strong>stack</strong>. This means each thread can handle its own functions and data, keeping them in its personal stack.</li>
-  <li><strong>Context switch</strong> is allowed by saving and loading different sets of registers for each thread.</li>
+  <li><strong>How to Schedule Jobs on Multiple CPUs?</strong> Strategies and mechanisms for effectively distributing tasks across multiple processing units.</li>
+  <li>Emerging <strong>Challenges in Multiprocessor Scheduling</strong>: Identifying and addressing unique issues that arise when transitioning from single to multiple CPU systems.</li>
+  <li><strong>Load Balancing in Multi-Queue Multiprocessor Schedulers</strong>: Methods to achieve optimal workload distribution among CPUs, ensuring efficient utilization of resources.</li>
 </ul>
 
-<h2 id="why-use-threads"><span class="me-2">Why use threads?</span><a href="#why-use-threads" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>They are useful on <strong>parallelism</strong> and handling <strong>I/O (Input/Output) operations</strong>.</p>
-
-<h3 id="parallelism"><span class="me-2">Parallelism</span><a href="#parallelism" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>In multi-processor system, we can speed up the process by <strong>dividing the task(e.g. adding numbers in a huge array) among multiple threads</strong>, with each processor handling a part of the job.</p>
-
-<h3 id="avoid-delays-caused-by-io-operations"><span class="me-2">Avoid delays caused by I/O operations</span><a href="#avoid-delays-caused-by-io-operations" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>If a program only used one thread and had to wait for an I/O operation to complete, it couldn’t do anything else during that time. By using multiple threads, <strong>one thread can handle the I/O operation while others continue processing or initiating more I/O requests</strong>.</p>
-
-<h3 id="why-not-just-use-multiple-processes-instead-of-threads"><span class="me-2">Why not just use multiple processes instead of threads?</span><a href="#why-not-just-use-multiple-processes-instead-of-threads" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>Threads have a special advantage: they <strong>share the same address space</strong>. This makes <strong>data sharing between threads straightforward and efficient</strong>, especially suitable for tasks that are <strong>closely related</strong>.</p>
-
-<h2 id="race-condition"><span class="me-2">Race Condition</span><a href="#race-condition" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="implications-for-applications"><span class="me-2">Implications for Applications</span><a href="#implications-for-applications" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>When multiple threads access and <strong>modify the same data</strong>, <strong>unpredictable outcomes</strong> can occur because of the <strong>uncontrollable threads scheduling</strong>.</li>
-  <li>For example, in order to increment an counter, <strong>3 machine codes</strong> will be generated by compiler.
-    <ol>
-      <li>load counter value from memory to register(e.g. <code class="language-plaintext highlighter-rouge">eax</code>).</li>
-      <li>increment the register.</li>
-      <li>store back the updated register value to counter memory location.</li>
-    </ol>
-  </li>
-  <li>Two threads (Thread 1 and Thread 2) executing this sequence concurrently so that <strong>the code executed twice, but the counter incremented only once</strong>.
-    <ol>
-      <li>Thread 1: loading the counter value(<code class="language-plaintext highlighter-rouge">10</code>) into <code class="language-plaintext highlighter-rouge">eax</code> and increments it to <code class="language-plaintext highlighter-rouge">11</code>.</li>
-      <li>Context Switch to Thread 2.</li>
-      <li>Thread 2: loading the counter value(<code class="language-plaintext highlighter-rouge">10</code>) into <code class="language-plaintext highlighter-rouge">eax</code> and increments it to <code class="language-plaintext highlighter-rouge">11</code>, store its <code class="language-plaintext highlighter-rouge">eax</code> value(<code class="language-plaintext highlighter-rouge">11</code>) back to memory.</li>
-      <li>Context Switch to Thread 1.</li>
-      <li>Thread 1: store its <code class="language-plaintext highlighter-rouge">eax</code> value(<code class="language-plaintext highlighter-rouge">11</code>) back to memory.</li>
-    </ol>
+  <li>Conventional Applications: Standard applications, like a C program, typically <strong>utilize only one CPU</strong>. Therefore, adding more CPUs doesn’t inherently boost their performance.</li>
+  <li><strong>Multi-Threaded</strong> Applications: These applications can <strong>distribute their workload across multiple CPUs</strong>, achieving significant performance gains.</li>
+</ul>
+
+<h2 id="role-of-caches-in-multiprocessor-systems"><span class="me-2">Role of Caches in Multiprocessor Systems</span><a href="#role-of-caches-in-multiprocessor-systems" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>Caches are <strong>small, fast memory units that store copies of data from the system’s main memory</strong>, crucial for enhancing processing speed.</li>
+  <li>Each processor has its <strong>own chache</strong> but several processors <strong>share a single main memory</strong>.</li>
+</ul>
+
+<h2 id="challenges-in-multiprocessor-caching"><span class="me-2">Challenges in Multiprocessor Caching</span><a href="#challenges-in-multiprocessor-caching" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>How data is <strong>shared and cached across multiple CPUs</strong>, affecting data access patterns and efficiency.</p>
+
+<h2 id="cache-coherence-problem"><span class="me-2">Cache Coherence Problem</span><a href="#cache-coherence-problem" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>The problem of cache coherence becomes evident when <strong>processes migrate between CPUs or when multiple CPUs access the same memory block</strong>.</p>
+
+<ul>
+  <li><strong>Process Migration</strong>: If a program initially running on CPU A switches to CPU B, the latter CPU <strong>lacks immediate access to the previously cached data in CPU A’s cache</strong>.</li>
+  <li><strong>Inefficient Data Access</strong>: CPU B, lacking the needed data in its cache, <strong>must access the main memory</strong>, leading to inefficiencies and potential data inconsistencies.</li>
+  <li><strong>Inconsistency Risks</strong>: The situation becomes even more complicated if <strong>both CPUs attempt to modify the same memory location</strong>, leading to potential data inconsistencies between their caches and the main memory.</li>
+</ul>
+
+<h2 id="addressing-cache-coherence"><span class="me-2">Addressing Cache Coherence</span><a href="#addressing-cache-coherence" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>Modern multiprocessor systems implement <strong>hardware-level mechanisms</strong> to ensure cache coherence. These mechanisms can <strong>detect and manage data that is simultaneously accessed or modified by multiple CPUs</strong>.</li>
+  <li>Operating systems and applications can also be designed to <strong>minimize cache coherence issues</strong>, for instance, by <strong>managing process allocation to CPUs</strong> or <strong>optimizing memory access patterns</strong>.</li>
+</ul>
+
+<h2 id="synchronization-in-multiprocessor-systems"><span class="me-2">Synchronization in Multiprocessor Systems</span><a href="#synchronization-in-multiprocessor-systems" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Even with cache coherence protocols in place, challenges persist in ensuring consistent and correct data manipulation.</p>
+
+<h3 id="case-study-shared-linked-list"><span class="me-2">Case Study: Shared Linked List</span><a href="#case-study-shared-linked-list" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Imagine a scenario where two CPU threads concurrently execute a routine to <strong>remove an element from a shared linked list</strong>:</p>
+
+<ol>
+  <li>Thread 1 executes the first line, storing the current <code class="language-plaintext highlighter-rouge">head</code> value in its <code class="language-plaintext highlighter-rouge">tmp</code> variable.</li>
+  <li>Thread 2 also executes the same line, capturing the same <code class="language-plaintext highlighter-rouge">head</code> value in its separate <code class="language-plaintext highlighter-rouge">tmp</code> variable (since tmp is stack-allocated and thus private to each thread).</li>
+</ol>
+
+<p>Both threads attempt to <strong>remove the same element</strong>, leading to potential data corruption or other unintended consequences.</p>
+
+<p>To prevent the concurrent access issues, we use <strong>mutex locks</strong> for the critical section (data manipulation part).</p>
+
+<h2 id="cache-affinity"><span class="me-2">Cache Affinity</span><a href="#cache-affinity" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>A multiprocessor scheduler should consider Cache affinity when <strong>scheduling</strong>, and thus if possible <strong>keeping a process on the same CPU</strong>.</li>
+  <li>When a process runs on the same CPU repeatedly, benefiting from the state information accumulated in that CPU’s caches</li>
+  <li>When a process is frequently shifted between different CPUs, it faces a performance hit. Each CPU switch <strong>forces the process to reload its state into a new cache</strong>, which is a slower operation.</li>
+</ul>
+
+<h2 id="single-queue-multiprocessor-scheduling-sqms"><span class="me-2">Single-Queue Multiprocessor Scheduling (SQMS)</span><a href="#single-queue-multiprocessor-scheduling-sqms" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>SQMS involves <strong>placing all jobs in a single queue</strong>, adopting a structure similar to single-processor scheduling.</p>
+
+<ul>
+  <li>The use of <strong>locks</strong> to access the single queue can lead to <strong>performance bottlenecks</strong>, especially as the number of CPUs increases. The <strong>competition for the single lock results in increased overhead</strong> and reduced job execution time.</li>
+  <li>In SQMS, jobs tend to <strong>move between CPUs</strong>, which goes against the principle of cache affinity.</li>
+</ul>
+
+<h2 id="multi-queue-multiprocessor-scheduling-mqms"><span class="me-2">Multi-Queue Multiprocessor Scheduling (MQMS)</span><a href="#multi-queue-multiprocessor-scheduling-mqms" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>MQMS addresses the limitations of SQMS by <strong>assigning each CPU its own scheduling queue</strong>.</p>
+
+<ul>
+  <li>Each queue <strong>operates independently</strong>, significantly reducing the need for synchronization and information sharing across CPUs.</li>
+  <li>Jobs are more likely to <strong>remain on the same CPU across executions</strong>, allowing them to benefit from cache affinity</li>
+  <li>While MQMS supports cache affinity, it requires <strong>effective load balancing strategies</strong> to ensure that <strong>no single CPU is overwhelmed or underutilized</strong>.
+    <ul>
+      <li>A technique that <strong>move jobs around CPUs</strong> which we call <strong>migration</strong>.</li>
+      <li><strong>Work stealing</strong> is one basic method the system used to decide how to perform such a migration.</li>
+    </ul>
   </li>
 </ul>
 
-<h2 id="critical-section"><span class="me-2">Critical Section</span><a href="#critical-section" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>From the above code sequence example, we can see that increment an counter is an <strong>critical section</strong> that the code that <strong>accesses a shared resource</strong> and should not be executed by <strong>more than one thread</strong> at a time.</p>
-
-<h2 id="mutual-exclusion"><span class="me-2">Mutual Exclusion</span><a href="#mutual-exclusion" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>To prevent race conditions, we need mutual exclusion in critical sections. <strong>If one thread operates within the critical part, the others are stopped</strong>.</p>
-
-<h2 id="atomicity"><span class="me-2">Atomicity</span><a href="#atomicity" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="work-stealing"><span class="me-2">Work Stealing</span><a href="#work-stealing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>In multi-threading, a major challenge is ensuring that certain operations are <strong>executed without interruption, maintaining consistency in shared data</strong>.</li>
-  <li><strong>add instruction</strong> is one of an atomic instructions.</li>
-  <li>In practice, we often don’t have such atomic instructions for <strong>complex operations</strong> in regular instruction set and we have to break it down to multiple instructions.</li>
-  <li>Since we can’t rely on <strong>hardware</strong> for atomicity, we turn to <strong>synchronization primitives</strong>.</li>
+  <li>When work-stealing takes place, <strong>a queue that is low on jobs occasionally peeks into another queue, to determine how full it is</strong>.</li>
+  <li>The <strong>source to “steal” one or more jobs from a target queue to balance the load</strong> but this strategy creates <strong>friction</strong>.</li>
+  <li><strong>Overlooking other queues</strong> causes significant overhead and scaling issues, which was the whole point of introducing MQMS.</li>
+  <li>Conversely, if you don’t glance at other queues often, you risk significant <strong>load imbalances</strong>.</li>
+  <li>Finding the proper <strong>threshold</strong> is a dark art in system policy design.</li>
 </ul>
 
   </div>
@@ -909,79 +956,79 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1229,22 +1276,18 @@ Swap Space
 
   
     <a
-      href="/posts/vms-lazy-optimizations/"
+      href="/posts/semaphore/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>VMS Lazy Optimizations</p>
+      <p>Semaphore</p>
     </a>
   
 
   
-    <a
-      href="/posts/thread-api/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>Thread API</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 

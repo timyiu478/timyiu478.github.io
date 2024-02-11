@@ -576,14 +576,21 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/condition-variables-in-threading/">Condition Variables in Threading</a>
+          <a href="/posts/semaphore/">Semaphore</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/semaphore/">Semaphore</a>
+          <a href="/posts/multi-cpu-scheduling/">Multi CPU Scheduling</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/condition-variables-in-threading/">Condition Variables in Threading</a>
         </li>
       
         
@@ -598,13 +605,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/threads-locks/">Threads Locks</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/concurrency-and-threads/">Concurrency and Threads</a>
         </li>
       
     </ul>
@@ -859,6 +859,18 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -872,49 +884,6 @@
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
-      
-        <article class="col">
-          <a href="/posts/advanced-page-table/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706371200"
-  data-df="ll"
-  
->
-  Jan 28, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Advanced Page Table</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Problem of Linear Page Table
-
-
-  The size of the page table is too big.
-  We need to allocate the physical memory for the page table entries that there is no physical frame as well.
-
-
-Larger Page s...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
       
         <article class="col">
           <a href="/posts/memory-space-management-with-paging/" class="post-preview card h-100">
@@ -991,6 +960,47 @@ Swap Space
 
 
   Swap space is reserved space on the disk for moving pages betwe...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/vms-lazy-optimizations/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1706803200"
+  data-df="ll"
+  
+>
+  Feb  2, 2024
+</time>
+
+              <h4 class="pt-0 my-2">VMS Lazy Optimizations</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Demand Page Zeroing
+
+
+  Consider adding a page to the address space, say in the heap.
+  The OS have to zero the page for security reason so that the process cannot know how this page used for.
+  In...
                 </p>
               </div>
             </div>
