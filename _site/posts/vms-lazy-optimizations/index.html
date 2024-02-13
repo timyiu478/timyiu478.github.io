@@ -662,6 +662,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/event-based-concurrency/">Event Based Concurrency</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/multi-cpu-scheduling/">Multi CPU Scheduling</a>
         </li>
       
@@ -670,13 +677,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/condition-variables-in-threading/">Condition Variables in Threading</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/concurrent-data-structure/">Concurrent Data Structures</a>
         </li>
       
     </ul>
@@ -767,6 +767,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -967,49 +979,6 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/page-swapping/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706544000"
-  data-df="ll"
-  
->
-  Jan 30, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Page Swapping</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  What is page swapping
-
-Swap pages to disk so that the running programs to use more RAM than is physically accessible.
-
-Swap Space
-
-
-  Swap space is reserved space on the disk for moving pages betwe...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/concurrency-and-threads/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1117,6 +1086,49 @@ Example Code
 25
 26
 ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/threads-locks/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1707062400"
+  data-df="ll"
+  
+>
+  Feb  5, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Threads Locks</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  What is a Lock
+
+Lock is a tool for allowing running critical section code atomically by only allow one thread to be execute that part of code.
+
+How does a lock work?
+
+
+  Lock Variable: e.g. mutex. ...
                 </p>
               </div>
             </div>

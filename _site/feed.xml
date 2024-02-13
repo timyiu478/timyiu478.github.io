@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-11T16:02:41+08:00</updated>
+  <updated>2024-02-13T14:31:03+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -52,6 +52,48 @@
   How to Schedule Jobs on Multiple CPUs? Strategies and mechanisms for effectively distributing tasks across multiple processing units.
   Emerging Challenges in Multiprocessor Scheduling: Identifying and addressing unique issues that arise when transitioning from single to multiple CPU systems.
   Load Balancing in Multi-Queue Multiprocessor Schedulers: Methods to achieve optimal...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Event Based Concurrency</title>
+    <link href="http://localhost:4000/posts/event-based-concurrency/" rel="alternate" type="text/html" title="Event Based Concurrency" />
+    <published>2024-02-10T00:00:00+08:00</published>
+  
+    <updated>2024-02-10T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/event-based-concurrency/</id>
+    <content src="http://localhost:4000/posts/event-based-concurrency/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      What is Event Based Concurrency?
+
+The method of constructing the concurrent servers without relying on threads is event-based concurrency.
+
+The Essence of Event-Based Concurrency
+
+
+  Event Monitoring: The server waits for specific events (like I/O requests) and reacts when they occur.
+  Minimal Work Execution: Upon an event’s occurrence, the server identifies the event type and performs only th...
     </summary>
   
 
@@ -203,49 +245,6 @@ Mesa vs. Hoare Semantics
 
 
   In Mesa semantics, signaling indicates a st...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Concurrent Data Structures</title>
-    <link href="http://localhost:4000/posts/concurrent-data-structure/" rel="alternate" type="text/html" title="Concurrent Data Structures" />
-    <published>2024-02-07T00:00:00+08:00</published>
-  
-    <updated>2024-02-07T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/concurrent-data-structure/</id>
-    <content src="http://localhost:4000/posts/concurrent-data-structure/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Challenges of Concurrency in Data Structures
-
-
-  What are the strategies for adding locks to a data structure to ensure correct, concurrent access?
-  How can locks be applied in a way that maintains the speed and allows simultaneous access by multiple threads?
-
-
-Ideal Scenario: Perfect Scaling
-
-Perfect scaling is achieved when the time taken for threads to complete tasks on multiple processors ...
     </summary>
   
 
