@@ -881,6 +881,13 @@ Swap:        2097148          12     2097136
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/io-device/">I/O Device</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/semaphore/">Semaphore</a>
         </li>
       
@@ -903,13 +910,6 @@ Swap:        2097148          12     2097136
         
         <li class="text-truncate lh-lg">
           <a href="/posts/multi-cpu-scheduling/">Multi CPU Scheduling</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/condition-variables-in-threading/">Condition Variables in Threading</a>
         </li>
       
     </ul>
@@ -1124,6 +1124,18 @@ Swap:        2097148          12     2097136
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -1210,47 +1222,6 @@ Swap:        2097148          12     2097136
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
-      
-        <article class="col">
-          <a href="/posts/vms-lazy-optimizations/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706803200"
-  data-df="ll"
-  
->
-  Feb  2, 2024
-</time>
-
-              <h4 class="pt-0 my-2">VMS Lazy Optimizations</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Demand Page Zeroing
-
-
-  Consider adding a page to the address space, say in the heap.
-  The OS have to zero the page for security reason so that the process cannot know how this page used for.
-  In...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
       
         <article class="col">
           <a href="/posts/concurrency-and-threads/" class="post-preview card h-100">
@@ -1360,6 +1331,49 @@ Example Code
 25
 26
 ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/threads-locks/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1707062400"
+  data-df="ll"
+  
+>
+  Feb  5, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Threads Locks</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  What is a Lock
+
+Lock is a tool for allowing running critical section code atomically by only allow one thread to be execute that part of code.
+
+How does a lock work?
+
+
+  Lock Variable: e.g. mutex. ...
                 </p>
               </div>
             </div>

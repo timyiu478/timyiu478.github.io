@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-13T14:31:03+08:00</updated>
+  <updated>2024-02-13T19:26:37+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,57 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>I/O Device</title>
+    <link href="http://localhost:4000/posts/io-device/" rel="alternate" type="text/html" title="I/O Device" />
+    <published>2024-02-13T00:00:00+08:00</published>
+  
+    <updated>2024-02-13T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/io-device/</id>
+    <content src="http://localhost:4000/posts/io-device/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      What is I/O Device?
+
+The objects that CPU handles that are not memory, and are connected to a computer system. e.g.
+
+
+  SSD
+  Keyboard
+  Network
+
+
+The Bus
+
+A bus is a system for transferring data between components inside a computer or between computers.
+
+Bus Hierarchy for I/O
+
+
+  Some devices, like graphics and high performance I/O devices are connected to the system using a general I/O(faster...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -200,51 +251,6 @@ Essence of a Semaphore
     
       sem_wait(): Decreases the semaphore value by one. If this action would lead to a negative value, the thread must wait.
  ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Condition Variables in Threading</title>
-    <link href="http://localhost:4000/posts/condition-variables-in-threading/" rel="alternate" type="text/html" title="Condition Variables in Threading" />
-    <published>2024-02-09T00:00:00+08:00</published>
-  
-    <updated>2024-02-09T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/condition-variables-in-threading/</id>
-    <content src="http://localhost:4000/posts/condition-variables-in-threading/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      What is Condition Variables?
-
-Condition variables in threading allow threads to wait for certain conditions to be true. When the condition changes, threads can be woken up by signaling the condition variable.
-
-Why we need Condition Variables?
-
-It allows a thread to wait for a specific condition without wasting CPU cycles.
-
-Mesa vs. Hoare Semantics
-
-
-  In Mesa semantics, signaling indicates a st...
     </summary>
   
 
