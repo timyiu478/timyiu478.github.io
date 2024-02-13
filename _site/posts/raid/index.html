@@ -30,23 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Memory Space Management with paging" />
+<meta property="og:title" content="Redundant Array Independent Disk (RAID)" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="What is Paging" />
-<meta property="og:description" content="What is Paging" />
-<link rel="canonical" href="http://localhost:4000/posts/memory-space-management-with-paging/" />
-<meta property="og:url" content="http://localhost:4000/posts/memory-space-management-with-paging/" />
+<meta name="description" content="What is RAID?" />
+<meta property="og:description" content="What is RAID?" />
+<link rel="canonical" href="http://localhost:4000/posts/raid/" />
+<meta property="og:url" content="http://localhost:4000/posts/raid/" />
 <meta property="og:site_name" content="Tim Yiu" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-01-28T00:00:00+08:00" />
+<meta property="article:published_time" content="2024-02-13T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Memory Space Management with paging" />
+<meta property="twitter:title" content="Redundant Array Independent Disk (RAID)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-28T17:32:10+08:00","datePublished":"2024-01-28T00:00:00+08:00","description":"What is Paging","headline":"Memory Space Management with paging","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/memory-space-management-with-paging/"},"url":"http://localhost:4000/posts/memory-space-management-with-paging/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-02-13T00:00:00+08:00","datePublished":"2024-02-13T00:00:00+08:00","description":"What is RAID?","headline":"Redundant Array Independent Disk (RAID)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/raid/"},"url":"http://localhost:4000/posts/raid/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Memory Space Management with paging | Tim Yiu
+  <title>Redundant Array Independent Disk (RAID) | Tim Yiu
   </title>
 
   <!--
@@ -288,7 +288,7 @@
         
           
             
-              <span>Memory Space Management with paging</span>
+              <span>Redundant Array Independent Disk (RAID)</span>
             
 
           
@@ -422,6 +422,32 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -435,11 +461,6 @@
     
 
     
-  
-
-  
-  
-
   
 
   
@@ -462,7 +483,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Memory Space Management with paging</h1>
+    <h1 data-toc-skip>Redundant Array Independent Disk (RAID)</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -478,41 +499,18 @@
 
 <time
   
-  data-ts="1706371200"
+  data-ts="1707753600"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jan 28, 2024
+  Feb 13, 2024
 </time>
 
       </span>
 
       <!-- lastmod date -->
-      
-        <span>
-          Updated
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706434330"
-  data-df="ll"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  Jan 28, 2024
-</time>
-
-        </span>
       
 
       
@@ -552,7 +550,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="280 words"
+  title="271 words"
 >
   <em>1 min</em> read</span>
 
@@ -563,77 +561,50 @@
   </header>
 
   <div class="content">
-    <h2 id="what-is-paging"><span class="me-2">What is Paging</span><a href="#what-is-paging" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="what-is-raid"><span class="me-2">What is RAID?</span><a href="#what-is-raid" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Paging is another memory space management approach that <strong>dividing memory into fixed size of chuncks called pages</strong>. In contrast to segmentation, paging <strong>does not have external fragmentation</strong> and support <strong>the abstraction of an address space effectively</strong>, regardless of how a process uses the address space since it won’t make assumptions about the way the heap and stack grow and how they are use.</p>
-
-<h2 id="address-translation"><span class="me-2">Address Translation</span><a href="#address-translation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>To translate the virtual address the process generates:</p>
-
-<ol>
-  <li>We have to break the resulting virtual address into two parts:
+<ul>
+  <li>A hardware RAID is a <strong>computer system designed to manage a set of disks</strong>.</li>
+  <li>RAID technology has three basic functions:
     <ul>
-      <li>The virtual page number (<strong>VPN</strong>) and</li>
-      <li>The <strong>offset</strong> within the page.</li>
+      <li>Block access to data is achieved by <strong>striping the data on the disk</strong>, reducing the mechanical seek time and increasing data access speed.</li>
+      <li>Reading multiple disks in an array reduces mechanical seek time and increases data access speed at the same time.</li>
+      <li><strong>Mirroring</strong> and storing <strong>parity</strong> information helps in data protection.</li>
     </ul>
   </li>
-  <li>Using our <em>VPN</em>, we can now index our <strong>page table</strong> and find out which physical frame virtual page lives in.</li>
-</ol>
-
-<h2 id="page-table"><span class="me-2">Page Table</span><a href="#page-table" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<ul>
-  <li>The page table is a <strong>data structure</strong> that <strong>maps virtual addresses (or virtual page numbers) into physical addresses (physical frame numbers)</strong>.</li>
-  <li>Each process has its own page table.</li>
+  <li>RAIDs do their job <strong>transparent</strong> to the systems they are used on, so it looks like <strong>a single big disk</strong> representing itself as a linear array of blocks. It can replace a disk without changing a single line of software while the OS and user applications continue to work as before.</li>
 </ul>
 
-<h2 id="linear-page-table"><span class="me-2">Linear Page Table</span><a href="#linear-page-table" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="interface-and-internal"><span class="me-2">Interface and Internal</span><a href="#interface-and-internal" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Linear Page table is an <strong>array</strong>.</p>
+<h3 id="interface"><span class="me-2">Interface</span><a href="#interface" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li><em>VPN</em> is an <strong>index</strong> of the array.</li>
-  <li>Each page table entry(<strong>PTE</strong>) contains <em>PFN</em> and other useful <em>bits</em>.</li>
+  <li>A file system sees a RAID as <strong>a single disk, a linear array of blocks</strong> that the file system or client can read or write to.</li>
+  <li>The RAID will issue one or more physical I/Os once it knows which disk (or disks) to access.</li>
 </ul>
 
-<h2 id="the-steps-of-address-translation-by-hardware"><span class="me-2">The steps of address translation by hardware</span><a href="#the-steps-of-address-translation-by-hardware" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="internal"><span class="me-2">Internal</span><a href="#internal" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-</pre></td><td class="rouge-code"><pre>// Extract the VPN from the virtual address
-VPN = (VirtualAddress &amp; VPN_MASK) &gt;&gt; SHIFT
-// Form the address of the page-table entry (PTE)
-PTEAddr = PTBR + (VPN * sizeof(PTE))
-// Fetch the PTE
-PTE = AccessMemory(PTEAddr)
-// Check if process can access the page
-if (PTE.Valid == False)
-    RaiseException(SEGMENTATION_FAULT)
-else if (CanAccess(PTE.ProtectBits) == False)
-    RaiseException(PROTECTION_FAULT)
-else
-    // Access is OK: form physical address and fetch it
-offset = VirtualAddress &amp; OFFSET_MASK
-PhysAddr = (PTE.PFN &lt;&lt; PFN_SHIFT) | offset
-Register = AccessMemory(PhysAddr)
-</pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li>Microcontrollers that run firmware to <strong>control the RAID</strong></li>
+  <li>Volatile memory (DRAM) to buffer data blocks <strong>being read and written</strong></li>
+  <li>Non-volatile memory (NVM) to <strong>buffer writes safely</strong>, and</li>
+  <li>Parity calculations might even be done with special logic</li>
+</ul>
+
+<h2 id="evaluation"><span class="me-2">Evaluation</span><a href="#evaluation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li><strong>Capacity</strong> - How much usable space is in N drives with B blocks each available to RAID clients?</li>
+  <li><strong>Reliability</strong> - Tolerance for disk failures for specified design.</li>
+  <li><strong>Performance</strong> - Performance is difficult to evaluate because it really depends on the workload(random, sequential) transmitted to the disk array.</li>
+  <li><strong>Availability</strong> - How available is the system for actual use?</li>
+</ul>
+
+<h2 id="raid-levels"><span class="me-2">RAID Levels</span><a href="#raid-levels" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Standard_RAID_levels">https://en.wikipedia.org/wiki/Standard_RAID_levels</a></p>
 
   </div>
 
@@ -862,175 +833,175 @@ Register = AccessMemory(PhysAddr)
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1241,22 +1212,18 @@ Condition variables in threading allow threads to wait for certain conditions to
 
   
     <a
-      href="/posts/advanced-page-table/"
+      href="/posts/io-device/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Advanced Page Table</p>
+      <p>I/O Device</p>
     </a>
   
 
   
-    <a
-      href="/posts/page-swapping/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>Page Swapping</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 

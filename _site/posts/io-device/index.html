@@ -907,6 +907,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/raid/">Redundant Array Independent Disk (RAID)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/semaphore/">Semaphore</a>
         </li>
       
@@ -915,13 +922,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/concurrency-bugs/">Concurrency Bugs</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/event-based-concurrency/">Event Based Concurrency</a>
         </li>
       
     </ul>
@@ -1012,6 +1012,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -1248,55 +1260,6 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/thread-api/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706889600"
-  data-df="ll"
-  
->
-  Feb  3, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Thread API</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Thread Creation in POSIX
-
-Functions
-
-
-  create thread: pthread_create
-  wait a thread to complete: pthread_join
-
-
-Example Code
-
-#include &amp;lt;stdio.h&amp;gt;
-#include &amp;lt;stdlib.h&amp;gt;
-#include &amp;lt;pthre...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/threads-locks/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1379,6 +1342,44 @@ How does a lock work?
           </a>
         </article>
       
+        <article class="col">
+          <a href="/posts/condition-variables-in-threading/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1707408000"
+  data-df="ll"
+  
+>
+  Feb  9, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Condition Variables in Threading</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  What is Condition Variables?
+
+Condition variables in threading allow threads to wait for certain conditions to be true. When the condition changes, threads can be woken up by signaling the conditio...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -1403,9 +1404,13 @@ How does a lock work?
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/raid/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Redundant Array Independent Disk (RAID)</p>
+    </a>
   
 </nav>
 

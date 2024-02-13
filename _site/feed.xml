@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-13T23:15:31+08:00</updated>
+  <updated>2024-02-13T23:53:45+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,47 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Redundant Array Independent Disk (RAID)</title>
+    <link href="http://localhost:4000/posts/raid/" rel="alternate" type="text/html" title="Redundant Array Independent Disk (RAID)" />
+    <published>2024-02-13T00:00:00+08:00</published>
+  
+    <updated>2024-02-13T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/raid/</id>
+    <content src="http://localhost:4000/posts/raid/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      What is RAID?
+
+
+  A hardware RAID is a computer system designed to manage a set of disks.
+  RAID technology has three basic functions:
+    
+      Block access to data is achieved by striping the data on the disk, reducing the mechanical seek time and increasing data access speed.
+      Reading multiple disks in an array reduces mechanical seek time and increases data access speed at the same ti...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -194,68 +235,6 @@ The Essence of Event-Based Concurrency
 
   Event Monitoring: The server waits for specific events (like I/O requests) and reacts when they occur.
   Minimal Work Execution: Upon an event’s occurrence, the server identifies the event type and performs only th...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Concurrency Bugs</title>
-    <link href="http://localhost:4000/posts/concurrency-bugs/" rel="alternate" type="text/html" title="Concurrency Bugs" />
-    <published>2024-02-10T00:00:00+08:00</published>
-  
-    <updated>2024-02-10T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/concurrency-bugs/</id>
-    <content src="http://localhost:4000/posts/concurrency-bugs/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Types of Bugs
-
-
-  Non-Deadlock
-    
-      Atomicity violation bugs.
-      Order violation bugs.
-    
-  
-  Deadlock
-
-
-Atomicity violation bugs
-
-A code region is intended to be atomic but the atomicity is not enforced during execution. For example,
-
-Thread 1::
-if (thd-&amp;gt;proc_info) {
-    fputs(thd-&amp;gt;proc_info, ...);
-}
-
-Thread 2::
-thd-&amp;gt;proc_info = NULL;
-
-
-Execution Order:
-
-
-  Thread 1: thd-&amp;...
     </summary>
   
 
