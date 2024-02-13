@@ -1073,6 +1073,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/hard-disk-drive/">Hard Disk Drive</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/io-device/">I/O Device</a>
         </li>
       
@@ -1095,13 +1102,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/event-based-concurrency/">Event Based Concurrency</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/multi-cpu-scheduling/">Multi CPU Scheduling</a>
         </li>
       
     </ul>
@@ -1192,6 +1192,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -1416,47 +1428,6 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/concurrency-and-threads/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1706889600"
-  data-df="ll"
-  
->
-  Feb  3, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Concurrency and Threads</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Threads
-
-
-  Each thread is like an independent worker, but they all share the same memory space.
-  Each thread has its own Program Counter(PC) to keeps track of where a thread is in its execution.
-...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/thread-api/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1542,6 +1513,44 @@ How does a lock work?
 
 
   Lock Variable: e.g. mutex. ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/condition-variables-in-threading/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1707408000"
+  data-df="ll"
+  
+>
+  Feb  9, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Condition Variables in Threading</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  What is Condition Variables?
+
+Condition variables in threading allow threads to wait for certain conditions to be true. When the condition changes, threads can be woken up by signaling the conditio...
                 </p>
               </div>
             </div>

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-13T19:26:37+08:00</updated>
+  <updated>2024-02-13T23:15:31+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -64,6 +64,55 @@ Bus Hierarchy for I/O
 
 
   Some devices, like graphics and high performance I/O devices are connected to the system using a general I/O(faster...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Hard Disk Drive</title>
+    <link href="http://localhost:4000/posts/hard-disk-drive/" rel="alternate" type="text/html" title="Hard Disk Drive" />
+    <published>2024-02-13T00:00:00+08:00</published>
+  
+    <updated>2024-02-13T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/hard-disk-drive/</id>
+    <content src="http://localhost:4000/posts/hard-disk-drive/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="OS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      What is Hard Disk Drive?
+
+Hard disk drives are persistent storage devices for computers.
+
+Interface and Internal
+
+
+  Interface: read and write.
+    
+      includes several sectors (512 -byte blocks) that each one can be read and write.
+      It’s like an array of n sectors, with an address space ranging from 0 to n−1.
+      Some types of interfaces: SCSI, SATA, and SAS.
+    
+  
+  Internal:
+    ...
     </summary>
   
 
@@ -207,50 +256,6 @@ Execution Order:
 
 
   Thread 1: thd-&amp;...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Semaphore</title>
-    <link href="http://localhost:4000/posts/semaphore/" rel="alternate" type="text/html" title="Semaphore" />
-    <published>2024-02-09T00:00:00+08:00</published>
-  
-    <updated>2024-02-10T12:50:22+08:00</updated>
-  
-    <id>http://localhost:4000/posts/semaphore/</id>
-    <content src="http://localhost:4000/posts/semaphore/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      What is Semaphore?
-
-Semaphores serve as a unified primitive, adept at handling synchronization tasks traditionally managed by both locks and condition variables.
-
-Essence of a Semaphore
-
-
-  Semaphores operate on a integer value, manipulated by two pivotal routines:
-    
-      sem_wait(): Decreases the semaphore value by one. If this action would lead to a negative value, the thread must wait.
- ...
     </summary>
   
 
