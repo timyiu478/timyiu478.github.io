@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Thread API"
-categories: "OS"
-tags: "OS"
+categories: ["os", "concurrency"]
+tags: ["os", "concurrency"]
 ---
 
 ## Thread Creation in POSIX

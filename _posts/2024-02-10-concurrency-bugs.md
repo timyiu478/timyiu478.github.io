@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Concurrency Bugs"
-categories: "OS"
-tags: "OS"
+categories: ["os", "concurrency"]
+tags: ["os", "concurrency"]
 ---
 
 ## Types of Bugs 

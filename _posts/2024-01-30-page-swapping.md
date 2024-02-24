@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Page Swapping"
-categories: "OS"
-tags: "OS"
+categories: ["os", "memory"]
+tags: ["os", "memory"]
 ---
 
 ## What is page swapping

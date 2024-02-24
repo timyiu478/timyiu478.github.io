@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-13T23:53:45+08:00</updated>
+  <updated>2024-02-24T14:53:31+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,51 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>File and Directory</title>
+    <link href="http://localhost:4000/posts/file-and-directory/" rel="alternate" type="text/html" title="File and Directory" />
+    <published>2024-02-17T00:00:00+08:00</published>
+  
+    <updated>2024-02-17T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/file-and-directory/</id>
+    <content src="http://localhost:4000/posts/file-and-directory/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="os" />
+    
+    <category term="persistence" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Storage Abstractions
+
+Storage virtualization is based on two main ideas: the file and the directory.
+
+
+  File: A group of bytes that can be read or written. Each file has a low-level name in the form of an inode number.
+  Directory: the user-readable name and the low-level name are listed in pairs.
+
+
+A file system consists of groups of directories and the files and other directories they contai...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -34,7 +79,9 @@
 
   
     
-    <category term="OS" />
+    <category term="os" />
+    
+    <category term="persistence" />
     
   
 
@@ -75,7 +122,9 @@
 
   
     
-    <category term="OS" />
+    <category term="os" />
+    
+    <category term="persistence" />
     
   
 
@@ -126,7 +175,9 @@ Bus Hierarchy for I/O
 
   
     
-    <category term="OS" />
+    <category term="os" />
+    
+    <category term="persistence" />
     
   
 
@@ -175,7 +226,9 @@ Interface and Internal
 
   
     
-    <category term="OS" />
+    <category term="os" />
+    
+    <category term="concurrency" />
     
   
 
@@ -193,48 +246,6 @@ Interface and Internal
   How to Schedule Jobs on Multiple CPUs? Strategies and mechanisms for effectively distributing tasks across multiple processing units.
   Emerging Challenges in Multiprocessor Scheduling: Identifying and addressing unique issues that arise when transitioning from single to multiple CPU systems.
   Load Balancing in Multi-Queue Multiprocessor Schedulers: Methods to achieve optimal...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Event Based Concurrency</title>
-    <link href="http://localhost:4000/posts/event-based-concurrency/" rel="alternate" type="text/html" title="Event Based Concurrency" />
-    <published>2024-02-10T00:00:00+08:00</published>
-  
-    <updated>2024-02-10T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/event-based-concurrency/</id>
-    <content src="http://localhost:4000/posts/event-based-concurrency/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="OS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      What is Event Based Concurrency?
-
-The method of constructing the concurrent servers without relying on threads is event-based concurrency.
-
-The Essence of Event-Based Concurrency
-
-
-  Event Monitoring: The server waits for specific events (like I/O requests) and reacts when they occur.
-  Minimal Work Execution: Upon an event’s occurrence, the server identifies the event type and performs only th...
     </summary>
   
 

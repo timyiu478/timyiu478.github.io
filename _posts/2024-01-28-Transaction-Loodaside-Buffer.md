@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Transaction Lookaside Buffer"
-categories: "OS"
-tags: "OS"
+categories: ["os", "memory"]
+tags: ["os", "memory"]
 ---
 
 ## Problem of Paging

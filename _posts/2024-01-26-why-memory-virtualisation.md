@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Why Memory Virtualisation?"
-categories: "OS"
-tags: "OS"
+categories: ["os", "memory"]
+tags: ["os", "memory"]
 ---
 
 1. **Transparency**: user program dont need to worry about the physical memory address.

@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Concurrent Data Structures"
-categories: "OS"
-tags: "OS"
+categories: ["os", "concurrency"]
+tags: ["os", "concurrency"]
 ---
 
 ## Challenges of Concurrency in Data Structures

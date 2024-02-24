@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Concurrency and Threads"
-categories: "OS"
-tags: "OS"
+categories: ["os", "concurrency"]
+tags: ["os", "concurrency"]
 ---
 
 ## Threads

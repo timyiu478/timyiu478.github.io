@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "VMS Lazy Optimizations"
-categories: "OS"
-tags: "OS"
+categories: ["os", "memory"]
+tags: ["os", "memory"]
 ---
 
 ## Demand Page Zeroing

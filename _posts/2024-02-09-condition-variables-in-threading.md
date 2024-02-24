@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Condition Variables in Threading"
-categories: "OS"
-tags: "OS"
+categories: ["os", "concurrency"]
+tags: ["os", "concurrency"]
 ---
 
 ## What is Condition Variables?

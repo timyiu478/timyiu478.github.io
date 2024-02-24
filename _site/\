@@ -576,6 +576,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/file-and-directory/">File and Directory</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/hard-disk-drive/">Hard Disk Drive</a>
         </li>
       
@@ -598,13 +605,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/semaphore/">Semaphore</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/concurrency-bugs/">Concurrency Bugs</a>
         </li>
       
     </ul>
@@ -633,6 +633,92 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -644,7 +730,19 @@
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/os/">OS</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/os/">os</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/concurrency/">concurrency</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/memory/">memory</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/persistence/">persistence</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/process/">process</a>
       
     </div>
   </section>
@@ -703,372 +801,15 @@
 
   
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  <aside id="related-posts" aria-labelledby="related-label">
-    <h3 class="mb-4" id="related-label">Further Reading</h3>
-    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
-      
-        <article class="col">
-          <a href="/posts/threads-locks/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1707062400"
-  data-df="ll"
-  
->
-  Feb  5, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Threads Locks</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  What is a Lock
-
-Lock is a tool for allowing running critical section code atomically by only allow one thread to be execute that part of code.
-
-How does a lock work?
-
-
-  Lock Variable: e.g. mutex. ...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/concurrent-data-structure/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1707235200"
-  data-df="ll"
-  
->
-  Feb  7, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Concurrent Data Structures</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Challenges of Concurrency in Data Structures
-
-
-  What are the strategies for adding locks to a data structure to ensure correct, concurrent access?
-  How can locks be applied in a way that maintain...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/condition-variables-in-threading/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1707408000"
-  data-df="ll"
-  
->
-  Feb  9, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Condition Variables in Threading</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  What is Condition Variables?
-
-Condition variables in threading allow threads to wait for certain conditions to be true. When the condition changes, threads can be woken up by signaling the conditio...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-    </nav>
-  </aside>
-  <!-- #related-posts -->
 
 
             
@@ -1154,6 +895,92 @@ Condition variables in threading allow threads to wait for certain conditions to
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1165,7 +992,19 @@ Condition variables in threading allow threads to wait for certain conditions to
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/os/">OS</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/os/">os</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/concurrency/">concurrency</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/memory/">memory</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/persistence/">persistence</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/process/">process</a>
       
     </div>
   </section>

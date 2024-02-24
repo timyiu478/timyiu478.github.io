@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Event Based Concurrency"
-categories: "OS"
-tags: "OS"
+categories: ["os", "concurrency"]
+tags: ["os", "concurrency"]
 ---
 
 ## What is Event Based Concurrency?

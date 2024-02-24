@@ -636,7 +636,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/os/">OS</a>
+          <a href="/categories/os/">os</a>,
+          <a href="/categories/persistence/">persistence</a>
       </div>
     
 
@@ -648,7 +649,12 @@
           <a
             href="/tags/os/"
             class="post-tag no-text-decoration"
-          >OS</a>
+          >os</a>
+        
+          <a
+            href="/tags/persistence/"
+            class="post-tag no-text-decoration"
+          >persistence</a>
         
       </div>
     
@@ -732,6 +738,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/file-and-directory/">File and Directory</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/hard-disk-drive/">Hard Disk Drive</a>
         </li>
       
@@ -754,13 +767,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/semaphore/">Semaphore</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/concurrency-bugs/">Concurrency Bugs</a>
         </li>
       
     </ul>
@@ -789,6 +795,92 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -800,7 +892,19 @@
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/os/">OS</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/os/">os</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/concurrency/">concurrency</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/memory/">memory</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/persistence/">persistence</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/process/">process</a>
       
     </div>
   </section>
@@ -851,6 +955,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -1099,7 +1215,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/threads-locks/" class="post-preview card h-100">
+          <a href="/posts/io-device/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1111,14 +1227,14 @@
 
 <time
   
-  data-ts="1707062400"
+  data-ts="1707753600"
   data-df="ll"
   
 >
-  Feb  5, 2024
+  Feb 13, 2024
 </time>
 
-              <h4 class="pt-0 my-2">Threads Locks</h4>
+              <h4 class="pt-0 my-2">I/O Device</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1127,14 +1243,19 @@
 
 
 
-                  What is a Lock
+                  What is I/O Device?
 
-Lock is a tool for allowing running critical section code atomically by only allow one thread to be execute that part of code.
-
-How does a lock work?
+The objects that CPU handles that are not memory, and are connected to a computer system. e.g.
 
 
-  Lock Variable: e.g. mutex. ...
+  SSD
+  Keyboard
+  Network
+
+
+The Bus
+
+A bus is a system for transferring data b...
                 </p>
               </div>
             </div>
@@ -1142,7 +1263,7 @@ How does a lock work?
         </article>
       
         <article class="col">
-          <a href="/posts/concurrent-data-structure/" class="post-preview card h-100">
+          <a href="/posts/raid/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1154,14 +1275,14 @@ How does a lock work?
 
 <time
   
-  data-ts="1707235200"
+  data-ts="1707753600"
   data-df="ll"
   
 >
-  Feb  7, 2024
+  Feb 13, 2024
 </time>
 
-              <h4 class="pt-0 my-2">Concurrent Data Structures</h4>
+              <h4 class="pt-0 my-2">Redundant Array Independent Disk (RAID)</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1170,11 +1291,13 @@ How does a lock work?
 
 
 
-                  Challenges of Concurrency in Data Structures
+                  What is RAID?
 
 
-  What are the strategies for adding locks to a data structure to ensure correct, concurrent access?
-  How can locks be applied in a way that maintain...
+  A hardware RAID is a computer system designed to manage a set of disks.
+  RAID technology has three basic functions:
+    
+      Block access to data is achieved by striping the da...
                 </p>
               </div>
             </div>
@@ -1182,7 +1305,7 @@ How does a lock work?
         </article>
       
         <article class="col">
-          <a href="/posts/condition-variables-in-threading/" class="post-preview card h-100">
+          <a href="/posts/file-and-directory/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1194,14 +1317,14 @@ How does a lock work?
 
 <time
   
-  data-ts="1707408000"
+  data-ts="1708099200"
   data-df="ll"
   
 >
-  Feb  9, 2024
+  Feb 17, 2024
 </time>
 
-              <h4 class="pt-0 my-2">Condition Variables in Threading</h4>
+              <h4 class="pt-0 my-2">File and Directory</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1210,9 +1333,12 @@ How does a lock work?
 
 
 
-                  What is Condition Variables?
+                  Storage Abstractions
 
-Condition variables in threading allow threads to wait for certain conditions to be true. When the condition changes, threads can be woken up by signaling the conditio...
+Storage virtualization is based on two main ideas: the file and the directory.
+
+
+  File: A group of bytes that can be read or written. Each file has a low-level name in the fo...
                 </p>
               </div>
             </div>
@@ -1383,6 +1509,92 @@ Condition variables in threading allow threads to wait for certain conditions to
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1394,7 +1606,19 @@ Condition variables in threading allow threads to wait for certain conditions to
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/os/">OS</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/os/">os</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/concurrency/">concurrency</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/memory/">memory</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/persistence/">persistence</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/process/">process</a>
       
     </div>
   </section>

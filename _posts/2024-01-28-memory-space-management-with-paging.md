@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Memory Space Management with paging"
-categories: "OS"
-tags: "OS"
+categories: ["os", "memory"]
+tags: ["os", "memory"]
 ---
 
 ## What is Paging

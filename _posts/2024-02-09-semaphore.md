@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Semaphore"
-categories: "OS"
-tags: "OS"
+categories: ["os", "concurrency"]
+tags: ["os", "concurrency"]
 ---
 
 ## What is Semaphore?

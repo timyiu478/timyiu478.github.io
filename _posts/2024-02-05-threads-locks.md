@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Threads Locks"
-categories: "OS"
-tags: "OS"
+categories: ["os", "concurrency"]
+tags: ["os", "concurrency"]
 ---
 
 ## What is a Lock

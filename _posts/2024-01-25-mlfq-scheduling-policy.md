@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Multilevel Feedback Queue Scheduling"
-categories: "OS"
-tags: "OS"
+categories: ["os", "process"]
+tags: ["os", "process"]
 ---
 
 ## Example Run

@@ -552,7 +552,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/os/">OS</a>
+          <a href="/categories/os/">os</a>,
+          <a href="/categories/memory/">memory</a>
       </div>
     
 
@@ -564,7 +565,12 @@
           <a
             href="/tags/os/"
             class="post-tag no-text-decoration"
-          >OS</a>
+          >os</a>
+        
+          <a
+            href="/tags/memory/"
+            class="post-tag no-text-decoration"
+          >memory</a>
         
       </div>
     
@@ -648,6 +654,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/file-and-directory/">File and Directory</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/hard-disk-drive/">Hard Disk Drive</a>
         </li>
       
@@ -670,13 +683,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/semaphore/">Semaphore</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/concurrency-bugs/">Concurrency Bugs</a>
         </li>
       
     </ul>
@@ -705,6 +711,92 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -716,7 +808,19 @@
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/os/">OS</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/os/">os</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/concurrency/">concurrency</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/memory/">memory</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/persistence/">persistence</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/process/">process</a>
       
     </div>
   </section>
@@ -767,6 +871,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -1015,7 +1131,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/threads-locks/" class="post-preview card h-100">
+          <a href="/posts/why-memory-virtualisation/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1027,14 +1143,14 @@
 
 <time
   
-  data-ts="1707062400"
+  data-ts="1706198400"
   data-df="ll"
   
 >
-  Feb  5, 2024
+  Jan 26, 2024
 </time>
 
-              <h4 class="pt-0 my-2">Threads Locks</h4>
+              <h4 class="pt-0 my-2">Why Memory Virtualisation?</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1043,14 +1159,11 @@
 
 
 
-                  What is a Lock
-
-Lock is a tool for allowing running critical section code atomically by only allow one thread to be execute that part of code.
-
-How does a lock work?
+                  
+  Transparency: user program dont need to worry about the physical memory address.
+  Protection: each process only can manipulate its own address space.
 
 
-  Lock Variable: e.g. mutex. ...
                 </p>
               </div>
             </div>
@@ -1058,7 +1171,7 @@ How does a lock work?
         </article>
       
         <article class="col">
-          <a href="/posts/concurrent-data-structure/" class="post-preview card h-100">
+          <a href="/posts/memory-segmentation/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1070,14 +1183,14 @@ How does a lock work?
 
 <time
   
-  data-ts="1707235200"
+  data-ts="1706284800"
   data-df="ll"
   
 >
-  Feb  7, 2024
+  Jan 27, 2024
 </time>
 
-              <h4 class="pt-0 my-2">Concurrent Data Structures</h4>
+              <h4 class="pt-0 my-2">Memory Segmentation</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1086,11 +1199,10 @@ How does a lock work?
 
 
 
-                  Challenges of Concurrency in Data Structures
+                  What is Memory Segmentation?
 
 
-  What are the strategies for adding locks to a data structure to ensure correct, concurrent access?
-  How can locks be applied in a way that maintain...
+  It allows the segments(code, stack, heap) of the address space can be stored in different physical memory locations so that we do not need to allocate the physical ...
                 </p>
               </div>
             </div>
@@ -1098,7 +1210,7 @@ How does a lock work?
         </article>
       
         <article class="col">
-          <a href="/posts/condition-variables-in-threading/" class="post-preview card h-100">
+          <a href="/posts/Transaction-Loodaside-Buffer/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1110,14 +1222,14 @@ How does a lock work?
 
 <time
   
-  data-ts="1707408000"
+  data-ts="1706371200"
   data-df="ll"
   
 >
-  Feb  9, 2024
+  Jan 28, 2024
 </time>
 
-              <h4 class="pt-0 my-2">Condition Variables in Threading</h4>
+              <h4 class="pt-0 my-2">Transaction Lookaside Buffer</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1126,9 +1238,9 @@ How does a lock work?
 
 
 
-                  What is Condition Variables?
+                  Problem of Paging
 
-Condition variables in threading allow threads to wait for certain conditions to be true. When the condition changes, threads can be woken up by signaling the conditio...
+Paging needs an additional memory lookup in order to translate each virtual address, but it takes too long to obtain translation information before every instruction fetch, load,...
                 </p>
               </div>
             </div>
@@ -1299,6 +1411,92 @@ Condition variables in threading allow threads to wait for certain conditions to
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1310,7 +1508,19 @@ Condition variables in threading allow threads to wait for certain conditions to
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/os/">OS</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/os/">os</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/concurrency/">concurrency</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/memory/">memory</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/persistence/">persistence</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/process/">process</a>
       
     </div>
   </section>

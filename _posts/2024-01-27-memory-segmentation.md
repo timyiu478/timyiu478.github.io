@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Memory Segmentation"
-categories: "OS"
-tags: "OS"
+categories: ["os", "memory"]
+tags: ["os", "memory"]
 ---
 
 ## What is Memory Segmentation?

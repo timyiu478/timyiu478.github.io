@@ -737,7 +737,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/os/">OS</a>
+          <a href="/categories/os/">os</a>,
+          <a href="/categories/concurrency/">concurrency</a>
       </div>
     
 
@@ -749,7 +750,12 @@
           <a
             href="/tags/os/"
             class="post-tag no-text-decoration"
-          >OS</a>
+          >os</a>
+        
+          <a
+            href="/tags/concurrency/"
+            class="post-tag no-text-decoration"
+          >concurrency</a>
         
       </div>
     
@@ -833,6 +839,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/file-and-directory/">File and Directory</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/hard-disk-drive/">Hard Disk Drive</a>
         </li>
       
@@ -855,13 +868,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/semaphore/">Semaphore</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/concurrency-bugs/">Concurrency Bugs</a>
         </li>
       
     </ul>
@@ -890,6 +896,92 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -901,7 +993,19 @@
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/os/">OS</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/os/">os</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/concurrency/">concurrency</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/memory/">memory</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/persistence/">persistence</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/process/">process</a>
       
     </div>
   </section>
@@ -952,6 +1056,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -1200,49 +1316,6 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/threads-locks/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1707062400"
-  data-df="ll"
-  
->
-  Feb  5, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Threads Locks</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  What is a Lock
-
-Lock is a tool for allowing running critical section code atomically by only allow one thread to be execute that part of code.
-
-How does a lock work?
-
-
-  Lock Variable: e.g. mutex. ...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/concurrent-data-structure/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1314,6 +1387,49 @@ How does a lock work?
                   What is Condition Variables?
 
 Condition variables in threading allow threads to wait for certain conditions to be true. When the condition changes, threads can be woken up by signaling the conditio...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/semaphore/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1707408000"
+  data-df="ll"
+  
+>
+  Feb  9, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Semaphore</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  What is Semaphore?
+
+Semaphores serve as a unified primitive, adept at handling synchronization tasks traditionally managed by both locks and condition variables.
+
+Essence of a Semaphore
+
+
+  Semapho...
                 </p>
               </div>
             </div>
@@ -1484,6 +1600,92 @@ Condition variables in threading allow threads to wait for certain conditions to
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1495,7 +1697,19 @@ Condition variables in threading allow threads to wait for certain conditions to
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/os/">OS</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/os/">os</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/concurrency/">concurrency</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/memory/">memory</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/persistence/">persistence</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/process/">process</a>
       
     </div>
   </section>

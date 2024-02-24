@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Advanced Page Table"
-categories: "OS"
-tags: "OS"
+categories: ["os", "memory"]
+tags: ["os", "memory"]
 ---
 
 ## Problem of Linear Page Table

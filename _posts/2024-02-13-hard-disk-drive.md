@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Hard Disk Drive"
-categories: "OS"
-tags: "OS"
+categories: ["os", "persistence"]
+tags: ["os", "persistence"]
 ---
 
 ## What is Hard Disk Drive?
