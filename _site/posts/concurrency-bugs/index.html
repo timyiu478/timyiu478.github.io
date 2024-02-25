@@ -42,7 +42,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Concurrency Bugs" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-02-10T00:00:00+08:00","datePublished":"2024-02-10T00:00:00+08:00","description":"Types of Bugs","headline":"Concurrency Bugs","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/concurrency-bugs/"},"url":"http://localhost:4000/posts/concurrency-bugs/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-02-24T14:53:45+08:00","datePublished":"2024-02-10T00:00:00+08:00","description":"Types of Bugs","headline":"Concurrency Bugs","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/concurrency-bugs/"},"url":"http://localhost:4000/posts/concurrency-bugs/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -588,6 +588,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1708757625"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Feb 24, 2024
+</time>
+
+        </span>
+      
 
       
 
@@ -920,28 +943,7 @@ void mMain(...) {
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/file-and-directory/">File and Directory</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/hard-disk-drive/">Hard Disk Drive</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/io-device/">I/O Device</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/raid/">Redundant Array Independent Disk (RAID)</a>
+          <a href="/posts/condition-variables-in-threading/">Condition Variables in Threading</a>
         </li>
       
         
@@ -949,6 +951,27 @@ void mMain(...) {
         
         <li class="text-truncate lh-lg">
           <a href="/posts/semaphore/">Semaphore</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/concurrency-bugs/">Concurrency Bugs</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/event-based-concurrency/">Event Based Concurrency</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/multi-cpu-scheduling/">Multi CPU Scheduling</a>
         </li>
       
     </ul>
@@ -1213,6 +1236,18 @@ void mMain(...) {
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -1397,46 +1432,6 @@ void mMain(...) {
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/concurrent-data-structure/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1707235200"
-  data-df="ll"
-  
->
-  Feb  7, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Concurrent Data Structures</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Challenges of Concurrency in Data Structures
-
-
-  What are the strategies for adding locks to a data structure to ensure correct, concurrent access?
-  How can locks be applied in a way that maintain...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/condition-variables-in-threading/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1511,6 +1506,49 @@ Essence of a Semaphore
 
 
   Semapho...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/event-based-concurrency/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1707494400"
+  data-df="ll"
+  
+>
+  Feb 10, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Event Based Concurrency</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  What is Event Based Concurrency?
+
+The method of constructing the concurrent servers without relying on threads is event-based concurrency.
+
+The Essence of Event-Based Concurrency
+
+
+  Event Monitori...
                 </p>
               </div>
             </div>

@@ -576,28 +576,7 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/file-and-directory/">File and Directory</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/hard-disk-drive/">Hard Disk Drive</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/io-device/">I/O Device</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/raid/">Redundant Array Independent Disk (RAID)</a>
+          <a href="/posts/condition-variables-in-threading/">Condition Variables in Threading</a>
         </li>
       
         
@@ -605,6 +584,27 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/semaphore/">Semaphore</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/concurrency-bugs/">Concurrency Bugs</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/event-based-concurrency/">Event Based Concurrency</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/multi-cpu-scheduling/">Multi CPU Scheduling</a>
         </li>
       
     </ul>

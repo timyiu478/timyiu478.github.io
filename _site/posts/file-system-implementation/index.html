@@ -30,23 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Multi CPU Scheduling" />
+<meta property="og:title" content="Very Simple File System Implementation" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Key Questions" />
-<meta property="og:description" content="Key Questions" />
-<link rel="canonical" href="http://localhost:4000/posts/multi-cpu-scheduling/" />
-<meta property="og:url" content="http://localhost:4000/posts/multi-cpu-scheduling/" />
+<meta name="description" content="A mental model of a File System" />
+<meta property="og:description" content="A mental model of a File System" />
+<link rel="canonical" href="http://localhost:4000/posts/file-system-implementation/" />
+<meta property="og:url" content="http://localhost:4000/posts/file-system-implementation/" />
 <meta property="og:site_name" content="Tim Yiu" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-02-10T00:00:00+08:00" />
+<meta property="article:published_time" content="2024-02-24T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Multi CPU Scheduling" />
+<meta property="twitter:title" content="Very Simple File System Implementation" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-02-24T14:53:45+08:00","datePublished":"2024-02-10T00:00:00+08:00","description":"Key Questions","headline":"Multi CPU Scheduling","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/multi-cpu-scheduling/"},"url":"http://localhost:4000/posts/multi-cpu-scheduling/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-02-24T00:00:00+08:00","datePublished":"2024-02-24T00:00:00+08:00","description":"A mental model of a File System","headline":"Very Simple File System Implementation","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/file-system-implementation/"},"url":"http://localhost:4000/posts/file-system-implementation/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Multi CPU Scheduling | Tim Yiu
+  <title>Very Simple File System Implementation | Tim Yiu
   </title>
 
   <!--
@@ -288,7 +288,7 @@
         
           
             
-              <span>Multi CPU Scheduling</span>
+              <span>Very Simple File System Implementation</span>
             
 
           
@@ -466,6 +466,76 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -525,13 +595,19 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
-  
-
-  
-  
-
   
 
   
@@ -549,7 +625,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Multi CPU Scheduling</h1>
+    <h1 data-toc-skip>Very Simple File System Implementation</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -565,32 +641,7 @@
 
 <time
   
-  data-ts="1707494400"
-  data-df="ll"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  Feb 10, 2024
-</time>
-
-      </span>
-
-      <!-- lastmod date -->
-      
-        <span>
-          Updated
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1708757625"
+  data-ts="1708704000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -599,7 +650,9 @@
   Feb 24, 2024
 </time>
 
-        </span>
+      </span>
+
+      <!-- lastmod date -->
       
 
       
@@ -639,9 +692,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="777 words"
+  title="1028 words"
 >
-  <em>4 min</em> read</span>
+  <em>5 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -650,107 +703,135 @@
   </header>
 
   <div class="content">
-    <h2 id="key-questions"><span class="me-2">Key Questions</span><a href="#key-questions" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="a-mental-model-of-a-file-system"><span class="me-2">A mental model of a File System</span><a href="#a-mental-model-of-a-file-system" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li><strong>How to Schedule Jobs on Multiple CPUs?</strong> Strategies and mechanisms for effectively distributing tasks across multiple processing units.</li>
-  <li>Emerging <strong>Challenges in Multiprocessor Scheduling</strong>: Identifying and addressing unique issues that arise when transitioning from single to multiple CPU systems.</li>
-  <li><strong>Load Balancing in Multi-Queue Multiprocessor Schedulers</strong>: Methods to achieve optimal workload distribution among CPUs, ensuring efficient utilization of resources.</li>
+  <li><strong>Data Structure</strong>: what types of on-disk structures are utilized by the file system to organize its data and metadata?</li>
+  <li><strong>Access methods</strong>: How does it map the calls made by a process, such as <code class="language-plaintext highlighter-rouge">open()</code>, <code class="language-plaintext highlighter-rouge">read()</code>, <code class="language-plaintext highlighter-rouge">write()</code>, etc., onto its structures?</li>
 </ul>
 
-<h2 id="implications-for-applications"><span class="me-2">Implications for Applications</span><a href="#implications-for-applications" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="overall-organization"><span class="me-2">Overall Organization</span><a href="#overall-organization" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>Conventional Applications: Standard applications, like a C program, typically <strong>utilize only one CPU</strong>. Therefore, adding more CPUs doesn’t inherently boost their performance.</li>
-  <li><strong>Multi-Threaded</strong> Applications: These applications can <strong>distribute their workload across multiple CPUs</strong>, achieving significant performance gains.</li>
+  <li><strong>Block</strong>: divide disk to a series of blocks.</li>
+  <li><strong>Data Region</strong>: reserve a fixed portion of the disk for these blocks to <strong>store user data</strong>.</li>
+  <li><strong>Inodes</strong>: a portion of the disk to store Inode. Inode is a structure for tracking things like which data blocks (in the data region) comprise a file, the size of the file, its owner and access rights, access and modify time.</li>
+  <li><strong>Allocation Structure</strong>: tracks data or inodes blocks are allocated or not. The data structures like <strong>free list</strong> or <strong>bit map</strong> can be used.</li>
+  <li><strong>Superblock</strong>: contains the information about this file system e.g. file system type, # of data/inodes blocks. When mounting a file system, the operating system will <strong>read the superblock first</strong>, to initialize various parameters, and then attach the volume to the file-system tree.</li>
 </ul>
 
-<h2 id="role-of-caches-in-multiprocessor-systems"><span class="me-2">Role of Caches in Multiprocessor Systems</span><a href="#role-of-caches-in-multiprocessor-systems" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="inode"><span class="me-2">Inode</span><a href="#inode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="index-node"><span class="me-2">Index node</span><a href="#index-node" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Inode is short for index node, as the inode number is used to index into an array of on-disk inodes in order to find the inode of that number.</p>
+
+<h3 id="design-of-the-inode"><span class="me-2">Design of the Inode</span><a href="#design-of-the-inode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>One of the most important decisions in the design of the inode is <strong>how it refers to where data blocks are</strong>. One simple approach would be to have <strong>one or more direct pointers (disk addresses)</strong> inside the inode; each pointer refers to one disk block that belongs to the file.</p>
+
+<h3 id="the-multi-level-index"><span class="me-2">The multi-level index</span><a href="#the-multi-level-index" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>To support <strong>bigger</strong> files, file system designers have had to introduce different structures. One common idea is to have a special pointer known as an <strong>indirect pointer</strong>. Instead of pointing to a block that contains user data, it <strong>points to a block that contains more pointers</strong>, each of which point to user data.</p>
+
+<h3 id="extended-approach"><span class="me-2">Extended Approach</span><a href="#extended-approach" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>Caches are <strong>small, fast memory units that store copies of data from the system’s main memory</strong>, crucial for enhancing processing speed.</li>
-  <li>Each processor has its <strong>own chache</strong> but several processors <strong>share a single main memory</strong>.</li>
+  <li>A different approach is to use extents instead of pointers. An extent is simply a <strong>disk pointer plus a length</strong> (in blocks).</li>
+  <li>All one needs is a pointer and a length to specify the on-disk location of a file.</li>
+  <li>Just a single extent is limiting, as one may have <strong>trouble finding a contiguous chunk of on-disk free space</strong> when allocating a file.</li>
+  <li>Thus, extent-based file systems often allow for <strong>more than one extent</strong>, thus giving more freedom to the file system during file allocation.</li>
 </ul>
 
-<h2 id="challenges-in-multiprocessor-caching"><span class="me-2">Challenges in Multiprocessor Caching</span><a href="#challenges-in-multiprocessor-caching" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>How data is <strong>shared and cached across multiple CPUs</strong>, affecting data access patterns and efficiency.</p>
-
-<h2 id="cache-coherence-problem"><span class="me-2">Cache Coherence Problem</span><a href="#cache-coherence-problem" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>The problem of cache coherence becomes evident when <strong>processes migrate between CPUs or when multiple CPUs access the same memory block</strong>.</p>
+<h2 id="directory-organization"><span class="me-2">Directory Organization</span><a href="#directory-organization" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li><strong>Process Migration</strong>: If a program initially running on CPU A switches to CPU B, the latter CPU <strong>lacks immediate access to the previously cached data in CPU A’s cache</strong>.</li>
-  <li><strong>Inefficient Data Access</strong>: CPU B, lacking the needed data in its cache, <strong>must access the main memory</strong>, leading to inefficiencies and potential data inconsistencies.</li>
-  <li><strong>Inconsistency Risks</strong>: The situation becomes even more complicated if <strong>both CPUs attempt to modify the same memory location</strong>, leading to potential data inconsistencies between their caches and the main memory.</li>
+  <li>A directory basically just contains a <strong>list</strong> of directory entries <strong>(contains e.g. entry name, inode number pairs)</strong>.
+    <ul>
+      <li>we can also store entries in B-Tree form.</li>
+    </ul>
+  </li>
+  <li>Each directory has two extra entries, <code class="language-plaintext highlighter-rouge">.</code> and <code class="language-plaintext highlighter-rouge">..</code>.</li>
+  <li>A directory has an inode, somewhere in the inode table which its type is directory instead of regular file.</li>
 </ul>
 
-<h2 id="addressing-cache-coherence"><span class="me-2">Addressing Cache Coherence</span><a href="#addressing-cache-coherence" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="free-space-management"><span class="me-2">Free Space management</span><a href="#free-space-management" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<ul>
-  <li>Modern multiprocessor systems implement <strong>hardware-level mechanisms</strong> to ensure cache coherence. These mechanisms can <strong>detect and manage data that is simultaneously accessed or modified by multiple CPUs</strong>.</li>
-  <li>Operating systems and applications can also be designed to <strong>minimize cache coherence issues</strong>, for instance, by <strong>managing process allocation to CPUs</strong> or <strong>optimizing memory access patterns</strong>.</li>
-</ul>
+<p>Use two bitmaps(one for inode blocks, one for data blocks) for free space management.</p>
 
-<h2 id="synchronization-in-multiprocessor-systems"><span class="me-2">Synchronization in Multiprocessor Systems</span><a href="#synchronization-in-multiprocessor-systems" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>Even with cache coherence protocols in place, challenges persist in ensuring consistent and correct data manipulation.</p>
-
-<h3 id="case-study-shared-linked-list"><span class="me-2">Case Study: Shared Linked List</span><a href="#case-study-shared-linked-list" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>Imagine a scenario where two CPU threads concurrently execute a routine to <strong>remove an element from a shared linked list</strong>:</p>
+<h2 id="reading-file-from-disk"><span class="me-2">Reading File from Disk</span><a href="#reading-file-from-disk" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
-  <li>Thread 1 executes the first line, storing the current <code class="language-plaintext highlighter-rouge">head</code> value in its <code class="language-plaintext highlighter-rouge">tmp</code> variable.</li>
-  <li>Thread 2 also executes the same line, capturing the same <code class="language-plaintext highlighter-rouge">head</code> value in its separate <code class="language-plaintext highlighter-rouge">tmp</code> variable (since tmp is stack-allocated and thus private to each thread).</li>
+  <li>The file system has to traverse the path name from the root directory where the root directory inode number is “well known” when the file system was mounted.</li>
+  <li>Once the inode is read in, the FS can look inside of it to find pointers to data blocks, which contain the contents of the root directory. And then find the related entry from the contents.</li>
+  <li>Recursively traverse the pathname until the desired inode is found.</li>
+  <li>The FS then does a final permissions check, allocates a file descriptor for this process in the per-process open-file table, and returns it to the user.</li>
+  <li>Once open, the program can then issue a <code class="language-plaintext highlighter-rouge">read()</code> system call to read from the file.</li>
+  <li>The first read (at offset 0 unless <code class="language-plaintext highlighter-rouge">lseek()</code> has been called) will thus read in the first block of the file, consulting the inode to find the location of such a block; it may also update the inode with a new last-accessed time. The read will further update the in-memory open file table for this file descriptor, updating the file offset such that the next read will read the second file block, etc.</li>
+  <li>Deallocated file descriptor when the file is closed.</li>
 </ol>
 
-<p>Both threads attempt to <strong>remove the same element</strong>, leading to potential data corruption or other unintended consequences.</p>
+<h2 id="writing-file-to-disk"><span class="me-2">Writing File to Disk</span><a href="#writing-file-to-disk" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>To prevent the concurrent access issues, we use <strong>mutex locks</strong> for the critical section (data manipulation part).</p>
+<h3 id="create-file"><span class="me-2">Create File</span><a href="#create-file" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h2 id="cache-affinity"><span class="me-2">Cache Affinity</span><a href="#cache-affinity" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ol>
+  <li>Open the file like how we do for reading a file.</li>
+  <li>One read to the inode bitmap (to find a free inode).</li>
+  <li>One write to the inode bitmap (to mark it allocated).</li>
+  <li>One write to the new inode itself (to initialize it).</li>
+  <li>One to the data of the directory (to link the high-level name of the file to its inode number).</li>
+  <li>One read and write to the directory inode to update it.</li>
+</ol>
+
+<h3 id="actual-write"><span class="me-2">Actual Write</span><a href="#actual-write" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>For each data blocl,</p>
+<ol>
+  <li>One read to the file inode.</li>
+  <li>One read and write to the data bitmap (to  find a free data block).</li>
+  <li>One write to the data block.</li>
+  <li>One write to the file inode (update pointer, # of blocks, etc).</li>
+</ol>
+
+<h2 id="caching-and-buffering"><span class="me-2">Caching and Buffering</span><a href="#caching-and-buffering" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="speed-up-reading"><span class="me-2">Speed up Reading</span><a href="#speed-up-reading" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>The first open may generate a lot of I/O traffic to read in directory inode and data, but <strong>subsequent file opens of that same file (or files in the same directory) will mostly hit in the cache and thus no I/O is needed</strong>.</p>
+
+<h4 id="static-partitioning"><span class="me-2">Static Partitioning</span><a href="#static-partitioning" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
-  <li>A multiprocessor scheduler should consider Cache affinity when <strong>scheduling</strong>, and thus if possible <strong>keeping a process on the same CPU</strong>.</li>
-  <li>When a process runs on the same CPU repeatedly, benefiting from the state information accumulated in that CPU’s caches</li>
-  <li>When a process is frequently shifted between different CPUs, it faces a performance hit. Each CPU switch <strong>forces the process to reload its state into a new cache</strong>, which is a slower operation.</li>
+  <li>introduced a fixed-size cache to hold popular blocks</li>
+  <li>ensures each user receives some share of the resource</li>
+  <li>usually delivers more predictable performance</li>
+  <li>is often easier to implement</li>
 </ul>
 
-<h2 id="single-queue-multiprocessor-scheduling-sqms"><span class="me-2">Single-Queue Multiprocessor Scheduling (SQMS)</span><a href="#single-queue-multiprocessor-scheduling-sqms" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>SQMS involves <strong>placing all jobs in a single queue</strong>, adopting a structure similar to single-processor scheduling.</p>
-
+<h4 id="dynamic-partiioning"><span class="me-2">Dynamic Partiioning</span><a href="#dynamic-partiioning" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <ul>
-  <li>The use of <strong>locks</strong> to access the single queue can lead to <strong>performance bottlenecks</strong>, especially as the number of CPUs increases. The <strong>competition for the single lock results in increased overhead</strong> and reduced job execution time.</li>
-  <li>In SQMS, jobs tend to <strong>move between CPUs</strong>, which goes against the principle of cache affinity.</li>
+  <li>integrate virtual memory pages and file system pages into a unified page cache</li>
+  <li>achieve better utilization, by letting resource-hungry users consume otherwise idle resources</li>
+  <li>more complex to implement</li>
+  <li>can be worse performance for users whose idle resources get consumed by others and then take a long time to reclaim when needed</li>
 </ul>
 
-<h2 id="multi-queue-multiprocessor-scheduling-mqms"><span class="me-2">Multi-Queue Multiprocessor Scheduling (MQMS)</span><a href="#multi-queue-multiprocessor-scheduling-mqms" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="speed-up-writing"><span class="me-2">Speed up Writing</span><a href="#speed-up-writing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>MQMS addresses the limitations of SQMS by <strong>assigning each CPU its own scheduling queue</strong>.</p>
+<p>Most modern file systems buffer writes in memory for anywhere between five and thirty seconds.</p>
 
 <ul>
-  <li>Each queue <strong>operates independently</strong>, significantly reducing the need for synchronization and information sharing across CPUs.</li>
-  <li>Jobs are more likely to <strong>remain on the same CPU across executions</strong>, allowing them to benefit from cache affinity</li>
-  <li>While MQMS supports cache affinity, it requires <strong>effective load balancing strategies</strong> to ensure that <strong>no single CPU is overwhelmed or underutilized</strong>.
+  <li>If the system crashes before the updates have been propagated to disk, <strong>the updates are lost</strong>.</li>
+  <li>Keeping writes in memory longer, performance can be improved by <strong>batching, scheduling, and even avoiding writes</strong>.
     <ul>
-      <li>A technique that <strong>move jobs around CPUs</strong> which we call <strong>migration</strong>.</li>
-      <li><strong>Work stealing</strong> is one basic method the system used to decide how to perform such a migration.</li>
+      <li>Batching: e.g. One inode bitmap read write for multiple file creations.</li>
+      <li>Scheduling: reorder the writes for reducing seek time, rotation time.</li>
+      <li>Avoiding: e.g. if an process creates a file and then delete that created file, we dont have to write it to disk at all.</li>
     </ul>
   </li>
 </ul>
 
-<h2 id="work-stealing"><span class="me-2">Work Stealing</span><a href="#work-stealing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<ul>
-  <li>When work-stealing takes place, <strong>a queue that is low on jobs occasionally peeks into another queue, to determine how full it is</strong>.</li>
-  <li>The <strong>source to “steal” one or more jobs from a target queue to balance the load</strong> but this strategy creates <strong>friction</strong>.</li>
-  <li><strong>Overlooking other queues</strong> causes significant overhead and scaling issues, which was the whole point of introducing MQMS.</li>
-  <li>Conversely, if you don’t glance at other queues often, you risk significant <strong>load imbalances</strong>.</li>
-  <li>Finding the proper <strong>threshold</strong> is a dark art in system policy design.</li>
-</ul>
 
   </div>
 
@@ -761,7 +842,7 @@
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/os/">os</a>,
-          <a href="/categories/concurrency/">concurrency</a>
+          <a href="/categories/persistence/">persistence</a>
       </div>
     
 
@@ -776,9 +857,9 @@
           >os</a>
         
           <a
-            href="/tags/concurrency/"
+            href="/tags/persistence/"
             class="post-tag no-text-decoration"
-          >concurrency</a>
+          >persistence</a>
         
       </div>
     
@@ -1083,67 +1164,67 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1351,7 +1432,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/condition-variables-in-threading/" class="post-preview card h-100">
+          <a href="/posts/hard-disk-drive/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1363,14 +1444,14 @@
 
 <time
   
-  data-ts="1707408000"
+  data-ts="1707753600"
   data-df="ll"
   
 >
-  Feb  9, 2024
+  Feb 13, 2024
 </time>
 
-              <h4 class="pt-0 my-2">Condition Variables in Threading</h4>
+              <h4 class="pt-0 my-2">Hard Disk Drive</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1379,9 +1460,16 @@
 
 
 
-                  What is Condition Variables?
+                  What is Hard Disk Drive?
 
-Condition variables in threading allow threads to wait for certain conditions to be true. When the condition changes, threads can be woken up by signaling the conditio...
+Hard disk drives are persistent storage devices for computers.
+
+Interface and Internal
+
+
+  Interface: read and write.
+    
+      includes several sectors (512 -byte blocks...
                 </p>
               </div>
             </div>
@@ -1389,7 +1477,7 @@ Condition variables in threading allow threads to wait for certain conditions to
         </article>
       
         <article class="col">
-          <a href="/posts/semaphore/" class="post-preview card h-100">
+          <a href="/posts/io-device/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1401,14 +1489,14 @@ Condition variables in threading allow threads to wait for certain conditions to
 
 <time
   
-  data-ts="1707408000"
+  data-ts="1707753600"
   data-df="ll"
   
 >
-  Feb  9, 2024
+  Feb 13, 2024
 </time>
 
-              <h4 class="pt-0 my-2">Semaphore</h4>
+              <h4 class="pt-0 my-2">I/O Device</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1417,14 +1505,19 @@ Condition variables in threading allow threads to wait for certain conditions to
 
 
 
-                  What is Semaphore?
+                  What is I/O Device?
 
-Semaphores serve as a unified primitive, adept at handling synchronization tasks traditionally managed by both locks and condition variables.
-
-Essence of a Semaphore
+The objects that CPU handles that are not memory, and are connected to a computer system. e.g.
 
 
-  Semapho...
+  SSD
+  Keyboard
+  Network
+
+
+The Bus
+
+A bus is a system for transferring data b...
                 </p>
               </div>
             </div>
@@ -1432,7 +1525,7 @@ Essence of a Semaphore
         </article>
       
         <article class="col">
-          <a href="/posts/concurrency-bugs/" class="post-preview card h-100">
+          <a href="/posts/raid/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1444,14 +1537,14 @@ Essence of a Semaphore
 
 <time
   
-  data-ts="1707494400"
+  data-ts="1707753600"
   data-df="ll"
   
 >
-  Feb 10, 2024
+  Feb 13, 2024
 </time>
 
-              <h4 class="pt-0 my-2">Concurrency Bugs</h4>
+              <h4 class="pt-0 my-2">Redundant Array Independent Disk (RAID)</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1460,21 +1553,13 @@ Essence of a Semaphore
 
 
 
-                  Types of Bugs
+                  What is RAID?
 
 
-  Non-Deadlock
+  A hardware RAID is a computer system designed to manage a set of disks.
+  RAID technology has three basic functions:
     
-      Atomicity violation bugs.
-      Order violation bugs.
-    
-  
-  Deadlock
-
-
-Atomicity violation bugs
-
-A code region is intended to be atomic but the atomici...
+      Block access to data is achieved by striping the da...
                 </p>
               </div>
             </div>
@@ -1496,22 +1581,18 @@ A code region is intended to be atomic but the atomici...
 
   
     <a
-      href="/posts/event-based-concurrency/"
+      href="/posts/file-and-directory/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Event Based Concurrency</p>
+      <p>File and Directory</p>
     </a>
   
 
   
-    <a
-      href="/posts/hard-disk-drive/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>Hard Disk Drive</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 

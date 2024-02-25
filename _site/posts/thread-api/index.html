@@ -42,7 +42,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Thread API" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-02-03T00:00:00+08:00","datePublished":"2024-02-03T00:00:00+08:00","description":"Thread Creation in POSIX","headline":"Thread API","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/thread-api/"},"url":"http://localhost:4000/posts/thread-api/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-02-24T14:53:45+08:00","datePublished":"2024-02-03T00:00:00+08:00","description":"Thread Creation in POSIX","headline":"Thread API","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/thread-api/"},"url":"http://localhost:4000/posts/thread-api/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -545,6 +545,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1708757625"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Feb 24, 2024
+</time>
+
+        </span>
+      
 
       
 
@@ -983,28 +1006,7 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/file-and-directory/">File and Directory</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/hard-disk-drive/">Hard Disk Drive</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/io-device/">I/O Device</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/raid/">Redundant Array Independent Disk (RAID)</a>
+          <a href="/posts/condition-variables-in-threading/">Condition Variables in Threading</a>
         </li>
       
         
@@ -1012,6 +1014,27 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/semaphore/">Semaphore</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/concurrency-bugs/">Concurrency Bugs</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/event-based-concurrency/">Event Based Concurrency</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/multi-cpu-scheduling/">Multi CPU Scheduling</a>
         </li>
       
     </ul>
@@ -1336,6 +1359,18 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -1460,46 +1495,6 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/concurrent-data-structure/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1707235200"
-  data-df="ll"
-  
->
-  Feb  7, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Concurrent Data Structures</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Challenges of Concurrency in Data Structures
-
-
-  What are the strategies for adding locks to a data structure to ensure correct, concurrent access?
-  How can locks be applied in a way that maintain...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/condition-variables-in-threading/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1574,6 +1569,56 @@ Essence of a Semaphore
 
 
   Semapho...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/concurrency-bugs/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1707494400"
+  data-df="ll"
+  
+>
+  Feb 10, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Concurrency Bugs</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Types of Bugs
+
+
+  Non-Deadlock
+    
+      Atomicity violation bugs.
+      Order violation bugs.
+    
+  
+  Deadlock
+
+
+Atomicity violation bugs
+
+A code region is intended to be atomic but the atomici...
                 </p>
               </div>
             </div>
