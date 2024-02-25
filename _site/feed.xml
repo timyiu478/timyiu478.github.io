@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-25T14:07:24+08:00</updated>
+  <updated>2024-02-25T23:42:00+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,55 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Fast File System</title>
+    <link href="http://localhost:4000/posts/fast-file-system/" rel="alternate" type="text/html" title="Fast File System" />
+    <published>2024-02-25T00:00:00+08:00</published>
+  
+    <updated>2024-02-25T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/fast-file-system/</id>
+    <content src="http://localhost:4000/posts/fast-file-system/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="os" />
+    
+    <category term="persistence" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Old Unix File System
+
+Structure
+
+
+  Super Block: information about the entire file system e.g. how big the volume is, how many inodes there are, a pointer to the head of a free list of blocks.
+  Inode Region
+  Data Region
+
+
+Poor Performance
+
+
+  The main issue was that the old UNIX file system treated the disk like it was a random-access memory. The data was spread all over the place without reg...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -201,57 +250,6 @@ Bus Hierarchy for I/O
 
 
   Some devices, like graphics and high performance I/O devices are connected to the system using a general I/O(faster...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Hard Disk Drive</title>
-    <link href="http://localhost:4000/posts/hard-disk-drive/" rel="alternate" type="text/html" title="Hard Disk Drive" />
-    <published>2024-02-13T00:00:00+08:00</published>
-  
-    <updated>2024-02-24T14:53:45+08:00</updated>
-  
-    <id>http://localhost:4000/posts/hard-disk-drive/</id>
-    <content src="http://localhost:4000/posts/hard-disk-drive/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="os" />
-    
-    <category term="persistence" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      What is Hard Disk Drive?
-
-Hard disk drives are persistent storage devices for computers.
-
-Interface and Internal
-
-
-  Interface: read and write.
-    
-      includes several sectors (512 -byte blocks) that each one can be read and write.
-      It’s like an array of n sectors, with an address space ranging from 0 to n−1.
-      Some types of interfaces: SCSI, SATA, and SAS.
-    
-  
-  Internal:
-    ...
     </summary>
   
 

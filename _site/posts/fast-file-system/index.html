@@ -30,23 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Hard Disk Drive" />
+<meta property="og:title" content="Fast File System" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="What is Hard Disk Drive?" />
-<meta property="og:description" content="What is Hard Disk Drive?" />
-<link rel="canonical" href="http://localhost:4000/posts/hard-disk-drive/" />
-<meta property="og:url" content="http://localhost:4000/posts/hard-disk-drive/" />
+<meta name="description" content="Old Unix File System" />
+<meta property="og:description" content="Old Unix File System" />
+<link rel="canonical" href="http://localhost:4000/posts/fast-file-system/" />
+<meta property="og:url" content="http://localhost:4000/posts/fast-file-system/" />
 <meta property="og:site_name" content="Tim Yiu" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-02-13T00:00:00+08:00" />
+<meta property="article:published_time" content="2024-02-25T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Hard Disk Drive" />
+<meta property="twitter:title" content="Fast File System" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-02-24T14:53:45+08:00","datePublished":"2024-02-13T00:00:00+08:00","description":"What is Hard Disk Drive?","headline":"Hard Disk Drive","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/hard-disk-drive/"},"url":"http://localhost:4000/posts/hard-disk-drive/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-02-25T00:00:00+08:00","datePublished":"2024-02-25T00:00:00+08:00","description":"Old Unix File System","headline":"Fast File System","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/fast-file-system/"},"url":"http://localhost:4000/posts/fast-file-system/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Hard Disk Drive | Tim Yiu
+  <title>Fast File System | Tim Yiu
   </title>
 
   <!--
@@ -288,7 +288,7 @@
         
           
             
-              <span>Hard Disk Drive</span>
+              <span>Fast File System</span>
             
 
           
@@ -400,6 +400,21 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
       
 
       
@@ -463,10 +478,48 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -484,7 +537,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Hard Disk Drive</h1>
+    <h1 data-toc-skip>Fast File System</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -500,41 +553,18 @@
 
 <time
   
-  data-ts="1707753600"
+  data-ts="1708790400"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb 13, 2024
+  Feb 25, 2024
 </time>
 
       </span>
 
       <!-- lastmod date -->
-      
-        <span>
-          Updated
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1708757625"
-  data-df="ll"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  Feb 24, 2024
-</time>
-
-        </span>
       
 
       
@@ -574,9 +604,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="340 words"
+  title="582 words"
 >
-  <em>1 min</em> read</span>
+  <em>3 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -585,70 +615,79 @@
   </header>
 
   <div class="content">
-    <h2 id="what-is-hard-disk-drive"><span class="me-2">What is Hard Disk Drive?</span><a href="#what-is-hard-disk-drive" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="old-unix-file-system"><span class="me-2">Old Unix File System</span><a href="#old-unix-file-system" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Hard disk drives are <strong>persistent storage devices</strong> for computers.</p>
-
-<h2 id="interface-and-internal"><span class="me-2">Interface and Internal</span><a href="#interface-and-internal" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="structure"><span class="me-2">Structure</span><a href="#structure" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>Interface: read and write.
+  <li>Super Block: information about the entire file system e.g. how big the volume is, how many inodes there are, a pointer to the head of a free list of blocks.</li>
+  <li>Inode Region</li>
+  <li>Data Region</li>
+</ul>
+
+<h3 id="poor-performance"><span class="me-2">Poor Performance</span><a href="#poor-performance" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>The main issue was that the old UNIX file system treated the disk like it was a <strong>random-access memory</strong>. The data was spread all over the place without regard to the fact that <strong>the medium holding the data was a disk</strong>, and thus had real and expensive <strong>positioning</strong> costs.</li>
+  <li>The free space is managed by free list that a <strong>logically contiguous file would be accessed by going back and forth across the disk</strong>, thus reducing performance dramatically.
     <ul>
-      <li>includes several <strong>sectors</strong> (512 -byte blocks) that each one can be read and write.</li>
-      <li>It’s like an <strong>array</strong> of n sectors, with an address space ranging from 0 to n−1.</li>
-      <li>Some types of interfaces: <strong>SCSI, SATA, and SAS</strong>.</li>
+      <li>disk defragmentation tool can help by reorganizing on-disk data to place files contiguously.</li>
     </ul>
   </li>
-  <li>Internal:
-    <ul>
-      <li>A <strong>controller</strong>: this exports the interface and controls the operation of each request given to the device.</li>
-      <li>Mechanics: <strong>Disk platters, Arm, Head</strong>, etc.</li>
-    </ul>
-  </li>
 </ul>
 
-<h2 id="basic-geometry"><span class="me-2">Basic Geometry</span><a href="#basic-geometry" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="fast-file-system-disk-awareness"><span class="me-2">Fast File System: Disk Awareness</span><a href="#fast-file-system-disk-awareness" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>The idea was to design the file system structures and allocation policies to be “disk aware” and thus improve performance.</p>
+
+<h3 id="organizing-structure-the-cylinder-group"><span class="me-2">Organizing structure: the cylinder group</span><a href="#organizing-structure-the-cylinder-group" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>A disk can have one or more <strong>platters</strong>.</li>
-  <li>Platter is a hard <strong>circular surface</strong> where <strong>data is permanently stored</strong> by causing magnetic variations.</li>
-  <li>The platters are connected around a <strong>spindle</strong> coupled to a motor that spins them at a constant speed measured in rotations per minute (RPM).</li>
-  <li>Each surface has data encoded in <strong>nested circles called tracks</strong>.</li>
-  <li><strong>Clusters(two or more sectors)</strong> are subdivided portions of these tracks.</li>
-  <li>The disk <strong>head</strong>, one per surface of the drive, <strong>does the reading and writing</strong> by sensing (i.e., read) or creating a change in (i.e., write) the magnetic patterns on the disk.</li>
-  <li>One disk <strong>arm</strong> is attached to the disk head that <strong>moves across the surface to put it over the track we want</strong>.</li>
+  <li><strong>Cylinder</strong> is <strong>a set of tracks</strong> on different surfaces of a hard drive that are the <strong>same distance</strong> from the center of the drive.a</li>
+  <li>FFS aggregates N <strong>consecutive cylinders</strong> into a group, and thus the entire disk can thus be viewed as a collection of cylinder groups.</li>
+  <li>To improve performance, FFS puts files into the same group for reducing the seek time.</li>
+  <li>Each group include all file system structures including super block, bitmaps, inode region, and data region.</li>
+  <li>Super block is duplicated in each group for reliabiltiy.</li>
+  <li>Use data and inode bitmaps manage free space in a file system because it is <strong>easy to find a large chunk of free space</strong> and allocate it to a file, perhaps avoiding some of the <strong>fragmentation problems of the free list</strong>.</li>
 </ul>
 
-<h2 id="readwrite-operations"><span class="me-2">Read/Write operations</span><a href="#readwrite-operations" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="policies-how-to-allocate-files-and-directories"><span class="me-2">Policies: How to Allocate Files and Directories</span><a href="#policies-how-to-allocate-files-and-directories" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>Keep related stuff together(same block group), keep unrelated stuff far apart(different block group)</strong>.</p>
+
+<h4 id="placement-of-directories"><span class="me-2">Placement of Directories</span><a href="#placement-of-directories" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>Find a group that</p>
 
 <ul>
-  <li><strong>Seek</strong> - positioning the read/write head over desired track</li>
-  <li><strong>Rotation</strong> (Rotational Delay) - Waiting for the target sector to rotate under the head</li>
-  <li><strong>Transfer</strong> - performing the read/write</li>
+  <li>a lower number of allocated directories for balancing directiories across groups.</li>
+  <li>a high number of free inodes which implies can allocate a lot of files.</li>
 </ul>
 
-<h2 id="performance-evaluation"><span class="me-2">Performance Evaluation</span><a href="#performance-evaluation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Then put the inode and data block of the directory to that group.</p>
+
+<h4 id="placement-of-files"><span class="me-2">Placement of Files</span><a href="#placement-of-files" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
-  <li><strong>Disk Access Time</strong> = <em>Seek Time + Rotation Time + Transfer Time</em></li>
-  <li><strong>Disk Response Time</strong> = <em>Queue Time + Disk Access Time</em></li>
+  <li>Allocate the data blocks of a file in the same group as its inode.</li>
+  <li>Places all files that are in the same directory in the cylinder group of the directory they are in.</li>
 </ul>
 
-<h2 id="types-of-workloads"><span class="me-2">Types of workloads</span><a href="#types-of-workloads" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h4 id="the-large-file-exception"><span class="me-2">The Large File exception</span><a href="#the-large-file-exception" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
-  <li><strong>Random workloads</strong> read small (4KB) blocks of data from the disk at random. Database management systems, in particular, use random workloads.</li>
-  <li><strong>Sequential workloads</strong> read several sectors from the disk in a linear fashion. Sequential access patterns are pretty common.</li>
+  <li>Without a different rule, a large file would <strong>entirely fill the block group</strong> it is first placed within such that it prevents subsequent “related” files from being placed within this block group, and thus may <strong>hurt file-access locality</strong>.</li>
+  <li>After some number of blocks are allocated into the first block group, the next large chunk of file will be placed into the next block group , and so on.</li>
+  <li>How to choose the chunk size? FFS decide it based on the <strong>inode structure</strong>. The first twelve direct blocks were placed in the same group as the inode. Each subsequent indirect block, and all the blocks it pointed to, were placed in a different group.</li>
 </ul>
 
-<h2 id="io-scheduling"><span class="me-2">I/O scheduling</span><a href="#io-scheduling" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>The disk scheduling algorithm affects the efficiency of our service.</p>
+<h3 id="internal-fragmentation"><span class="me-2">Internal Fragmentation</span><a href="#internal-fragmentation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li><strong>FIFO</strong></li>
-  <li><strong>Shortest Seek Time First</strong> prioritizes requests by their seek time.</li>
-  <li><strong>Shortest Access Time First</strong> prioritizes requests by how close they are to the head’s current location.</li>
+  <li>FFS designed to to <strong>sub-blocks(512 bytes size blocks)</strong> to fix the internal fragmentation problem.</li>
+  <li>The sub-blocks will be allocated to a small file(smaller than 4KB) until the file acquires a full 4KB of data.</li>
+  <li>At that point, FFS will find a 4KB block, copy the sub-blocks into it, and free the sub-blocks for future use.</li>
+  <li>Since this introduces additional I/0s, buffer write is used to aviod the sub-block specialization entirely in most cases.</li>
 </ul>
 
   </div>
@@ -982,67 +1021,67 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1262,6 +1301,51 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
+          <a href="/posts/hard-disk-drive/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1707753600"
+  data-df="ll"
+  
+>
+  Feb 13, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Hard Disk Drive</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  What is Hard Disk Drive?
+
+Hard disk drives are persistent storage devices for computers.
+
+Interface and Internal
+
+
+  Interface: read and write.
+    
+      includes several sectors (512 -byte blocks...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/posts/io-device/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1351,47 +1435,6 @@ A bus is a system for transferring data b...
           </a>
         </article>
       
-        <article class="col">
-          <a href="/posts/file-and-directory/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1708099200"
-  data-df="ll"
-  
->
-  Feb 17, 2024
-</time>
-
-              <h4 class="pt-0 my-2">File and Directory</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Storage Abstractions
-
-Storage virtualization is based on two main ideas: the file and the directory.
-
-
-  File: A group of bytes that can be read or written. Each file has a low-level name in the fo...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -1407,22 +1450,18 @@ Storage virtualization is based on two main ideas: the file and the directory.
 
   
     <a
-      href="/posts/multi-cpu-scheduling/"
+      href="/posts/file-system-implementation/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Multi CPU Scheduling</p>
+      <p>Very Simple File System Implementation</p>
     </a>
   
 
   
-    <a
-      href="/posts/io-device/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>I/O Device</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
