@@ -71,10 +71,10 @@ theme_mode: dark # [light|dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn: "https://timyiu478.github.io/assets/favicons/favicon.ico"
+img_cdn: "https://timyiu478.github.io"
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "https://timyiu478.github.io/assets/favicons/favicon.ico"
+avatar: "https://timyiu478.github.io/assets/img/favicons/android-chrome-192x192.png"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.

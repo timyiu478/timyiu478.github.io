@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-03-13T22:21:02+08:00</updated>
+  <updated>2024-07-18T15:49:04+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,112 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Travel to japan kansai from May 2024 to June 2024</title>
+    <link href="http://localhost:4000/posts/travel-to-japan-kansai-from-may-to-june/" rel="alternate" type="text/html" title="Travel to japan kansai from May 2024 to June 2024" />
+    <published>2024-07-17T00:00:00+08:00</published>
+  
+    <updated>2024-07-18T14:58:21+08:00</updated>
+  
+    <id>http://localhost:4000/posts/travel-to-japan-kansai-from-may-to-june/</id>
+    <content src="http://localhost:4000/posts/travel-to-japan-kansai-from-may-to-june/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="travel" />
+    
+    <category term="japan" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Kyoto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nara
+
+
+
+
+
+
+
+
+Himeji
+
+
+
+
+
+
+
+
+Kobe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mieken
+
+
+
+
+
+
+
+Nachi
+
+
+
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -62,54 +168,6 @@ Poor Performance
 
 
   The main issue was that the old UNIX file system treated the disk like it was a random-access memory. The data was spread all over the place without reg...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Crash Consistency Problem</title>
-    <link href="http://localhost:4000/posts/crash-consistency-problem/" rel="alternate" type="text/html" title="Crash Consistency Problem" />
-    <published>2024-02-25T00:00:00+08:00</published>
-  
-    <updated>2024-02-25T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/crash-consistency-problem/</id>
-    <content src="http://localhost:4000/posts/crash-consistency-problem/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="os" />
-    
-    <category term="persistence" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Crash Consistency Problem
-
-
-  The disk only serve one request at a time.
-  You have to update two on-disk structures.
-  If the system crashes or loses power after one write completes, the on-disk structure will be left in an inconsistent state.
-  How to update persistent data structures despite the presence of a power loss or system crash?
-
-
-File System Structure used in following example
-
-
-  I...
     </summary>
   
 
