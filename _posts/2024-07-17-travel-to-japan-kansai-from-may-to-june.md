@@ -5,7 +5,7 @@ categories: ["travel", "japan"]
 tags: ["travel", "japan"]
 ---
 
-# Kyoto
+## Kyoto
 
 ![a](/assets/img/japan-2024-05-to-06/kyoto/signal-2024-06-29-230452.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/kyoto/signal-2024-06-29-230453-1.jpeg)
@@ -28,7 +28,7 @@ tags: ["travel", "japan"]
 ![a](/assets/img/japan-2024-05-to-06/kyoto/signal-2024-06-29-230456.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/kyoto/signal-2024-06-29-230457.jpeg)
 
-# Nara
+## Nara
 
 ![a](/assets/img/japan-2024-05-to-06/nara/signal-2024-05-22-140742.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/nara/signal-2024-05-24-132822.jpeg)
@@ -37,7 +37,7 @@ tags: ["travel", "japan"]
 ![a](/assets/img/japan-2024-05-to-06/nara/signal-2024-05-26-154517.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/nara/signal-2024-05-27-172723.jpeg)
 
-# Himeji
+## Himeji
 
 ![a](/assets/img/japan-2024-05-to-06/himeji/signal-2024-05-31-151919.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/himeji/signal-2024-05-31-195133.jpeg)
@@ -46,7 +46,7 @@ tags: ["travel", "japan"]
 ![a](/assets/img/japan-2024-05-to-06/himeji/signal-2024-06-01-222815.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/himeji/signal-2024-06-06-212637.jpeg)
 
-# Kobe
+## Kobe
 
 ![a](/assets/img/japan-2024-05-to-06/kobe/signal-2024-06-08-135327.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/kobe/signal-2024-06-08-135420.jpeg)
@@ -62,7 +62,7 @@ tags: ["travel", "japan"]
 ![a](/assets/img/japan-2024-05-to-06/kobe/signal-2024-06-21-193051.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/kobe/signal-2024-06-21-194234.jpeg)
 
-# Mieken
+## Mieken
 
 ![a](/assets/img/japan-2024-05-to-06/mieken/signal-2024-06-23-152420.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/mieken/signal-2024-06-23-153117.jpeg)
@@ -70,7 +70,7 @@ tags: ["travel", "japan"]
 ![a](/assets/img/japan-2024-05-to-06/mieken/signal-2024-06-26-134445.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/mieken/signal-2024-06-26-141802.jpeg)
 
-# Nachi
+## Nachi
 
 ![a](/assets/img/japan-2024-05-to-06/nachi/signal-2024-06-28-130043.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/nachi/signal-2024-06-28-161600.jpeg)
