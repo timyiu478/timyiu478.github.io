@@ -627,14 +627,14 @@ To support **bigger** files, file system designers have had to introduce differe
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/fast-file-system/">Fast File System</a>
+          <a href="/posts/crash-consistency-problem/">Crash Consistency Problem</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/semaphore/">Semaphore</a>
+          <a href="/posts/fast-file-system/">Fast File System</a>
         </li>
       
         
@@ -730,6 +730,8 @@ To support **bigger** files, file system designers have had to introduce differe
     
     
     
+    
+      
     
   
     
@@ -839,6 +841,18 @@ To support **bigger** files, file system designers have had to introduce differe
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -1399,6 +1413,8 @@ A bus is a system for transferring data b...
     
     
     
+    
+      
     
   
     

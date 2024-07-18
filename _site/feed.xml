@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-25T23:42:00+08:00</updated>
+  <updated>2024-03-13T22:21:02+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -62,6 +62,54 @@ Poor Performance
 
 
   The main issue was that the old UNIX file system treated the disk like it was a random-access memory. The data was spread all over the place without reg...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Crash Consistency Problem</title>
+    <link href="http://localhost:4000/posts/crash-consistency-problem/" rel="alternate" type="text/html" title="Crash Consistency Problem" />
+    <published>2024-02-25T00:00:00+08:00</published>
+  
+    <updated>2024-02-25T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/crash-consistency-problem/</id>
+    <content src="http://localhost:4000/posts/crash-consistency-problem/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="os" />
+    
+    <category term="persistence" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Crash Consistency Problem
+
+
+  The disk only serve one request at a time.
+  You have to update two on-disk structures.
+  If the system crashes or loses power after one write completes, the on-disk structure will be left in an inconsistent state.
+  How to update persistent data structures despite the presence of a power loss or system crash?
+
+
+File System Structure used in following example
+
+
+  I...
     </summary>
   
 
@@ -197,59 +245,6 @@ A file system consists of groups of directories and the files and other director
     
       Block access to data is achieved by striping the data on the disk, reducing the mechanical seek time and increasing data access speed.
       Reading multiple disks in an array reduces mechanical seek time and increases data access speed at the same ti...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>I/O Device</title>
-    <link href="http://localhost:4000/posts/io-device/" rel="alternate" type="text/html" title="I/O Device" />
-    <published>2024-02-13T00:00:00+08:00</published>
-  
-    <updated>2024-02-24T14:53:45+08:00</updated>
-  
-    <id>http://localhost:4000/posts/io-device/</id>
-    <content src="http://localhost:4000/posts/io-device/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="os" />
-    
-    <category term="persistence" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      What is I/O Device?
-
-The objects that CPU handles that are not memory, and are connected to a computer system. e.g.
-
-
-  SSD
-  Keyboard
-  Network
-
-
-The Bus
-
-A bus is a system for transferring data between components inside a computer or between computers.
-
-Bus Hierarchy for I/O
-
-
-  Some devices, like graphics and high performance I/O devices are connected to the system using a general I/O(faster...
     </summary>
   
 

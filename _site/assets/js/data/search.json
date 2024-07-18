@@ -18,6 +18,23 @@
   },
   
   {
+    "title": "Crash Consistency Problem",
+    "url": "/posts/crash-consistency-problem/",
+    "categories": "os, persistence",
+    "tags": "os, persistence",
+    "date": "2024-02-25 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Crash Consistency Problem  The disk only serve one request at a time.  You have to update two on-disk structures.  If the system crashes or loses power after one write completes, the on-disk struct...",
+    "content": "Crash Consistency Problem  The disk only serve one request at a time.  You have to update two on-disk structures.  If the system crashes or loses power after one write completes, the on-disk structure will be left in an inconsistent state.  How to update persistent data structures despite the presence of a power loss or system crash?File System Structure used in following example  Inode and data bitmaps for free space management  Inode Region  Data Region"
+  },
+  
+  {
     "title": "Very Simple File System Implementation",
     "url": "/posts/file-system-implementation/",
     "categories": "os, persistence",
