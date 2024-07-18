@@ -50,7 +50,6 @@ tags: ["travel", "japan"]
 
 ![a](/assets/img/japan-2024-05-to-06/kobe/signal-2024-06-08-135327.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/kobe/signal-2024-06-08-135420.jpeg)
-![a](/assets/img/japan-2024-05-to-06/kobe/signal-2024-06-08-140249-11.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/kobe/signal-2024-06-08-140249.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/kobe/signal-2024-06-08-142108.jpeg)
 ![a](/assets/img/japan-2024-05-to-06/kobe/signal-2024-06-08-143617.jpeg)
@@ -73,5 +72,5 @@ tags: ["travel", "japan"]
 
 # Nachi
 
-![a](/assets/img/japan-2024-05-to-06/mieken/signal-2024-06-28-130043.jpeg)
-![a](/assets/img/japan-2024-05-to-06/mieken/signal-2024-06-28-161600.jpeg)
+![a](/assets/img/japan-2024-05-to-06/nachi/signal-2024-06-28-130043.jpeg)
+![a](/assets/img/japan-2024-05-to-06/nachi/signal-2024-06-28-161600.jpeg)
