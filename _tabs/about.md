@@ -20,6 +20,8 @@ This website is a personal blog where I share my learnings, questions, take away
 
 - Distributed systems
 - Security
+- Enterprise Application Architectures
+- Software Testing and Automation
 
 ## Hobbies
 
