@@ -12,6 +12,10 @@ Hi, my name is Tim Yiu. I was a platform engineer at [Mox Bank](https://mox.com)
 
 This website is a personal blog where I share my learnings, questions, take aways, travels. This website has neither been sponsored by anyone nor shows any advertisements, and it will be open to all and ad-free.
 
+# Research Experiences
+
+- [Blockchain Unleashed: A Secure E-Voting Application](https://github.com/timyiu478/e-voting/blob/main/final_report.pdf)
+
 # Research Interests
 
 - Distributed systems
