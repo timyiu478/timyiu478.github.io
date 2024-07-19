@@ -6,7 +6,7 @@ order: 4
 
 ## About Me
 
-Hi, my name is Tim Yiu. I was a platform engineer at [Mox Bank](https://mox.com) for about 2 years managing an application platform on Kubernetes to boost developer productivity by reducing cognitive load. The key components of the application platform are CI/CD pipelines, multi-tenant Kubernetes runtime, observability services, and service mesh for communication. I have a first-class honours computing degree at the [Hong Kong Polytechnic University](https://www.polyu.edu.hk/comp/). I like to design, implement, improve, and study distributed systems in all aspects and layers.
+Hi, my name is Tim Yiu. I was a platform engineer at [Mox Bank](https://mox.com) for about 2 years managing an application platform on Kubernetes to boost developer productivity by reducing cognitive load. The key components of the application platform are CI/CD services, multi-tenant Kubernetes runtime, observability services, and service mesh for communication. I have a first-class honours computing degree at the [Hong Kong Polytechnic University](https://www.polyu.edu.hk/comp/). I like to design, implement, improve, and study distributed systems in all aspects and layers.
 
 ## About this website
 
