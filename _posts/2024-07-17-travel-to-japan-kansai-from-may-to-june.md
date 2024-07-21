@@ -5,6 +5,10 @@ categories: ["travel", "japan"]
 tags: ["travel", "japan"]
 ---
 
+## Acknowledgement
+
+Thanks for the kind people I met in japan especially the people who gave me a ride to the bus stop when I missed the last train.
+
 ## Kyoto
 
 ![a](/assets/img/japan-2024-05-to-06/kyoto/signal-2024-06-29-230452.jpeg)
