@@ -40,3 +40,21 @@ CHIP RAM8 {
 - After I [built the HACK computer](https://github.com/timyiu478/nand2tetris/blob/main/projects/05/CPU.hdl) by writing *HDL*, I a much clear understanding on the interactions of CPU components in *bit* level.
 
 ![computer_architecture](/assets/img/nand2tetris/cpu.png)
+
+## Assembler
+
+## Virtual Machine
+
+### Stack Arithmetic
+
+### Program Control
+
+## High-Level Language
+
+## Compiler
+
+### Syntax Analysis
+
+### Code Generation
+
+## Operating System
