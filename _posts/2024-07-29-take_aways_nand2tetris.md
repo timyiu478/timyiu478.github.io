@@ -43,6 +43,19 @@ CHIP RAM8 {
 
 ## Assembler
 
+- Assembler is a software to **translate** the **symbolic and human-readable** language called assembly to **binary** machine language. For example, `LOAD R3,7` rather than `110000101000000110000000000000111`.
+- The symbols are introduced into assembly programs from two sources: **variables** and **labels**.
+  - Variable: the programmer can use symbolic variable names, and the translator will assign them to memory addresses.
+  - Label: the programmer can mark various **locations in the program** with symbols.
+- To implement an assembler, we need to write a **parser** that get the revelent instructions from the file, a **translation table** to help us to translate characters to proper binaries and the symbols need to be inserted(retreived) to(from) the **symbol tables** for setting(getting) correct memory locations or instruction addresses. For example, the below code snippet shows how to set(get) the unique free memory address for the variable.
+
+```python
+if self.symbolTable.contains(p.symbol()) == False:
+  self.symbolTable.addEntry(p.symbol(), self.freeMemoryAddress)
+  self.freeMemoryAddress += 1
+hackFileStr += decimalToBinary(self.symbolTable.getAddress(p.symbol()))
+```
+
 ## Virtual Machine
 
 ### Stack Arithmetic

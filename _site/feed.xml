@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-07-18T17:44:43+08:00</updated>
+  <updated>2024-07-29T23:03:08+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,53 @@
 
   
   <entry>
+    <title>Takeaways from Nand2Tetris course</title>
+    <link href="http://localhost:4000/posts/take_aways_nand2tetris/" rel="alternate" type="text/html" title="Takeaways from Nand2Tetris course" />
+    <published>2024-07-29T00:00:00+08:00</published>
+  
+    <updated>2024-07-29T17:27:45+08:00</updated>
+  
+    <id>http://localhost:4000/posts/take_aways_nand2tetris/</id>
+    <content src="http://localhost:4000/posts/take_aways_nand2tetris/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="takeaways" />
+    
+    <category term="nand2tetris" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Abstracts
+
+I took the Nand2Tetris course in few months ago for consolidating my computing knowledge by its hands-on projects. This post is about my key takeaways from this course. If you are intereted in my solutions of the projects, you can check this Github repository.
+
+Random Access Memory
+
+The reason why we can access an arbitrary memory element of a sequence in equal time is the processing...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Travel to japan kansai from May 2024 to June 2024</title>
     <link href="http://localhost:4000/posts/travel-to-japan-kansai-from-may-to-june/" rel="alternate" type="text/html" title="Travel to japan kansai from May 2024 to June 2024" />
     <published>2024-07-17T00:00:00+08:00</published>
   
-    <updated>2024-07-18T17:38:59+08:00</updated>
+    <updated>2024-07-21T23:53:31+08:00</updated>
   
     <id>http://localhost:4000/posts/travel-to-japan-kansai-from-may-to-june/</id>
     <content src="http://localhost:4000/posts/travel-to-japan-kansai-from-may-to-june/" />
@@ -48,7 +90,11 @@
 
 
 
-      Kyoto
+      Acknowledgement
+
+Thanks for the kind people I met in japan especially the people who gave me a ride to the bus stop when I missed the last train.
+
+Kyoto
 
 
 
@@ -259,49 +305,6 @@ Storage virtualization is based on two main ideas: the file and the directory.
 
 
 A file system consists of groups of directories and the files and other directories they contai...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Redundant Array Independent Disk (RAID)</title>
-    <link href="http://localhost:4000/posts/raid/" rel="alternate" type="text/html" title="Redundant Array Independent Disk (RAID)" />
-    <published>2024-02-13T00:00:00+08:00</published>
-  
-    <updated>2024-02-24T14:53:45+08:00</updated>
-  
-    <id>http://localhost:4000/posts/raid/</id>
-    <content src="http://localhost:4000/posts/raid/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="os" />
-    
-    <category term="persistence" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      What is RAID?
-
-
-  A hardware RAID is a computer system designed to manage a set of disks.
-  RAID technology has three basic functions:
-    
-      Block access to data is achieved by striping the data on the disk, reducing the mechanical seek time and increasing data access speed.
-      Reading multiple disks in an array reduces mechanical seek time and increases data access speed at the same ti...
     </summary>
   
 

@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Takeaways from Nand2Tetris course",
+    "url": "/posts/take_aways_nand2tetris/",
+    "categories": "takeaways, nand2tetris",
+    "tags": "takeaways, nand2tetris",
+    "date": "2024-07-29 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "AbstractsI took the Nand2Tetris course in few months ago for consolidating my computing knowledge by its hands-on projects. This post is about my key takeaways from this course. If you are interete...",
+    "content": "AbstractsI took the Nand2Tetris course in few months ago for consolidating my computing knowledge by its hands-on projects. This post is about my key takeaways from this course. If you are intereted in my solutions of the projects, you can check this Github repository.Random Access MemoryThe reason why we can access an arbitrary memory element of a sequence in equal time is the processing of chips or memory elements are paralleled. The following HDL example code is one of the RAM implementation. From the code, we can see how we use the address, multiplexer and de-multiplexer to select which register and use the load to control whether the selected register saves the input in.CHIP RAM8 {    IN in[16], load, address[3];    OUT out[16];    PARTS:    DMux8Way(in=load, sel=address, a=load0, b=load1, c=load2, d=load3, e=load4, f=load5, g=load6, h=load7);    Register(in=in, load=load0, out=out0);    Register(in=in, load=load1, out=out1);    Register(in=in, load=load2, out=out2);    Register(in=in, load=load3, out=out3);    Register(in=in, load=load4, out=out4);    Register(in=in, load=load5, out=out5);    Register(in=in, load=load6, out=out6);    Register(in=in, load=load7, out=out7);    Mux8Way16(a=out0, b=out1, c=out2, d=out3, e=out4, f=out5, g=out6, h=out7, sel=address, out=out);}Computer Architecture  There are two main type of computer architecture for general use: Von Neumann architecture and Harvard architecture.  Before I took this course, I had knew the components of a computer architecture such as CPU and Memory, the communication between them via BUS and the fetch and execute cycle. But I did not exactly know how the inputs of the CPU affect the bits(specifically the control bits) of the CPU internal components so that we can get the desired outputs and figure out which instruction to execute next when I looked the below CPU diagram.  After I built the HACK computer by writing HDL, I a much clear understanding on the interactions of CPU components in bit level.Assembler  Assembler is a software to translate the symbolic and human-readable language called assembly to binary machine language. For example, LOAD R3,7 rather than 110000101000000110000000000000111.  The symbols are introduced into assembly programs from two sources: variables and labels.          Variable: the programmer can use symbolic variable names, and the translator will assign them to memory addresses.      Label: the programmer can mark various locations in the program with symbols.        To implement an assembler, we need to write a parser that get the revelent instructions from the file, a translation table to help us to translate characters to proper binaries and the symbols need to be inserted(retreived) to(from) the symbol tables for setting(getting) correct memory locations or instruction addresses. For example, the below code snippet shows how to set(get) the unique free memory address for the variable.if self.symbolTable.contains(p.symbol()) == False:  self.symbolTable.addEntry(p.symbol(), self.freeMemoryAddress)  self.freeMemoryAddress += 1hackFileStr += decimalToBinary(self.symbolTable.getAddress(p.symbol()))Virtual MachineStack ArithmeticProgram ControlHigh-Level LanguageCompilerSyntax AnalysisCode GenerationOperating System"
+  },
+  
+  {
     "title": "Travel to japan kansai from May 2024 to June 2024",
     "url": "/posts/travel-to-japan-kansai-from-may-to-june/",
     "categories": "travel, japan",
@@ -13,8 +30,8 @@
 
 
     
-    "snippet": "KyotoNaraHimejiKobeMiekenNachi",
-    "content": "KyotoNaraHimejiKobeMiekenNachi"
+    "snippet": "AcknowledgementThanks for the kind people I met in japan especially the people who gave me a ride to the bus stop when I missed the last train.KyotoNaraHimejiKobeMiekenNachi",
+    "content": "AcknowledgementThanks for the kind people I met in japan especially the people who gave me a ride to the bus stop when I missed the last train.KyotoNaraHimejiKobeMiekenNachi"
   },
   
   {
