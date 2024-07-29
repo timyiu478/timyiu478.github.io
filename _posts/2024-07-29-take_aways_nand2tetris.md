@@ -33,6 +33,10 @@ CHIP RAM8 {
 }
 ```
 
-## Machine Language
+## Computer Architecture
 
-tbc
+- There are two main type of computer architecture for general use: [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) and [Harvard architecture](https://en.wikipedia.org/wiki/Harvard_architecture).
+- Before I took this course, I had knew the components of a computer architecture such as *CPU* and *Memory*, the communication between them via *BUS* and the *fetch and execute cycle*. But I did not exactly know how the inputs of the *CPU* affect the bits(specifically the control bits) of the *CPU* internal components so that we can get the desired outputs and figure out which instruction to execute next when I looked the below CPU diagram.
+- After I [built the HACK computer](https://github.com/timyiu478/nand2tetris/blob/main/projects/05/CPU.hdl) by writing *HDL*, I a much clear understanding on the interactions of CPU components in *bit* level.
+
+![computer_architecture](/assets/img/nand2tetris/cpu.png)
