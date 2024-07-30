@@ -455,6 +455,61 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -551,9 +606,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="358 words"
+  title="655 words"
 >
-  <em>1 min</em> read</span>
+  <em>3 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -648,6 +703,49 @@ your applications to explain any anomalies, without hitting investigative dead e
   </span><span class="nl">"user"</span><span class="p">:</span><span class="s2">"foo"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="the-core-analysis-loop"><span class="me-2">The Core Analysis Loop</span><a href="#the-core-analysis-loop" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ol>
+  <li>Start with the overall view of what prompted your investigation: what did the
+customer or alert tell you?</li>
+  <li>verify what you know so far is true: is a notable change in performance
+happening somewhere in this system?</li>
+  <li>Search for <strong>dimensions</strong> that might drive that change in performance.</li>
+  <li>Do you now know enough about what might be occurring? If not, filter your view to isolate this area of performance as your next starting
+point. Then return to step 3.</li>
+</ol>
+
+<h2 id="determining-where-to-debug"><span class="me-2">Determining Where to Debug</span><a href="#determining-where-to-debug" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>Observability operates on the order of <strong>systems</strong>, not on the order of <strong>functions</strong>. Emitting enough detail at the line level to reliably debug code would emit so much output that it would swamp most observability systems with an obscene amount of storage and scale.</li>
+  <li>Observability is not for debugging your code logic. Observability is for <strong>figuring out where in your systems to find the code you need to debug</strong>.</li>
+</ul>
+
+<h2 id="the-functional-requirements-for-observability"><span class="me-2">The Functional Requirements for Observability</span><a href="#the-functional-requirements-for-observability" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>Queries against your observability data must return results as quickly as possible.</li>
+  <li>An ability to analyze high-cardinality and high-dimensionality data.</li>
+  <li>Queries return all data recorded within specific time intervals, so you must ensure that it is indexed appropriately.</li>
+  <li>That data store must also be durable and reliable.</li>
+</ul>
+
+<h2 id="when-constant-sampling-is-not-effective"><span class="me-2">When constant sampling is not effective</span><a href="#when-constant-sampling-is-not-effective" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>You care a lot about <strong>error</strong> cases and not very much about success cases.</li>
+  <li>You want to ensure that a huge increase in traffic on your servers can’t overwhelm your analytics backend.</li>
+</ul>
+
+<h2 id="choosing-dynamic-sampling-options"><span class="me-2">Choosing Dynamic Sampling Options</span><a href="#choosing-dynamic-sampling-options" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>Are you dealing with a front-page app, and 90% of the requests hitting it are nearly indistinguishable from one another?</li>
+  <li>A backend behind a read-through cache, where each request is mostly unique.</li>
+  <li>Each of these situations benefits from a slightly different sampling strategy that optimizes for their needs.</li>
+</ul>
 
 <h2 id="references"><span class="me-2">References</span><a href="#references" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 

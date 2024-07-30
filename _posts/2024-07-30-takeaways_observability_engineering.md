@@ -67,6 +67,39 @@ Structured log example:
 }
 ```
 
+## The Core Analysis Loop
+
+1. Start with the overall view of what prompted your investigation: what did the
+customer or alert tell you?
+2. verify what you know so far is true: is a notable change in performance
+happening somewhere in this system?
+3. Search for **dimensions** that might drive that change in performance.
+4. Do you now know enough about what might be occurring? If not, filter your view to isolate this area of performance as your next starting
+point. Then return to step 3.
+
+## Determining Where to Debug
+
+- Observability operates on the order of **systems**, not on the order of **functions**. Emitting enough detail at the line level to reliably debug code would emit so much output that it would swamp most observability systems with an obscene amount of storage and scale.
+- Observability is not for debugging your code logic. Observability is for **figuring out where in your systems to find the code you need to debug**. 
+
+## The Functional Requirements for Observability
+
+- Queries against your observability data must return results as quickly as possible. 
+- An ability to analyze high-cardinality and high-dimensionality data.
+- Queries return all data recorded within specific time intervals, so you must ensure that it is indexed appropriately.
+- That data store must also be durable and reliable.
+
+## When constant sampling is not effective 
+
+- You care a lot about **error** cases and not very much about success cases.
+- You want to ensure that a huge increase in traffic on your servers can’t overwhelm your analytics backend.
+
+## Choosing Dynamic Sampling Options
+
+- Are you dealing with a front-page app, and 90% of the requests hitting it are nearly indistinguishable from one another?
+- A backend behind a read-through cache, where each request is mostly unique.
+- Each of these situations benefits from a slightly different sampling strategy that optimizes for their needs.
+
 ## References
 
 [^1]: https://grafana.com/blog/2022/02/15/what-are-cardinality-spikes-and-why-do-they-matter/
