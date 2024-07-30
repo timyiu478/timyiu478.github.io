@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-07-30T15:45:38+08:00</updated>
+  <updated>2024-07-30T17:34:45+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/take_aways_nand2tetris/" rel="alternate" type="text/html" title="Takeaways from Nand2Tetris course" />
     <published>2024-07-29T00:00:00+08:00</published>
   
-    <updated>2024-07-29T23:04:50+08:00</updated>
+    <updated>2024-07-30T15:51:31+08:00</updated>
   
     <id>http://localhost:4000/posts/take_aways_nand2tetris/</id>
     <content src="http://localhost:4000/posts/take_aways_nand2tetris/" />

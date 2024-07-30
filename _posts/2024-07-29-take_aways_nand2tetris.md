@@ -103,12 +103,12 @@ Example code snippet: [https://github.com/timyiu478/nand2tetris/blob/main/projec
 
 ![return_implementation](/assets/img/nand2tetris/return_implementation.png)
 
-## High-Level Language
-
-## Compiler
-
-### Syntax Analysis
-
-### Code Generation
-
 ## Operating System
+
+### Heap Management using first-fit free list
+
+Note: The lenght of the link list will be longer and the size of the free block will be smaller over time. The OS can run the **defragmentation** periodically to mitigate this.
+
+Example code snippet: [https://github.com/timyiu478/nand2tetris/blob/main/projects/12/Memory.jack](https://github.com/timyiu478/nand2tetris/blob/main/projects/12/Memory.jack)
+
+![free_list](/assets/img/nand2tetris/free_list.png)
