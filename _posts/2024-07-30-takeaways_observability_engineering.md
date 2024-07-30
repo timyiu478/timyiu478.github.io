@@ -100,6 +100,11 @@ point. Then return to step 3.
 - A backend behind a read-through cache, where each request is mostly unique.
 - Each of these situations benefits from a slightly different sampling strategy that optimizes for their needs.
 
+## When to Make a Sampling Decision for Traces
+
+- **head**-based sampling: the decision is made when the trace event is initiated. That decision is then propagated further downstream (e.g., by inserting a “require sampling” header bit) to ensure that every span necessary to complete the trace is sampled.
+- **tail**-based sampling: a decision on values known only at the end of a request. To collect full traces in the tail-based approach, all spans must **first be collected in a buffer** and then, retrospectively, a sampling decision can be made
+
 ## References
 
 [^1]: https://grafana.com/blog/2022/02/15/what-are-cardinality-spikes-and-why-do-they-matter/
