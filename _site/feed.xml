@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-07-30T17:34:45+08:00</updated>
+  <updated>2024-07-30T23:54:42+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,57 @@
 
   
   <entry>
+    <title>Takeaways from Observability Engineering Book</title>
+    <link href="http://localhost:4000/posts/takeaways_observability_engineering/" rel="alternate" type="text/html" title="Takeaways from Observability Engineering Book" />
+    <published>2024-07-30T00:00:00+08:00</published>
+  
+    <updated>2024-07-30T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/takeaways_observability_engineering/</id>
+    <content src="http://localhost:4000/posts/takeaways_observability_engineering/" />
+    <author>
+      <name>Tim Yiu</name>
+    </author>
+
+  
+    
+    <category term="takeaways" />
+    
+    <category term="observability" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Abstracts
+
+This post is about my key takeaways from the Observability Engineering Book by Charity Majors, Liz Fong-Jones, George Miranda.
+
+What is Observability
+
+For a software application to have observability, you must be able to do the following:
+
+
+  Understand the inner workings and system state solely by observing and interrogating with external tools
+  Can continually answer open-ended qu...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Takeaways from Nand2Tetris course</title>
     <link href="http://localhost:4000/posts/take_aways_nand2tetris/" rel="alternate" type="text/html" title="Takeaways from Nand2Tetris course" />
     <published>2024-07-29T00:00:00+08:00</published>
   
-    <updated>2024-07-30T15:51:31+08:00</updated>
+    <updated>2024-07-30T17:35:21+08:00</updated>
   
     <id>http://localhost:4000/posts/take_aways_nand2tetris/</id>
     <content src="http://localhost:4000/posts/take_aways_nand2tetris/" />
@@ -260,51 +306,6 @@ Overall Organization
 
   Block: divide disk to a series of blocks.
   Data Region: reserve a fixed portion of the disk fo...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>File and Directory</title>
-    <link href="http://localhost:4000/posts/file-and-directory/" rel="alternate" type="text/html" title="File and Directory" />
-    <published>2024-02-17T00:00:00+08:00</published>
-  
-    <updated>2024-02-17T00:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/file-and-directory/</id>
-    <content src="http://localhost:4000/posts/file-and-directory/" />
-    <author>
-      <name>Tim Yiu</name>
-    </author>
-
-  
-    
-    <category term="os" />
-    
-    <category term="persistence" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Storage Abstractions
-
-Storage virtualization is based on two main ideas: the file and the directory.
-
-
-  File: A group of bytes that can be read or written. Each file has a low-level name in the form of an inode number.
-  Directory: the user-readable name and the low-level name are listed in pairs.
-
-
-A file system consists of groups of directories and the files and other directories they contai...
     </summary>
   
 

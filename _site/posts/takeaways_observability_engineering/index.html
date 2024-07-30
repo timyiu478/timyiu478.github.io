@@ -30,22 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="nand2tetris" />
+<meta property="og:title" content="Takeaways from Observability Engineering Book" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<link rel="canonical" href="http://localhost:4000/tags/nand2tetris/" />
-<meta property="og:url" content="http://localhost:4000/tags/nand2tetris/" />
+<meta name="description" content="Abstracts" />
+<meta property="og:description" content="Abstracts" />
+<link rel="canonical" href="http://localhost:4000/posts/takeaways_observability_engineering/" />
+<meta property="og:url" content="http://localhost:4000/posts/takeaways_observability_engineering/" />
 <meta property="og:site_name" content="Tim Yiu" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-07-30T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="nand2tetris" />
+<meta property="twitter:title" content="Takeaways from Observability Engineering Book" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"nand2tetris","url":"http://localhost:4000/tags/nand2tetris/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-30T00:00:00+08:00","datePublished":"2024-07-30T00:00:00+08:00","description":"Abstracts","headline":"Takeaways from Observability Engineering Book","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/takeaways_observability_engineering/"},"url":"http://localhost:4000/posts/takeaways_observability_engineering/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>nand2tetris | Tim Yiu
+  <title>Takeaways from Observability Engineering Book | Tim Yiu
   </title>
 
   <!--
@@ -97,9 +98,16 @@
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
   
 
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
+
+  
+    <!-- Manific Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
   
 
   <!-- JavaScript -->
@@ -277,16 +285,10 @@
           
         
           
-            <span>
-              <a href="/tags">
-                Tags
-              </a>
-            </span>
-          
         
           
             
-              <span>nand2tetris</span>
+              <span>Takeaways from Observability Engineering Book</span>
             
 
           
@@ -300,7 +302,7 @@
     </button>
 
     <div id="topbar-title">
-      Tag
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link">
@@ -326,27 +328,168 @@
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-              
+              <!-- Refactor the HTML structure -->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+
+<!-- Handle images -->
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
 
 
 
 <article class="px-1">
-  
-    
+  <header>
+    <h1 data-toc-skip>Takeaways from Observability Engineering Book</h1>
 
-
-
-<div id="page-tag">
-  <h1 class="ps-lg-2">
-    <i class="fa fa-tag fa-fw text-muted"></i>
-    nand2tetris
-    <span class="lead text-muted ps-2">1</span>
-  </h1>
-  <ul class="content ps-0">
-    
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/posts/take_aways_nand2tetris/">Takeaways from Nand2Tetris course</a>
-        <span class="dash flex-grow-1"></span>
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
         <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -357,22 +500,245 @@
 
 <time
   
-    class="text-muted small text-nowrap"
-  
-  data-ts="1722182400"
+  data-ts="1722268800"
   data-df="ll"
   
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
 >
-  Jul 29, 2024
+  Jul 30, 2024
 </time>
 
-      </li>
-    
-  </ul>
+      </span>
+
+      <!-- lastmod date -->
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              <a href="https://www.linkedin.com/in/kam-wing-yiu-47685b172">Tim Yiu</a>
+            
+          </em>
+        </span>
+
+        <!-- read time -->
+        <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="358 words"
+>
+  <em>1 min</em> read</span>
+
+      </div>
+      <!-- .d-flex -->
+    </div>
+    <!-- .post-meta -->
+  </header>
+
+  <div class="content">
+    <h2 id="abstracts"><span class="me-2">Abstracts</span><a href="#abstracts" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>This post is about my key takeaways from the <a href="https://www.oreilly.com/library/view/observability-engineering/9781492076438/">Observability Engineering Book</a> by Charity Majors, Liz Fong-Jones, George Miranda.</p>
+
+<h2 id="what-is-observability"><span class="me-2">What is Observability</span><a href="#what-is-observability" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>For a software application to have observability, you must be able to do the following:</p>
+
+<ul>
+  <li>Understand the inner workings and system state <strong>solely</strong> by observing and interrogating with external tools</li>
+  <li>Can continually answer <strong>open-ended</strong> questions about the inner workings of
+your applications to explain any anomalies, without hitting investigative dead ends</li>
+</ul>
+
+<p>It is about how people interact with and try to understand their complex systems</p>
+
+<h2 id="the-role-of-cardinality"><span class="me-2">The Role of Cardinality</span><a href="#the-role-of-cardinality" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>In the database context, the cardinality refers to the <strong>uniqueness</strong> of the data values contained in a set.</li>
+  <li>Cardinality matters for observability, because <strong>high</strong>-cardinality information (e.g <em>userId</em>, <em>requestId</em>) is almost always the most useful in <strong>identifying</strong> data for debugging or understanding a system.</li>
+  <li>Unfortunately, <strong>metrics</strong>-based tooling systems can deal with only <strong>low</strong>-cardinality dimensions at any reasonable scale<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.</li>
+</ul>
+
+<h2 id="the-role-of-dimensionality"><span class="me-2">The Role of Dimensionality</span><a href="#the-role-of-dimensionality" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>The dimensionality refers to the <strong>keys</strong> within that data.</li>
+  <li>In observable systems, the telemetry data is generated as an arbitrarily wide(can contains thousands of <strong>key-value pairs</strong>) structured event.</li>
+  <li>Imagine that you have an event schema that defines six high-cardinality dimensions per event: <strong>time, app, host, user, endpoint, and status</strong>. With those six dimensions, you can create queries that analyze any <strong>combination</strong> of dimensions to surface relevant patterns that may be contributing to anomalies.</li>
+</ul>
+
+<h2 id="the-limitations-of-metrics-as-a-building-block"><span class="me-2">The Limitations of Metrics as a Building Block</span><a href="#the-limitations-of-metrics-as-a-building-block" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>The numerical values generated by a metric reflect an <strong>aggregated</strong> report of system state over a <strong>predefined</strong> period of time that pre-aggregated measure now becomes the <strong>lowest possible level of granularity</strong> for examining system state. That aggregation obscures many possible problems.</p>
+
+<h2 id="unstructured-log-vs-structured-log"><span class="me-2">Unstructured Log vs Structured Log</span><a href="#unstructured-log-vs-structured-log" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>Unstructured Log is <strong>human readable</strong> but <strong>difficult for machines to process</strong>.</li>
+  <li>Structured Log is the <strong>opposite</strong> of unstructured log.</li>
+</ul>
+
+<p>Unstructured logs example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>6:01:00 accepted connection on port 80 from 10.0.0.3:63349
+6:01:03 basic authentication accepted for user foo
+6:01:15 processing request for /super/slow/server
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Structured log example:</p>
+
+<div class="language-json highlighter-rouge"><div class="code-header">
+        <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"authority"</span><span class="p">:</span><span class="s2">"10.0.0.3:63349"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"duration_ms"</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"level"</span><span class="p">:</span><span class="s2">"info"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"Served HTTP request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"path"</span><span class="p">:</span><span class="s2">"/super/slow/server"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"port"</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"service_name"</span><span class="p">:</span><span class="s2">"slowsvc"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"time"</span><span class="p">:</span><span class="s2">"2019-08-22T11:57:03-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"trace.trace_id"</span><span class="p">:</span><span class="s2">"eafdf3123"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="s2">"foo"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="references"><span class="me-2">References</span><a href="#references" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>https://grafana.com/blog/2022/02/15/what-are-cardinality-spikes-and-why-do-they-matter/ <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
 </div>
 
-  
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/takeaways/">takeaways</a>,
+          <a href="/categories/observability/">observability</a>
+      </div>
+    
+
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/takeaways/"
+            class="post-tag no-text-decoration"
+          >takeaways</a>
+        
+          <a
+            href="/tags/observability/"
+            class="post-tag no-text-decoration"
+          >observability</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
+</div>
+
+    </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
 </article>
+
 
             
           </main>
@@ -833,12 +1199,220 @@
             </div>
 
             
+              
+              
+
+
+
+  <section id="toc-wrapper" class="ps-0 pe-4">
+    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/take_aways_nand2tetris/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1722182400"
+  data-df="ll"
+  
+>
+  Jul 29, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Takeaways from Nand2Tetris course</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Abstracts
+
+I took the Nand2Tetris course in few months ago for consolidating my computing knowledge by its hands-on projects. This post is about my key takeaways from this course. If you are intere...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/take_aways_nand2tetris/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>Takeaways from Nand2Tetris course</p>
+    </a>
+  
+
+  
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
+  
+</nav>
+
+            
+              
+              <!--  The comments switcher -->
+
+  
+  <!-- https://giscus.app/ -->
+<script type="text/javascript">
+  (function () {
+    const origin = 'https://giscus.app';
+    const iframe = 'iframe.giscus-frame';
+    const lightTheme = 'light';
+    const darkTheme = 'dark_dimmed';
+
+    let initTheme = lightTheme;
+    const html = document.documentElement;
+
+    if (
+      (html.hasAttribute('data-mode') &&
+        html.getAttribute('data-mode') === 'dark') ||
+      (!html.hasAttribute('data-mode') &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      initTheme = darkTheme;
+    }
+
+    let giscusAttributes = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'timyiu478/timyiu478.github.io',
+      'data-repo-id': 'R_kgDOLHfwOQ',
+      'data-category': 'General',
+      'data-category-id': 'DIC_kwDOLHfwOc4Cckt6',
+      'data-mapping': 'pathname',
+      'data-reactions-enabled': '1',
+      'data-emit-metadata': '0',
+      'data-theme': initTheme,
+      'data-input-position': 'bottom',
+      'data-lang': 'en',
+      'data-loading': 'lazy',
+      crossorigin: 'anonymous',
+      async: ''
+    };
+
+    let giscusScript = document.createElement('script');
+    Object.entries(giscusAttributes).forEach(([key, value]) =>
+      giscusScript.setAttribute(key, value)
+    );
+    document.getElementById('tail-wrapper').appendChild(giscusScript);
+
+    addEventListener('message', (event) => {
+      if (
+        event.source === window &&
+        event.data &&
+        event.data.direction === ModeToggle.ID
+      ) {
+        /* global theme mode changed */
+        const mode = event.data.message;
+        const theme = mode === ModeToggle.DARK_MODE ? darkTheme : lightTheme;
+
+        const message = {
+          setConfig: {
+            theme: theme
+          }
+        };
+
+        const giscus = document.querySelector(iframe).contentWindow;
+        giscus.postMessage({ giscus: message }, origin);
+      }
+    });
+  })();
+</script>
+
+
+
             
 
             <!-- The Footer -->
@@ -1321,6 +1895,13 @@
 <!-- layout specified -->
 
 
+  
+
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
+
 
 
 
@@ -1384,16 +1965,44 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
 
 
 
 
 
 
-<script defer src="/assets/js/dist/misc.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
 
 

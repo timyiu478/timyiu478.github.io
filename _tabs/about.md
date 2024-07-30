@@ -10,7 +10,7 @@ Hi, my name is Tim Yiu. I was a platform engineer at [Mox Bank](https://mox.com)
 
 ## About this website
 
-This website is a personal blog where I share my learnings, questions, take aways, travels. This website has neither been sponsored by anyone nor shows any advertisements, and it will be open to all and ad-free.
+This website is a personal blog where I share my learnings, questions, takeaways, and travels. This website has neither been sponsored by anyone nor shows any advertisements, and it will be open to all and ad-free.
 
 ## Research Experiences
 
