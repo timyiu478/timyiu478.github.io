@@ -5,7 +5,7 @@ categories: ["takeaways", "nand2tetris"]
 tags: ["takeaways", "nand2tetris"]
 ---
 
-## Abstracts
+## Abstract
 
 I took the [Nand2Tetris](https://www.coursera.org/learn/build-a-computer) course in few months ago for consolidating my computing knowledge by its hands-on projects. This post is about my key takeaways from this course. If you are intereted in my solutions of the projects, you can check [this Github repository](https://github.com/timyiu478/nand2tetris).
 

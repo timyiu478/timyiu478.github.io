@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Takeaways from Observability Engineering Book" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Abstracts" />
-<meta property="og:description" content="Abstracts" />
+<meta name="description" content="Abstract" />
+<meta property="og:description" content="Abstract" />
 <link rel="canonical" href="http://localhost:4000/posts/takeaways_observability_engineering/" />
 <meta property="og:url" content="http://localhost:4000/posts/takeaways_observability_engineering/" />
 <meta property="og:site_name" content="Tim Yiu" />
@@ -42,7 +42,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Takeaways from Observability Engineering Book" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-30T00:00:00+08:00","datePublished":"2024-07-30T00:00:00+08:00","description":"Abstracts","headline":"Takeaways from Observability Engineering Book","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/takeaways_observability_engineering/"},"url":"http://localhost:4000/posts/takeaways_observability_engineering/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-31T01:34:07+08:00","datePublished":"2024-07-30T00:00:00+08:00","description":"Abstract","headline":"Takeaways from Observability Engineering Book","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/takeaways_observability_engineering/"},"url":"http://localhost:4000/posts/takeaways_observability_engineering/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -510,6 +510,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -568,6 +579,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1722360847"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Jul 31, 2024
+</time>
+
+        </span>
+      
 
       
 
@@ -606,9 +640,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="655 words"
+  title="742 words"
 >
-  <em>3 min</em> read</span>
+  <em>4 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -617,7 +651,7 @@
   </header>
 
   <div class="content">
-    <h2 id="abstracts"><span class="me-2">Abstracts</span><a href="#abstracts" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="abstract"><span class="me-2">Abstract</span><a href="#abstract" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>This post is about my key takeaways from the <a href="https://www.oreilly.com/library/view/observability-engineering/9781492076438/">Observability Engineering Book</a> by Charity Majors, Liz Fong-Jones, George Miranda.</p>
 
@@ -747,6 +781,13 @@ point. Then return to step 3.</li>
   <li>Each of these situations benefits from a slightly different sampling strategy that optimizes for their needs.</li>
 </ul>
 
+<h2 id="when-to-make-a-sampling-decision-for-traces"><span class="me-2">When to Make a Sampling Decision for Traces</span><a href="#when-to-make-a-sampling-decision-for-traces" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li><strong>head</strong>-based sampling: the decision is made when the trace event is initiated. That decision is then propagated further downstream (e.g., by inserting a “require sampling” header bit) to ensure that every span necessary to complete the trace is sampled.</li>
+  <li><strong>tail</strong>-based sampling: a decision on values known only at the end of a request. To collect full traces in the tail-based approach, all spans must <strong>first be collected in a buffer</strong> and then, retrospectively, a sampling decision can be made</li>
+</ul>
+
 <h2 id="references"><span class="me-2">References</span><a href="#references" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="footnotes" role="doc-endnotes">
@@ -867,14 +908,14 @@ point. Then return to step 3.</li>
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/take_aways_nand2tetris/">Takeaways from Nand2Tetris course</a>
+          <a href="/posts/takeaways_observability_engineering/">Takeaways from Observability Engineering Book</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/takeaways_observability_engineering/">Takeaways from Observability Engineering Book</a>
+          <a href="/posts/take_aways_nand2tetris/">Takeaways from Nand2Tetris course</a>
         </li>
       
         
@@ -1399,9 +1440,9 @@ point. Then return to step 3.</li>
 
 
 
-                  Abstracts
+                  Abstract
 
-I took the Nand2Tetris course in few months ago for consolidating my computing knowledge by its hands-on projects. This post is about my key takeaways from this course. If you are intere...
+I took the Nand2Tetris course in few months ago for consolidating my computing knowledge by its hands-on projects. This post is about my key takeaways from this course. If you are interet...
                 </p>
               </div>
             </div>

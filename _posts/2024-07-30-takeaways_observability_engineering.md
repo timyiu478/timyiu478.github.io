@@ -6,7 +6,7 @@ categories: ["takeaways", "observability"]
 tags: ["takeaways", "observability"]
 ---
 
-## Abstracts
+## Abstract
 
 This post is about my key takeaways from the [Observability Engineering Book](https://www.oreilly.com/library/view/observability-engineering/9781492076438/) by Charity Majors, Liz Fong-Jones, George Miranda.
 

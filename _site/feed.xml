@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-07-31T01:08:06+08:00</updated>
+  <updated>2024-07-31T12:19:54+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/takeaways_observability_engineering/" rel="alternate" type="text/html" title="Takeaways from Observability Engineering Book" />
     <published>2024-07-30T00:00:00+08:00</published>
   
-    <updated>2024-07-30T00:00:00+08:00</updated>
+    <updated>2024-07-31T01:34:07+08:00</updated>
   
     <id>http://localhost:4000/posts/takeaways_observability_engineering/</id>
     <content src="http://localhost:4000/posts/takeaways_observability_engineering/" />
@@ -48,7 +48,7 @@
 
 
 
-      Abstracts
+      Abstract
 
 This post is about my key takeaways from the Observability Engineering Book by Charity Majors, Liz Fong-Jones, George Miranda.
 
@@ -58,7 +58,7 @@ For a software application to have observability, you must be able to do the fol
 
 
   Understand the inner workings and system state solely by observing and interrogating with external tools
-  Can continually answer open-ended qu...
+  Can continually answer open-ended que...
     </summary>
   
 
@@ -94,13 +94,13 @@ For a software application to have observability, you must be able to do the fol
 
 
 
-      Abstracts
+      Abstract
 
 I took the Nand2Tetris course in few months ago for consolidating my computing knowledge by its hands-on projects. This post is about my key takeaways from this course. If you are intereted in my solutions of the projects, you can check this Github repository.
 
 Random Access Memory
 
-The reason why we can access an arbitrary memory element of a sequence in equal time is the processing...
+The reason why we can access an arbitrary memory element of a sequence in equal time is the processing ...
     </summary>
   
 
