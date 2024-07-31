@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Tim Yiu</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-07-31T12:19:54+08:00</updated>
+  <updated>2024-07-31T12:43:30+08:00</updated>
   <author>
     <name>Tim Yiu</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,11 @@
 
   
   <entry>
-    <title>Takeaways from Observability Engineering Book</title>
-    <link href="http://localhost:4000/posts/takeaways_observability_engineering/" rel="alternate" type="text/html" title="Takeaways from Observability Engineering Book" />
+    <title>11 Takeaways from Observability Engineering Book</title>
+    <link href="http://localhost:4000/posts/takeaways_observability_engineering/" rel="alternate" type="text/html" title="11 Takeaways from Observability Engineering Book" />
     <published>2024-07-30T00:00:00+08:00</published>
   
-    <updated>2024-07-31T01:34:07+08:00</updated>
+    <updated>2024-07-31T12:32:01+08:00</updated>
   
     <id>http://localhost:4000/posts/takeaways_observability_engineering/</id>
     <content src="http://localhost:4000/posts/takeaways_observability_engineering/" />
@@ -70,7 +70,7 @@ For a software application to have observability, you must be able to do the fol
     <link href="http://localhost:4000/posts/take_aways_nand2tetris/" rel="alternate" type="text/html" title="Takeaways from Nand2Tetris course" />
     <published>2024-07-29T00:00:00+08:00</published>
   
-    <updated>2024-07-30T17:35:21+08:00</updated>
+    <updated>2024-07-31T12:20:14+08:00</updated>
   
     <id>http://localhost:4000/posts/take_aways_nand2tetris/</id>
     <content src="http://localhost:4000/posts/take_aways_nand2tetris/" />
