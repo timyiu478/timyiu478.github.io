@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  ""
-title:  "Takeaways from Observability Engineering Book"
+title:  "11 Takeaways from Observability Engineering Book"
 categories: ["takeaways", "observability"]
 tags: ["takeaways", "observability"]
 ---
